@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="Unity, 学习" />
   
-  <meta name="description" content="API移动和旋转问题有问题的代码 12Vector3 move &#x3D; Vector3.forward * m_MovementInputValue * Time.deltaTime * m_Speed;   m_Rigidbody.MovePosition(m_Rigidbody.position + move);  此代码会导致物体旋转后会继续以世界坐标的z轴为前后方向，而导致旋转不起作用">
+  <meta name="description" content="API移动和旋转问题有问题的代码 12Vector3 move &#x3D; Vector3.forward * m_MovementInputValue * Time.deltaTime * m_Speed;m_Rigidbody.MovePosition(m_Rigidbody.position + move);  此代码会导致物体旋转后会继续以世界坐标的z轴为前后方向，而导致旋转不起作用，看起">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity学习记录1">
 <meta property="og:url" content="http://example.com/2021/04/13/Unity/index.html">
 <meta property="og:site_name" content="Imperio">
-<meta property="og:description" content="API移动和旋转问题有问题的代码 12Vector3 move &#x3D; Vector3.forward * m_MovementInputValue * Time.deltaTime * m_Speed;   m_Rigidbody.MovePosition(m_Rigidbody.position + move);  此代码会导致物体旋转后会继续以世界坐标的z轴为前后方向，而导致旋转不起作用">
+<meta property="og:description" content="API移动和旋转问题有问题的代码 12Vector3 move &#x3D; Vector3.forward * m_MovementInputValue * Time.deltaTime * m_Speed;m_Rigidbody.MovePosition(m_Rigidbody.position + move);  此代码会导致物体旋转后会继续以世界坐标的z轴为前后方向，而导致旋转不起作用，看起">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/logo.jpg">
 <meta property="article:published_time" content="2021-04-13T15:25:35.000Z">
-<meta property="article:modified_time" content="2021-04-13T16:25:33.521Z">
+<meta property="article:modified_time" content="2021-04-13T16:30:21.366Z">
 <meta property="article:author" content="kennyyy">
 <meta property="article:tag" content="Unity">
 <meta property="article:tag" content="学习">
@@ -138,7 +138,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            514
+                            507
                         
                         字
                     </li>
@@ -147,7 +147,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1618331133521"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1618331421366"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
@@ -160,16 +160,16 @@
 
 
 <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="移动和旋转问题"><a href="#移动和旋转问题" class="headerlink" title="移动和旋转问题"></a>移动和旋转问题</h3><p>有问题的代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Vector3 move = Vector3.forward * m_MovementInputValue * Time.deltaTime * m_Speed;</span><br><span class="line">   m_Rigidbody.MovePosition(m_Rigidbody.position + move);</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Vector3 move = Vector3.forward * m_MovementInputValue * Time.deltaTime * m_Speed;</span><br><span class="line">m_Rigidbody.MovePosition(m_Rigidbody.position + move);</span><br></pre></td></tr></table></figure>
 
 <p>此代码会导致物体旋转后会继续以世界坐标的z轴为前后方向，而导致旋转不起作用，看起来像坐标轴没有跟着旋转一样</p>
 <hr>
 <p>正确的代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vector3 move = transform.forward * m_MovementInputValue * Time.deltaTime * m_Speed;</span><br><span class="line"></span><br><span class="line">   m_Rigidbody.MovePosition(m_Rigidbody.position + move);</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Vector3 move = transform.forward * m_MovementInputValue * Time.deltaTime * m_Speed;</span><br><span class="line">m_Rigidbody.MovePosition(m_Rigidbody.position + move);</span><br></pre></td></tr></table></figure>
 
 <p>修改后一切正常</p>
 <hr>
-<div class="panel panel-info">
+<div class="panel panel-warning">
     <div class="panel-title">Vector3.forward和transform.forward的区别</div>
     <div class="panel-body">
         <p>Vector3.forward的值永远是世界坐标（0,0,1），<br>而transform.forward是世界坐标对应的物体坐标的轴的向量</p>
@@ -250,7 +250,7 @@
 
 
 API移动和旋转问题有问题的代码
-12Vector3 move = Vector3.forward * m_MovementInputValue * Time.deltaTime * m_Speed;   m_Rigidbod...`;
+12Vector3 move = Vector3.forward * m_MovementInputValue * Time.deltaTime * m_Speed;m_Rigidbody.M...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
