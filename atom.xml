@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-04-13T14:30:53.472Z</updated>
+  <updated>2021-04-13T16:25:33.521Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Unity学习记录1</title>
+    <link href="http://example.com/2021/04/13/Unity/"/>
+    <id>http://example.com/2021/04/13/Unity/</id>
+    <published>2021-04-13T15:25:35.000Z</published>
+    <updated>2021-04-13T16:25:33.521Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span><h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="移动和旋转问题"><a href="#移动和旋转问题" class="headerlink" title="移动和旋转问题"></a>移动和旋转问题</h3><p>有问题的代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Vector3 move = Vector3.forward * m_MovementInputValue * Time.deltaTime * m_Speed;</span><br><span class="line">   m_Rigidbody.MovePosition(m_Rigidbody.position + move);</span><br></pre></td></tr></table></figure><p>此代码会导致物体旋转后会继续以世界坐标的z轴为前后方向，而导致旋转不起作用，看起来像坐标轴没有跟着旋转一样</p><hr><p>正确的代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vector3 move = transform.forward * m_MovementInputValue * Time.deltaTime * m_Speed;</span><br><span class="line"></span><br><span class="line">   m_Rigidbody.MovePosition(m_Rigidbody.position + move);</span><br></pre></td></tr></table></figure><p>修改后一切正常</p><hr><div class="panel panel-info">    <div class="panel-title">Vector3.forward和transform.forward的区别</div>    <div class="panel-body">        <p>Vector3.forward的值永远是世界坐标（0,0,1），<br>而transform.forward是世界坐标对应的物体坐标的轴的向量</p>    </div>    </div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+
+
+
+&lt;h2 id=&quot;API&quot;&gt;&lt;a href=&quot;#API&quot; class=&quot;headerlink&quot; title=&quot;API&quot;&gt;&lt;/a&gt;API&lt;/h2&gt;&lt;h3 id=&quot;移动和旋转问题&quot;&gt;&lt;a href=&quot;#移动和旋转问题&quot; class=</summary>
+      
+    
+    
+    
+    <category term="Unity" scheme="http://example.com/categories/Unity/"/>
+    
+    
+    <category term="Unity" scheme="http://example.com/tags/Unity/"/>
+    
+    <category term="学习" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>部署网站的记录</title>
