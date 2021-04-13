@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-04-13T13:46:10.973Z</updated>
+  <updated>2021-04-13T14:24:17.049Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,29 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Demo</title>
+    <title>部署网站的记录</title>
     <link href="http://example.com/2021/04/13/Demo/"/>
     <id>http://example.com/2021/04/13/Demo/</id>
     <published>2021-04-13T08:56:13.000Z</published>
-    <updated>2021-04-13T13:46:10.973Z</updated>
+    <updated>2021-04-13T14:24:17.049Z</updated>
     
-    <content type="html"><![CDATA[<span id="more"></span><hr><h2 id="标题一1"><a href="#标题一1" class="headerlink" title="标题一1 "></a>标题一1 </h2><h2 id="哈哈哈哈"><a href="#哈哈哈哈" class="headerlink" title="哈哈哈哈"></a>哈哈哈哈</h2><p>伞兵一号<br>打发发达的地方阿斯顿发撒发的撒发</p>]]></content>
+    <content type="html"><![CDATA[<span id="more"></span><p>##总结</p><p>###网页属性</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 创建时间</span><br><span class="line">categories: 分类</span><br><span class="line">tags:标签</span><br><span class="line">- Tag0</span><br><span class="line">- Tag1</span><br><span class="line">- Tag2</span><br><span class="line">sticky: 100数字越大优先级越高</span><br><span class="line">pic:指定预览图片，图片位置为同级目录下的同名文件夹</span><br><span class="line">comments: <span class="literal">true</span>是否开放评论</span><br><span class="line">toc: <span class="literal">true</span>是否生成目录</span><br><span class="line">only:在什么位置显示，如果没有就全部显示</span><br><span class="line">- home</span><br><span class="line">- category</span><br><span class="line">- tag</span><br><span class="line">---</span><br></pre></td></tr></table></figure><p>###其他</p><p>提示信息</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">&#123;% alertbox success <span class="string">&quot;成功&quot;</span> %&#125;</span><br><span class="line">&#123;% alertbox danger <span class="string">&quot;危险&quot;</span> %&#125;</span><br><span class="line">&#123;% alertbox info <span class="string">&quot;消息&quot;</span> %&#125;</span><br><span class="line">&#123;% alertbox warning <span class="string">&quot;警告&quot;</span> %&#125;</span><br><span class="line">---</span><br></pre></td></tr></table></figure><p>###折叠相关</p><div class="xControl">    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>折叠的折叠框</span></div>    <div class="xContent"><div class="inner">        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">&#123;% collapse 折叠框的标题 %&#125;</span><br><span class="line"></span><br><span class="line">被折叠的内容 1</span><br><span class="line">被折叠的内容 2</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&#123;% endcollapse %&#125;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>     </div></div>    </div><div class="xControl active">    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>预先打开的折叠框</span></div>    <div class="xContent pre-open"><div class="inner">        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">&#123;% collapse 折叠框的标题 open %&#125;</span><br><span class="line"></span><br><span class="line">被折叠的内容 1</span><br><span class="line">被折叠的内容 2</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&#123;% endcollapse %&#125;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>     </div></div>    </div><p>###提示</p><div class="panel panel-info">    <div class="panel-title">提示框</div>    <div class="panel-body">        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">&#123;% colorpanel TYPE 面板框的标题 %&#125;</span><br><span class="line"></span><br><span class="line">面板里的内容 1</span><br><span class="line">面板里的内容 2</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&#123;% endcolorpanel %&#125;</span><br><span class="line">---</span><br></pre></td></tr></table></figure><p>type是框的类型<br>·successs<br>·danger<br>·info<br>·warning</p>    </div>    </div>]]></content>
     
     
       
       
     <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
 
-&lt;hr&gt;
-&lt;h2 id=&quot;标题一1&quot;&gt;&lt;a href=&quot;#标题一1&quot; class=&quot;headerlink&quot; title=&quot;标题一1 &quot;&gt;&lt;/a&gt;标题一1 &lt;/h2&gt;&lt;h2 id=&quot;哈哈哈哈&quot;&gt;&lt;a href=&quot;#哈哈哈哈&quot; cla</summary>
+
+&lt;p&gt;##总结&lt;/p&gt;
+&lt;p&gt;###网页属性&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;</summary>
       
     
     
     
-    <category term="Demo" scheme="http://example.com/categories/Demo/"/>
+    <category term="学习" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="demo" scheme="http://example.com/tags/demo/"/>
+    <category term="错误总结" scheme="http://example.com/tags/%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/"/>
+    
+    <category term="经验" scheme="http://example.com/tags/%E7%BB%8F%E9%AA%8C/"/>
     
   </entry>
   
