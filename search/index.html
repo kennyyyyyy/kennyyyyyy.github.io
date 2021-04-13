@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="">
-  <title>标签 | imeprio</title>
+  <title>imeprio</title>
   <meta name="author" content="kennyyy" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -17,14 +17,12 @@
   
   <meta name="description" content="deep dark fantasy♂">
 <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://example.com/tags/index.html">
+<meta property="og:title" content="imeprio">
+<meta property="og:url" content="http://example.com/search/index.html">
 <meta property="og:site_name" content="imeprio">
 <meta property="og:description" content="deep dark fantasy♂">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/null">
-<meta property="article:published_time" content="2021-04-13T05:33:45.000Z">
-<meta property="article:modified_time" content="2021-04-13T05:37:15.372Z">
 <meta property="article:author" content="kennyyy">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/null">
@@ -129,29 +127,44 @@
                     
 
         <section class="col-md-8">
-    <article>
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <div class="kratos-post-content">
+            <h2 class="title-h2 text-center">搜索</h2>
+            <form class="input-group" onsubmit="return inpSearch();">
+                <input class="form-input input-lg" id="search-input" maxlength="80" name="s" placeholder="有什么想找找看的呢o(*￣▽￣*)ブ" required type="search">
+                <button class="btn btn-primary" type="submit">找一找~</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="alert alert-info" id="kr-search-notice">
+        这里是 imeprio 的搜索引擎~
+    </div>
+
+    <div id="result-posts">
         <div class="kratos-hentry kratos-post-inner clearfix">
             <div class="kratos-post-content">
-                <h2 class="title-h2 text-center">标签</h2>
-                
+                <p>搜索多个关键词时请用空格分割，例如「」这样；</p>
+                <p>您也可以使用这些标签碰碰运气哦~</p>
+                <p class="search-demo-tags">
+                    
+                </p>
             </div>
-            <footer class="kratos-entry-footer clearfix">
-                <div class="footer-tag clearfix">
-                    <div class="pull-date">
-                    <span>最后编辑：2021-04-13</span>
-                    </div>
-                </div>
-            </footer>
         </div>
-        
-    </article>
+    </div>
+
 </section>
+
+<script>var searchDataFile = "/search.json";</script>
+<script defer src="/js/local-search.min.js"></script>
 
                 
             
 
 <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
     <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+        <div class="sticky-area">
     
     
                 <aside id="krw-about" class="widget widget-kratos-about clearfix">
@@ -166,8 +179,6 @@
     </div>
 </aside>
             
-                    <div class="sticky-area">
-                
                 
 
             
