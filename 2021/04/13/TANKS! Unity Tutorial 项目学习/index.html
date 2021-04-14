@@ -167,7 +167,7 @@
 <h3 id="InverseTransformPoint"><a href="#InverseTransformPoint" class="headerlink" title="InverseTransformPoint"></a>InverseTransformPoint</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public Vector3 InverseTransformPoint(Vector3 position);</span><br></pre></td></tr></table></figure>
 <p>将position这个Vector3类型变量转化为 以V3的世界坐标为零点基准的情况下 position相对于V3的坐标值。</p>
 <h2 id="mune"><a href="#mune" class="headerlink" title="mune"></a>mune</h2><h3 id="相机的两种投影方式"><a href="#相机的两种投影方式" class="headerlink" title="相机的两种投影方式"></a>相机的两种投影方式</h3>
-<p><img src="%E7%9B%B8%E6%9C%BA.jpg" alt="e"><br><img src="/%E7%9B%B8%E6%9C%BA.jpg" alt="e"><br>![e](“TANKS! Unity Tutorial 项目学习/相机.jpg”)<br><img src="%22/%E7%9B%B8%E6%9C%BA.jpg%22" alt="e"><br><img src="%22%E7%9B%B8%E6%9C%BA.jpg%22" alt="e"></p>
+<p><img src="/.com//%E7%9B%B8%E6%9C%BA.jpg" alt="e"><br><img src="/.com//%E7%9B%B8%E6%9C%BA.jpg" alt="e"><br>![e](“TANKS! Unity Tutorial 项目学习/相机.jpg”)<br><img src="/.com//%E7%9B%B8%E6%9C%BA.jpg%22" alt="e"><br><img src="/.com//%22%E7%9B%B8%E6%9C%BA.jpg%22" alt="e"></p>
 <h2 id="问题与解决"><a href="#问题与解决" class="headerlink" title="问题与解决"></a>问题与解决</h2><h3 id="移动和旋转问题"><a href="#移动和旋转问题" class="headerlink" title="移动和旋转问题"></a>移动和旋转问题</h3><p>有问题的代码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Vector3 move = Vector3.forward * m_MovementInputValue * Time.deltaTime * m_Speed;</span><br><span class="line">m_Rigidbody.MovePosition(m_Rigidbody.position + move);</span><br></pre></td></tr></table></figure>
 
