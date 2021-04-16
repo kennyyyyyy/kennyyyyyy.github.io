@@ -24,7 +24,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/2021/04/13/Tanks%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/01.jpg">
 <meta property="article:published_time" content="2021-04-13T15:25:35.000Z">
-<meta property="article:modified_time" content="2021-04-16T16:13:37.380Z">
+<meta property="article:modified_time" content="2021-04-16T16:19:18.543Z">
 <meta property="article:author" content="kennyyy">
 <meta property="article:tag" content="Unity">
 <meta property="article:tag" content="学习">
@@ -147,7 +147,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1618589617380"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1618589958543"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
@@ -162,8 +162,8 @@
 <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="SmoothDamp"><a href="#SmoothDamp" class="headerlink" title="SmoothDamp"></a>SmoothDamp</h3><p>平滑的改变当前值至另一个值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mathf.SmoothDamp(<span class="built_in">float</span> current, <span class="built_in">float</span> target, ref <span class="built_in">float</span> currentVelocity, <span class="built_in">float</span> smoothTime, <span class="built_in">float</span> maxSpeed = Mathf.Infinity, <span class="built_in">float</span> deltaTime = Time.deltaTime);</span><br><span class="line"></span><br><span class="line">Vector3 SmoothDamp(Vector3 current, Vector3 target, ref Vector3 currentVelocity, <span class="built_in">float</span> smoothTime, <span class="built_in">float</span> maxSpeed = Mathf.Infinity, <span class="built_in">float</span> deltaTime = Time.deltaTime);</span><br></pre></td></tr></table></figure>
 
-<p>current：当前位置<br>target：尝试达到的目标值<br>currentVelocity：当前速度，该值在每次调用时都会由函数修改。<br>smoothTime：达到目标值的时间<br>maxSpeed：最大速度<br>deltaTime：默认为Time.deltatime</p>
-<p>ref关键字：相当于c的指针传参，及引用传参。</p>
+<p><strong>current</strong>：当前位置<br><strong>target</strong>：尝试达到的目标值<br><strong>currentVelocity</strong>：当前速度，该值在每次调用时都会由函数修改。<br><strong>smoothTime</strong>：达到目标值的时间<br><strong>maxSpeed</strong>：最大速度<br><strong>deltaTime</strong>：默认为Time.deltatime</p>
+<p><strong>ref关键字</strong>：相当于c的指针传参，及引用传参。</p>
 <h3 id="InverseTransformPoint"><a href="#InverseTransformPoint" class="headerlink" title="InverseTransformPoint"></a>InverseTransformPoint</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public Vector3 InverseTransformPoint(Vector3 position);</span><br></pre></td></tr></table></figure>
 <p>将position这个Vector3类型变量转化为 以V3的世界坐标为零点基准的情况下 position相对于V3的坐标值。</p>
 <h3 id="Physics"><a href="#Physics" class="headerlink" title="Physics"></a>Physics</h3><h4 id="Physics-OverlapSphere"><a href="#Physics-OverlapSphere" class="headerlink" title="Physics.OverlapSphere"></a>Physics.OverlapSphere</h4><p>检测范围内的Collider<br><code> public static Collider[] OverlapSphere(Vector3 position, float radius, int layerMask = AllLayers, QueryTriggerInteraction queryTriggerInteraction = QueryTriggerInteraction.UseGlobal);</code></p>
