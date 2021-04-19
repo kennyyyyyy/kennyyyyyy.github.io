@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="学习" />
   
-  <meta name="description" content="第四章：组合逻辑电路编码器    译码器        \mid \mathrm{Y}_{1}&#x3D;\left[\mathrm{D}_{10}\left(\mathrm{~A}_{1} \mathrm{~A}_{0}^{\prime}\right)+\mathrm{D}_{11}\left(\mathrm{~A}_{1}^{\prime} \mathrm{A}_{0}\right)+\mathrm{">
+  <meta name="description" content="第四章：组合逻辑电路编码器    译码器      选择器  \mid \mathrm{Y}_{1}&#x3D;\left[\mathrm{D}_{10}\left(\mathrm{~A}_{1} \mathrm{~A}_{0}^{\prime}\right)+\mathrm{D}_{11}\left(\mathrm{~A}_{1}^{\prime} \mathrm{A}_{0}\right)+\math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数电">
 <meta property="og:url" content="http://kennyyyyyy.github.io/2021/04/19/%E6%95%B0%E7%94%B5/index.html">
 <meta property="og:site_name" content="Imperio">
-<meta property="og:description" content="第四章：组合逻辑电路编码器    译码器        \mid \mathrm{Y}_{1}&#x3D;\left[\mathrm{D}_{10}\left(\mathrm{~A}_{1} \mathrm{~A}_{0}^{\prime}\right)+\mathrm{D}_{11}\left(\mathrm{~A}_{1}^{\prime} \mathrm{A}_{0}\right)+\mathrm{">
+<meta property="og:description" content="第四章：组合逻辑电路编码器    译码器      选择器  \mid \mathrm{Y}_{1}&#x3D;\left[\mathrm{D}_{10}\left(\mathrm{~A}_{1} \mathrm{~A}_{0}^{\prime}\right)+\mathrm{D}_{11}\left(\mathrm{~A}_{1}^{\prime} \mathrm{A}_{0}\right)+\math">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2021-04-19T13:05:33.000Z">
-<meta property="article:modified_time" content="2021-04-19T15:11:45.054Z">
+<meta property="article:modified_time" content="2021-04-19T15:30:54.628Z">
 <meta property="article:author" content="kennyyy">
 <meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary">
@@ -137,7 +137,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            347
+                            665
                         
                         字
                     </li>
@@ -146,7 +146,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1618845105054"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1618846254628"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
@@ -159,9 +159,18 @@
 <p><img src="/images/数电/2.3线-8线译码器.png" alt="3线-8线译码器"></p>
 <p><img src="/images/数电/2.2-10进制译码器.png" alt="2-10进制译码器"></p>
 <p><img src="/images/数电/2.数码显示译码器.png" alt="数码显示译码器"></p>
-<p><img src="/images/数电/3.数据选择器.png" alt="数据选择器"></p>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p><img src="/images/数电/3.数据选择器.png" alt="数据选择器"></p>
 <script type="math/tex; mode=display">
-\mid \mathrm{Y}_{1}=\left[\mathrm{D}_{10}\left(\mathrm{~A}_{1} \mathrm{~A}_{0}^{\prime}\right)+\mathrm{D}_{11}\left(\mathrm{~A}_{1}^{\prime} \mathrm{A}_{0}\right)+\mathrm{D}_{12}\left(\mathrm{~A}_{1} \mathrm{~A}_{0}^{\prime}\right)+\mathrm{D}_{13}\left(\mathrm{~A}_{1} \mathrm{~A}_{0}\right)\right]^{*} \mathrm{~S}_{1}</script>
+\mid \mathrm{Y}_{1}=\left[\mathrm{D}_{10}\left(\mathrm{~A}_{1} \mathrm{~A}_{0}^{\prime}\right)+\mathrm{D}_{11}\left(\mathrm{~A}_{1}^{\prime} \mathrm{A}_{0}\right)+\mathrm{D}_{12}\left(\mathrm{~A}_{1} \mathrm{~A}_{0}^{\prime}\right)+\mathrm{D}_{13}\left(\mathrm{~A}_{1} \mathrm{~A}_{0}\right)\right]^{*} \mathrm{~S}_{1}</script><h2 id="加法器"><a href="#加法器" class="headerlink" title="加法器"></a>加法器</h2><h3 id="一位加法器"><a href="#一位加法器" class="headerlink" title="一位加法器"></a>一位加法器</h3><p><img src="/images/数电/4.1位加法器-半加器.png" alt="半加器"></p>
+<p><img src="/images/数电/4.1位加法器-全加器.png" alt="全加器"></p>
+<h3 id="多位加法器"><a href="#多位加法器" class="headerlink" title="多位加法器"></a>多位加法器</h3><p><img src="/images/数电/4.多为加法器-超前进位加法器.png" alt="超前进位加法器"></p>
+<p><img src="/images/数电/4.多为加法器-串行进位加法器.png" alt="串行进位加法器"> </p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+(\boldsymbol{C I})_{i}=(\boldsymbol{C O})_{i-1} \\
+\boldsymbol{S}_{i}=\boldsymbol{A}_{i} \oplus \boldsymbol{B}_{i} \oplus(\boldsymbol{C I})_{i} \\
+(\boldsymbol{C O})_{i}=A_{i} \boldsymbol{B}_{i}+\left(\boldsymbol{A}_{i}+\boldsymbol{B}_{i}\right)(\boldsymbol{C I})_{i}
+\end{array}</script>
             </div>
             
                 <div class="kratos-copyright text-center clearfix">
@@ -237,9 +246,9 @@
 
 
 
+选择器
 
-
-\mid \mathrm{Y}_{1}=\left[\mathrm{D}_{10}\left(\mathrm{~A}_{1} \mathrm{~A}_{0}^{\prime}\...`;
+\mid \mathrm{Y}_{1}=\left[\mathrm{D}_{10}\left(\mathrm{~A}_{1} \mathrm{~A}_{0}^{\prim...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
