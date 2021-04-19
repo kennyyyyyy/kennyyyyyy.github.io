@@ -6,7 +6,7 @@
   <link href="http://kennyyyyyy.github.io/atom.xml" rel="self"/>
   
   <link href="http://kennyyyyyy.github.io/"/>
-  <updated>2021-04-19T13:41:53.596Z</updated>
+  <updated>2021-04-19T14:07:26.063Z</updated>
   <id>http://kennyyyyyy.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://kennyyyyyy.github.io/2021/04/19/%E6%95%B0%E7%94%B5/"/>
     <id>http://kennyyyyyy.github.io/2021/04/19/%E6%95%B0%E7%94%B5/</id>
     <published>2021-04-19T13:05:33.000Z</published>
-    <updated>2021-04-19T13:41:53.596Z</updated>
+    <updated>2021-04-19T14:07:26.063Z</updated>
     
-    <content type="html"><![CDATA[<span id="more"></span><h1 id="第四章：组合逻辑电路"><a href="#第四章：组合逻辑电路" class="headerlink" title="第四章：组合逻辑电路"></a>第四章：组合逻辑电路</h1><h2 id="编码器"><a href="#编码器" class="headerlink" title="编码器"></a>编码器</h2><p><img src="/source/images/%E6%95%B0%E7%94%B5/1.%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="二进制编码器"></p><p><img src="/source/images/%E6%95%B0%E7%94%B5/1.2-10%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="2-10进制编码器"></p><p><img src="/source/images/%E6%95%B0%E7%94%B5/1.%E4%BC%98%E5%85%88%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="优先编码器"></p><p><img src="/source/images/%E6%95%B0%E7%94%B5/1.2-10%E8%BF%9B%E5%88%B6%E4%BC%98%E5%85%88%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="2-10进制优先编码器"></p><h2 id="译码器"><a href="#译码器" class="headerlink" title="译码器"></a>译码器</h2><p><img src="/source/images/%E6%95%B0%E7%94%B5/2.%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%AF%91%E7%A0%81%E5%99%A8-%E4%BD%8E%E7%94%B5%E5%B9%B3%E6%9C%89%E6%95%88.png" alt="二进制译码器-低电平有效"> <img src="/source/images/%E6%95%B0%E7%94%B5/2.%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%AF%91%E7%A0%81%E5%99%A8-%E9%AB%98%E7%94%B5%E5%B9%B3%E6%9C%89%E6%95%88.png" alt="二进制译码器-高电平有效"> </p><p><img src="/source/images/%E6%95%B0%E7%94%B5/2.3%E7%BA%BF-8%E7%BA%BF%E8%AF%91%E7%A0%81%E5%99%A8.png" alt="3线-8线译码器"></p><p><img src="/source/images/%E6%95%B0%E7%94%B5/2.2-10%E8%BF%9B%E5%88%B6%E8%AF%91%E7%A0%81%E5%99%A8.png" alt="2-10进制译码器"></p><p><img src="/source/images/%E6%95%B0%E7%94%B5/2.%E6%95%B0%E7%A0%81%E6%98%BE%E7%A4%BA%E8%AF%91%E7%A0%81%E5%99%A8.png" alt="数码显示译码器"></p>]]></content>
+    <content type="html"><![CDATA[<span id="more"></span><h1 id="第四章：组合逻辑电路"><a href="#第四章：组合逻辑电路" class="headerlink" title="第四章：组合逻辑电路"></a>第四章：组合逻辑电路</h1><h2 id="编码器"><a href="#编码器" class="headerlink" title="编码器"></a>编码器</h2><p><img src="/images/%E6%95%B0%E7%94%B5/1.%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="二进制编码器"></p><p><img src="/images/%E6%95%B0%E7%94%B5/1.2-10%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="2-10进制编码器"></p><p><img src="/images/%E6%95%B0%E7%94%B5/1.%E4%BC%98%E5%85%88%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="优先编码器"></p><p><img src="/images/%E6%95%B0%E7%94%B5/1.2-10%E8%BF%9B%E5%88%B6%E4%BC%98%E5%85%88%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="2-10进制优先编码器"></p><h2 id="译码器"><a href="#译码器" class="headerlink" title="译码器"></a>译码器</h2><p><img src="/images/%E6%95%B0%E7%94%B5/2.%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%AF%91%E7%A0%81%E5%99%A8-%E4%BD%8E%E7%94%B5%E5%B9%B3%E6%9C%89%E6%95%88.png" alt="二进制译码器-低电平有效"> <img src="/images/%E6%95%B0%E7%94%B5/2.%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%AF%91%E7%A0%81%E5%99%A8-%E9%AB%98%E7%94%B5%E5%B9%B3%E6%9C%89%E6%95%88.png" alt="二进制译码器-高电平有效"> </p><p><img src="/images/%E6%95%B0%E7%94%B5/2.3%E7%BA%BF-8%E7%BA%BF%E8%AF%91%E7%A0%81%E5%99%A8.png" alt="3线-8线译码器"></p><p><img src="/images/%E6%95%B0%E7%94%B5/2.2-10%E8%BF%9B%E5%88%B6%E8%AF%91%E7%A0%81%E5%99%A8.png" alt="2-10进制译码器"></p><p><img src="/images/%E6%95%B0%E7%94%B5/2.%E6%95%B0%E7%A0%81%E6%98%BE%E7%A4%BA%E8%AF%91%E7%A0%81%E5%99%A8.png" alt="数码显示译码器"></p><p> $$<br> \int_a^b f(x),dx<br> $$</p>]]></content>
     
     
       
