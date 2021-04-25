@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="概念NaN：not a Number 逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁例：true &amp;&amp; 4 &amp;&amp; “aaa”输出 “aaa” 0 &amp;nbsp;&amp;nbsp; “0” &amp;nbsp;&amp;nbsp; “” &amp;nbsp;&amp;nbsp; null &amp;nbsp;&amp;nbsp; NaN &amp;nbsp;&amp;nbsp; undefined  &#x3D;&gt;">
+  <meta name="description" content="概念NaN：not a Number 逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁例：true &amp;&amp; 4 &amp;&amp; “aaa”x输出 “aaa” 0 &amp;nbsp;&amp;nbsp; “0” &amp;nbsp;&amp;nbsp; “” &amp;nbsp;&amp;nbsp; null &amp;nbsp;&amp;nbsp; NaN &amp;nbsp;&amp;nbsp; undefined  &#x3D;&gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web">
 <meta property="og:url" content="http://kennyyyyyy.github.io/2021/04/25/Web/index.html">
 <meta property="og:site_name" content="Imperio">
-<meta property="og:description" content="概念NaN：not a Number 逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁例：true &amp;&amp; 4 &amp;&amp; “aaa”输出 “aaa” 0 &amp;nbsp;&amp;nbsp; “0” &amp;nbsp;&amp;nbsp; “” &amp;nbsp;&amp;nbsp; null &amp;nbsp;&amp;nbsp; NaN &amp;nbsp;&amp;nbsp; undefined  &#x3D;&gt;">
+<meta property="og:description" content="概念NaN：not a Number 逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁例：true &amp;&amp; 4 &amp;&amp; “aaa”x输出 “aaa” 0 &amp;nbsp;&amp;nbsp; “0” &amp;nbsp;&amp;nbsp; “” &amp;nbsp;&amp;nbsp; null &amp;nbsp;&amp;nbsp; NaN &amp;nbsp;&amp;nbsp; undefined  &#x3D;&gt;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2021-04-25T08:12:15.000Z">
-<meta property="article:modified_time" content="2021-04-25T08:59:03.528Z">
+<meta property="article:modified_time" content="2021-04-25T09:27:41.971Z">
 <meta property="article:author" content="kennyyy">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
@@ -136,7 +136,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            232
+                            233
                         
                         字
                     </li>
@@ -145,7 +145,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1619341143528"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1619342861971"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
@@ -155,7 +155,7 @@
                 <hr />
                 <!--  more -->
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>NaN：not a Number</p>
-<p>逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁<br><br>例：<code>true &amp;&amp; 4 &amp;&amp; “aaa”</code><br><br>输出 “aaa”</p>
+<p>逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁<br>例：<code>true &amp;&amp; 4 &amp;&amp; “aaa”</code><br>x输出 “aaa”</p>
 <p>0 &nbsp;&nbsp; “0” &nbsp;&nbsp; “” &nbsp;&nbsp; null &nbsp;&nbsp; NaN &nbsp;&nbsp; undefined  =&gt; false</p>
 <h2 id="预定义函数"><a href="#预定义函数" class="headerlink" title="预定义函数"></a>预定义函数</h2><p>parseInt():将字符转化为Int</p>
 
@@ -227,8 +227,8 @@
             const title         = "「Web」";
             const excerpt       = `
 概念NaN：not a Number
-逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁例：true &amp;&amp; 4 &amp;&amp; “aaa”输出 “aaa”
-0 &nbsp;&nbsp; “0...`;
+逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁例：true &amp;&amp; 4 &amp;&amp; “aaa”x输出 “aaa”
+0 &nbsp;&nbsp; “...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -444,5 +444,20 @@
 <!-- Extra support for third-party plguins  -->
 
 
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+//<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
