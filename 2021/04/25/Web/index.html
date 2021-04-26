@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="概念外部JavaScript脚本的调用：&lt;&#x2F;scripts&gt; NaN：not a Number 逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁例：true &amp;&amp; 4 &amp;&amp; “aaa”x输出 “aaa” 0 &amp;nbsp;&amp;nbsp; “0” &amp;nbsp;&amp;nbsp; “” &amp;nbsp;&amp;nbsp; null &amp;nbsp;&amp;nbsp">
+  <meta name="description" content="概念外部JavaScript脚本的调用：&lt;script  src &#x3D; &quot;..&#x2F;..&#x2F;路径&quot;&gt;&lt;&#x2F;scripts&gt; NaN：not a Number 逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁例：true &amp;&amp; 4 &amp;&amp; “aaa”x输出 “aaa” 0 &amp;nbsp;&amp;nbsp; “0” &amp;nb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript">
 <meta property="og:url" content="http://kennyyyyyy.github.io/2021/04/25/Web/index.html">
 <meta property="og:site_name" content="Imperio">
-<meta property="og:description" content="概念外部JavaScript脚本的调用：&lt;&#x2F;scripts&gt; NaN：not a Number 逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁例：true &amp;&amp; 4 &amp;&amp; “aaa”x输出 “aaa” 0 &amp;nbsp;&amp;nbsp; “0” &amp;nbsp;&amp;nbsp; “” &amp;nbsp;&amp;nbsp; null &amp;nbsp;&amp;nbsp">
+<meta property="og:description" content="概念外部JavaScript脚本的调用：&lt;script  src &#x3D; &quot;..&#x2F;..&#x2F;路径&quot;&gt;&lt;&#x2F;scripts&gt; NaN：not a Number 逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁例：true &amp;&amp; 4 &amp;&amp; “aaa”x输出 “aaa” 0 &amp;nbsp;&amp;nbsp; “0” &amp;nb">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2021-04-25T08:12:15.000Z">
-<meta property="article:modified_time" content="2021-04-26T08:09:05.074Z">
+<meta property="article:modified_time" content="2021-04-26T08:52:31.217Z">
 <meta property="article:author" content="kennyyy">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
@@ -136,7 +136,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            308
+                            643
                         
                         字
                     </li>
@@ -145,22 +145,27 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1619424545074"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1619427151217"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
-                        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li></ol>
+                        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">预定义函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">3.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#join"><span class="toc-number">3.1.</span> <span class="toc-text">join</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#splice"><span class="toc-number">3.2.</span> <span class="toc-text">splice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort"><span class="toc-number">3.3.</span> <span class="toc-text">sort</span></a></li></ol></li></ol>
                     </div>
                 
                 <hr />
                 <!--  more -->
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>外部JavaScript脚本的调用：<script src="../../路径">&lt;/scripts&gt;</p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>外部JavaScript脚本的调用：<code>&lt;script  src = &quot;../../路径&quot;&gt;&lt;/scripts&gt;</code></p>
 <p>NaN：not a Number</p>
-<p>逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁<br/>例：<code>true &amp;&amp; 4 &amp;&amp; “aaa”</code><br/>x输出 “aaa”</p>
+<p>逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁<br>例：<code>true &amp;&amp; 4 &amp;&amp; “aaa”</code><br>x输出 “aaa”</p>
 <p>0 &nbsp;&nbsp; “0” &nbsp;&nbsp; “” &nbsp;&nbsp; null &nbsp;&nbsp; NaN &nbsp;&nbsp; undefined  =&gt; false</p>
+<p>用 new 创建的对象为引用类型（object）</p>
 <h2 id="预定义函数"><a href="#预定义函数" class="headerlink" title="预定义函数"></a>预定义函数</h2><p>parseInt():将字符转化为Int</p>
 <p>eval(string):string为一个可计算的字符串或者是可执行的表达式</p>
-</script></p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><code>cars = [“0”, 2, new Object()];</code>//数组中的元素可以不同</p>
+<h3 id="join"><a href="#join" class="headerlink" title="join"></a>join</h3><p>join() : 将数组中的元素拼接成字符串，默认连接符为“,”</p>
+<h3 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h3><p>splice(index, howmany, [item1, … , itemx], item, …) : howmany为从index的位置开始删除元素的个数，后面的为插入的元素</p>
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><p>sort(function(a,b){return b - a}); 数字的降序排列<br><br>sort(function(a,b){return a - b}); 数字的升序排列</p>
+
             </div>
             
                 <div class="kratos-copyright text-center clearfix">
@@ -228,9 +233,9 @@
             const hostUrl       = "http://kennyyyyyy.github.io/2021/04/25/Web/";
             const title         = "「JavaScript」";
             const excerpt       = `
-概念外部JavaScript脚本的调用：&lt;/scripts&gt;
+概念外部JavaScript脚本的调用：&lt;script  src = &quot;../../路径&quot;&gt;&lt;/scripts&gt;
 NaN：not a Number
-逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁例：true &amp;&amp; 4 &amp;&a...`;
+逻辑运算（&amp;&amp;）：谁在表...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -300,7 +305,7 @@ NaN：not a Number
         <span class="toc-progress-bar"></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="toc-text">预定义函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#join"><span class="toc-text">join</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#splice"><span class="toc-text">splice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort"><span class="toc-text">sort</span></a></li></ol></li></ol>
     </div>
 </aside>
                 
