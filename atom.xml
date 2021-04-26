@@ -6,7 +6,7 @@
   <link href="http://kennyyyyyy.github.io/atom.xml" rel="self"/>
   
   <link href="http://kennyyyyyy.github.io/"/>
-  <updated>2021-04-25T09:27:41.971Z</updated>
+  <updated>2021-04-26T08:09:05.074Z</updated>
   <id>http://kennyyyyyy.github.io/</id>
   
   <author>
@@ -17,20 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Web</title>
+    <title>JavaScript</title>
     <link href="http://kennyyyyyy.github.io/2021/04/25/Web/"/>
     <id>http://kennyyyyyy.github.io/2021/04/25/Web/</id>
     <published>2021-04-25T08:12:15.000Z</published>
-    <updated>2021-04-25T09:27:41.971Z</updated>
+    <updated>2021-04-26T08:09:05.074Z</updated>
     
-    <content type="html"><![CDATA[<!--  more --><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>NaN：not a Number</p><p>逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁<br>例：<code>true &amp;&amp; 4 &amp;&amp; “aaa”</code><br>x输出 “aaa”</p><p>0 &nbsp;&nbsp; “0” &nbsp;&nbsp; “” &nbsp;&nbsp; null &nbsp;&nbsp; NaN &nbsp;&nbsp; undefined  =&gt; false</p><h2 id="预定义函数"><a href="#预定义函数" class="headerlink" title="预定义函数"></a>预定义函数</h2><p>parseInt():将字符转化为Int</p>]]></content>
+    <content type="html"><![CDATA[<!--  more --><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>外部JavaScript脚本的调用：<script src="../../路径">&lt;/scripts&gt;</p><p>NaN：not a Number</p><p>逻辑运算（&amp;&amp;）：谁在表达式中起关键性作用，结果就是谁<br/>例：<code>true &amp;&amp; 4 &amp;&amp; “aaa”</code><br/>x输出 “aaa”</p><p>0 &nbsp;&nbsp; “0” &nbsp;&nbsp; “” &nbsp;&nbsp; null &nbsp;&nbsp; NaN &nbsp;&nbsp; undefined  =&gt; false</p><h2 id="预定义函数"><a href="#预定义函数" class="headerlink" title="预定义函数"></a>预定义函数</h2><p>parseInt():将字符转化为Int</p><p>eval(string):string为一个可计算的字符串或者是可执行的表达式</p></script></p>]]></content>
     
     
       
       
     <summary type="html">&lt;!--  more --&gt;
-&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;NaN：not a Number&lt;/p&gt;
-&lt;p&gt;逻辑运算（&amp;amp;&amp;amp;）：谁在表达式中起关键性作用，结</summary>
+&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;外部JavaScript脚本的调用：&lt;script src=&quot;../../路径&quot;&gt;&amp;lt;/scripts&amp;g</summary>
       
     
     
