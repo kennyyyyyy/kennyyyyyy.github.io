@@ -24,7 +24,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2021-06-06T11:27:43.000Z">
-<meta property="article:modified_time" content="2021-07-20T07:49:55.781Z">
+<meta property="article:modified_time" content="2021-07-20T07:54:25.161Z">
 <meta property="article:author" content="kennyyy">
 <meta property="article:tag" content="错误总结">
 <meta property="article:tag" content="经验">
@@ -138,7 +138,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            637
+                            639
                         
                         字
                     </li>
@@ -147,7 +147,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1626767395781"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1626767665161"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
@@ -182,15 +182,17 @@
 </li>
 <li><p>simulator为键鼠模拟；steamVr为设备操作；[VRSimulator_CameraRig]是VRTK的prefab，可直接使用；</p>
 <p>RightController 为右控制器； LeftController 为左控制器； PlayArea 为需要传送时添加。</p>
-<p><img src="/.io//Users\Imperio\AppData\Roaming\Typora\typora-user-images\image-20210720110238352.png" alt="image-20210720110238352"></p>
+<p><img src="/.io//基本结构.bmp" alt="基本结构"></p>
 </li>
+</ol>
+<ol>
 <li><p>VRTK SDK 需要添加VRTK_SDKManager 组件，并将子物体simulator和steamVR添加到组件中Setups的列表中（因为只需要键鼠模拟，所以只添加了simulator），然后将左右手控制器分别添加到Scripts Aliases中。</p>
-
+<p><img src="/images/VRTK学习记录/VRTK_SDKManager.jpg" alt="Manager"></p>
 </li>
 </ol>
 <ol>
 <li><p>Simulator和SteamVR需要添加VRTK_SDK Setup 组件，并将Quick Select设置为相应的模式</p>
-<p><img src="/.io//VRTK_SDKSetup.jpg" alt="Setup"></p>
+<p><img src="/images/VRTK学习记录/VRTK_SDKSetup.jpg" alt="Setup"></p>
 </li>
 </ol>
 <h3 id="控制器基本组件"><a href="#控制器基本组件" class="headerlink" title="控制器基本组件"></a>控制器基本组件</h3><ol>
