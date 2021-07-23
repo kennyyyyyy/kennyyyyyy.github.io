@@ -6,7 +6,7 @@
   <link href="http://kennyyyyyy.github.io/atom.xml" rel="self"/>
   
   <link href="http://kennyyyyyy.github.io/"/>
-  <updated>2021-07-23T07:58:01.767Z</updated>
+  <updated>2021-07-23T08:04:12.969Z</updated>
   <id>http://kennyyyyyy.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://kennyyyyyy.github.io/2021/07/23/3D-RPG-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://kennyyyyyy.github.io/2021/07/23/3D-RPG-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2021-07-23T07:38:31.000Z</published>
-    <updated>2021-07-23T07:58:01.767Z</updated>
+    <updated>2021-07-23T08:04:12.969Z</updated>
     
-    <content type="html"><![CDATA[<span id="more"></span><h2 id="一、创建项目导入素材"><a href="#一、创建项目导入素材" class="headerlink" title="一、创建项目导入素材"></a>一、创建项目导入素材</h2><ol><li><h4 id="创建普通项目"><a href="#创建普通项目" class="headerlink" title="创建普通项目"></a>创建普通项目</h4><ul><li>在Package Manager中安装Universal RP</li><li>在Asset中创建Rendering =&gt; Universal Render Pipeline =&gt; Pipeline Asset(URP的设置文件)</li><li>将project setting中Graphics和Quality的渲染管线设置为刚创建的渲染管线设置文件</li><li>导入素材（Dog Knight PBR Polyart、 Low-Poly Simple Nature Pack 和 FREE Skybox Extended Shader）</li><li>Edit =&gt; Edit=Render Pipeline=Universal Render Pipeline</li></ul></li><li><p>地方撒</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<span id="more"></span><h2 id="一、创建项目导入素材"><a href="#一、创建项目导入素材" class="headerlink" title="一、创建项目导入素材"></a>一、创建项目导入素材</h2><ol><li><h4 id="创建普通项目"><a href="#创建普通项目" class="headerlink" title="创建普通项目"></a>创建普通项目</h4><ul><li><p>在Package Manager中安装Universal RP</p></li><li><p>在Asset中创建Rendering =&gt; Universal Render Pipeline =&gt; Pipeline Asset(URP的设置文件)</p></li><li><p>将project setting中Graphics和Quality的渲染管线设置为刚创建的渲染管线设置文件</p></li><li><p>导入素材（Dog Knight PBR Polyart、 Low-Poly Simple Nature Pack 和 FREE Skybox Extended Shader）</p></li><li><p>Edit =&gt; Edit=Render Pipeline=Universal Render Pipeline</p><p><img src="/images/3D-RPG-学习笔记/image-20210723160407582.png" alt="image-20210723160407582"></p></li></ul></li><li><p>地方撒</p></li></ol>]]></content>
     
     
       
