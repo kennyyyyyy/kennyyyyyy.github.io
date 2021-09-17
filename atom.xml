@@ -6,7 +6,7 @@
   <link href="http://kennyyyyyy.github.io/atom.xml" rel="self"/>
   
   <link href="http://kennyyyyyy.github.io/"/>
-  <updated>2021-09-16T09:21:35.181Z</updated>
+  <updated>2021-09-17T06:10:33.876Z</updated>
   <id>http://kennyyyyyy.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://kennyyyyyy.github.io/2021/09/16/%E5%89%91%E6%8C%87offer/"/>
     <id>http://kennyyyyyy.github.io/2021/09/16/%E5%89%91%E6%8C%87offer/</id>
     <published>2021-09-16T08:45:47.000Z</published>
-    <updated>2021-09-16T09:21:35.181Z</updated>
+    <updated>2021-09-17T06:10:33.876Z</updated>
     
-    <content type="html"><![CDATA[<span id="more"></span><h4 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h4><ul><li><p>链表反转：</p><p>开始先设定三个指针，并进行初始化，如图</p><p><img src="../images/剑指offer/List_1.png" alt="List_1"></p><p>并将Pre的指向的Next指向NULL</p><p><img src="../images/剑指offer/List_2.png" alt="List_2"></p><p>开始循环，head指针后移，让Cur指针的Next指向Pre，然后使Pre = Cur，Cur = Head。直到链表尾</p><p><img src="../images/剑指offer/List_3.png" alt="List_3"></p><p><img src="../images/剑指offer/List_4.png" alt="List_4"></p></li></ul>]]></content>
+    <content type="html"><![CDATA[<span id="more"></span><h4 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h4><ul><li><p>链表反转：</p><p>开始先设定三个指针，并进行初始化，如图</p><p><img src="/images/剑指offer/List_1.png" alt="List_1"></p><p>并将Pre的指向的Next指向NULL</p><p><img src="/images/剑指offer/List_2.png" alt="List_2"></p><p>开始循环，head指针后移，让Cur指针的Next指向Pre，然后使Pre = Cur，Cur = Head。直到链表尾</p><p><img src="/images/剑指offer/List_3.png" alt="List_3"></p><p><img src="/images/剑指offer/List_4.png" alt="List_4"></p></li></ul>]]></content>
     
     
       
