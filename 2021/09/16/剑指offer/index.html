@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="c++" />
   
-  <meta name="description" content="链表 链表反转： 开始先设定三个指针，并进行初始化，如图  并将Pre的指向的Next指向NULL  开始循环，head指针后移，让Cur指针的Next指向Pre，然后使Pre &#x3D; Cur，Cur &#x3D; Head。直到链表尾">
+  <meta name="description" content="链表 链表反转： 开始先设定三个指针，并进行初始化，如图  并将Pre的指向的Next指向NULL  开始循环，head指针后移，让Cur指针的Next指向Pre，然后使Pre &#x3D; Cur，Cur &#x3D; Head。直到链表尾      二分法模板： 12345678910111213int l &#x3D; 0, r &#x3D; nums.size() - 1;int mid &#x3D; 0;while (l &lt;&#x3D;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指offer">
 <meta property="og:url" content="http://kennyyyyyy.github.io/2021/09/16/%E5%89%91%E6%8C%87offer/index.html">
 <meta property="og:site_name" content="Imperio">
-<meta property="og:description" content="链表 链表反转： 开始先设定三个指针，并进行初始化，如图  并将Pre的指向的Next指向NULL  开始循环，head指针后移，让Cur指针的Next指向Pre，然后使Pre &#x3D; Cur，Cur &#x3D; Head。直到链表尾">
+<meta property="og:description" content="链表 链表反转： 开始先设定三个指针，并进行初始化，如图  并将Pre的指向的Next指向NULL  开始循环，head指针后移，让Cur指针的Next指向Pre，然后使Pre &#x3D; Cur，Cur &#x3D; Head。直到链表尾      二分法模板： 12345678910111213int l &#x3D; 0, r &#x3D; nums.size() - 1;int mid &#x3D; 0;while (l &lt;&#x3D;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2021-09-16T08:45:47.000Z">
-<meta property="article:modified_time" content="2021-09-17T06:10:33.876Z">
+<meta property="article:modified_time" content="2021-09-20T08:35:27.318Z">
 <meta property="article:author" content="kennyyy">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
@@ -137,7 +137,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            117
+                            717
                         
                         字
                     </li>
@@ -146,7 +146,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1631859033876"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1632126927318"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
@@ -164,6 +164,16 @@
 <p>开始循环，head指针后移，让Cur指针的Next指向Pre，然后使Pre = Cur，Cur = Head。直到链表尾</p>
 <p><img src="/images/剑指offer/List_3.png" alt="List_3"></p>
 <p><img src="/images/剑指offer/List_4.png" alt="List_4"></p>
+</li>
+</ul>
+<ul>
+<li><p>二分法模板：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> l = <span class="number">0</span>, r = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> mid = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">	mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (<span class="string">&quot;根据题目判断搜索条件&quot;</span>) &#123;</span><br><span class="line">		l = mid + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		r = mid - <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">return</span> l;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>广度优先遍历（BFS）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">levelOrder</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">    queue&lt;TreeNode*&gt; qu;</span><br><span class="line">    <span class="keyword">if</span>(root)</span><br><span class="line">        qu.<span class="built_in">push</span>(root);</span><br><span class="line">    <span class="keyword">while</span> (!qu.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        TreeNode* t = qu.<span class="built_in">front</span>();</span><br><span class="line">        qu.<span class="built_in">pop</span>();</span><br><span class="line">        cout &lt;&lt; t-&gt;val;</span><br><span class="line">        <span class="keyword">if</span>(t-&gt;left)</span><br><span class="line">            qu.<span class="built_in">push</span>(t-&gt;left);</span><br><span class="line">        <span class="keyword">if</span>(t-&gt;right)</span><br><span class="line">            qu.<span class="built_in">push</span>(t-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -245,7 +255,7 @@
 
 
 
-`;
+...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -267,7 +277,7 @@
                         <a class="tag-none-link" href="/tags/c/" rel="tag">c++</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-09-17</span>
+                    <span>最后编辑：2021-09-20</span>
                     </div>
                 </div>
             </footer>
