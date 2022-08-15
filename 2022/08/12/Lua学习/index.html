@@ -24,7 +24,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2022-08-12T02:30:23.000Z">
-<meta property="article:modified_time" content="2022-08-14T12:04:42.139Z">
+<meta property="article:modified_time" content="2022-08-15T01:19:49.368Z">
 <meta property="article:author" content="kennyyy">
 <meta property="article:tag" content="Lua">
 <meta name="twitter:card" content="summary">
@@ -146,7 +146,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1660478682139"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1660526389368"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
@@ -192,8 +192,8 @@
 </ol>
 <ol>
 <li><p>协程</p>
-<p><img src="../images/Lua学习/协程执行流程.png" alt="image-20220814104344185"></p>
-<p><img src="../images/Lua学习/协程状态转换.png" alt="image-20220814104542854"></p>
+<p><img src="images/Lua学习/协程执行流程.png" alt="协程执行流程"></p>
+<p><img src="images/Lua学习/协程状态转换.png" alt="协程状态转换"></p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 协程：与Unity协程基本一致，执行到yield，下次执行从yeild后继续</span></span><br><span class="line"><span class="comment">-- thread 线程 协程 进程</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--type(co) = thread</span></span><br><span class="line">co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(</span><br><span class="line">    <span class="function"><span class="keyword">function</span><span class="params">()</span></span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;coroutine running...&quot;</span>)</span><br><span class="line">        <span class="built_in">coroutine</span>.<span class="built_in">yield</span>()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;coroutine continue...&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">-- 运行协程</span></span><br><span class="line"><span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co)</span><br><span class="line"><span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co)</span><br><span class="line"></span><br><span class="line">co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(</span><br><span class="line">    <span class="function"><span class="keyword">function</span><span class="params">(a,b)</span></span></span><br><span class="line">        <span class="built_in">print</span>(a+b)</span><br><span class="line">        v1,v2 = <span class="built_in">coroutine</span>.<span class="built_in">yield</span>(<span class="string">&quot;a&quot;</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;v1 = &quot;</span>, v1, <span class="string">&quot;v2 = &quot;</span>, v2)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">)</span><br><span class="line">a1,a2,a3 = <span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(a1, a2, a3)   <span class="comment">-- a1：执行结果(成功/失败) a2，a3(yield返回值)</span></span><br><span class="line"><span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co, <span class="number">1</span>, <span class="number">2</span>)  <span class="comment">-- 第二次调用时传入的参数会作为yeild的返回值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- type(func) == function</span></span><br><span class="line">func = <span class="built_in">coroutine</span>.<span class="built_in">wrap</span>(</span><br><span class="line">    <span class="function"><span class="keyword">function</span><span class="params">(i)</span></span></span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -305,7 +305,7 @@ Lua5.3参考手册
                         <a class="tag-none-link" href="/tags/Lua/" rel="tag">Lua</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2022-08-14</span>
+                    <span>最后编辑：2022-08-15</span>
                     </div>
                 </div>
             </footer>
