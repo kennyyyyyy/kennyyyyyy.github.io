@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/logo.jpg">
+  <title>笔试题记录 | Imperio</title>
+  <meta name="author" content="kennyyy" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="C#, Unity" />
+  
+  <meta name="description" content="从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果 1234567891011Material material &#x3D; Render.materials;material.shader &#x3D; targetShader;&#x2F;&#x2F;修改 Shader 中参数的值：material.SetFloat(“参数名”，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔试题记录">
+<meta property="og:url" content="http://kennyyyyyy.github.io/2022/08/19/%E7%AC%94%E8%AF%95%E9%A2%98%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Imperio">
+<meta property="og:description" content="从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果 1234567891011Material material &#x3D; Render.materials;material.shader &#x3D; targetShader;&#x2F;&#x2F;修改 Shader 中参数的值：material.SetFloat(“参数名”，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
+<meta property="article:published_time" content="2022-08-19T14:13:21.000Z">
+<meta property="article:modified_time" content="2022-08-20T07:14:04.532Z">
+<meta property="article:author" content="kennyyy">
+<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="C#">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Imperio" type="application/atom+xml">
+</head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">Imperio</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://imperio.cn">作者</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/kennyyyyyy/kennyyyyyy.github.io">链接</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Imperio</h2> <br />
+                        <span>Boy♂ Next♂ Door~</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">笔试题记录</h1>
+                
+                <ul class="kratos-post-meta text-center">
+                    <li><i class="fa fa-calendar"></i> 2022-08-19</li>
+                    <li><i class="fa fa-user"></i> 作者 kennyyy</li>
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~5.59K
+                        
+                        字
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1660979644532"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                    <div class="kratos-post-inner-toc">
+                        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#IEnumerator"><span class="toc-number">1.</span> <span class="toc-text">IEnumerator</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IEnumerable"><span class="toc-number">2.</span> <span class="toc-text">IEnumerable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#yield"><span class="toc-number">3.</span> <span class="toc-text">yield</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8F%E7%A8%8B-coroutine"><span class="toc-number">4.</span> <span class="toc-text">协程(coroutine)</span></a></li></ol>
+                    </div>
+                
+                <hr />
+                <span id="more"></span>
+<ol>
+<li><p><strong>从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果</strong></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Material material = Render.materials;</span><br><span class="line">material.shader = targetShader;</span><br><span class="line"><span class="comment">//修改 Shader 中参数的值：</span></span><br><span class="line">material.SetFloat(“参数名”，值); </span><br><span class="line">material.SetColor(“参数名”，颜色值); </span><br><span class="line">material.SetTexture(“参数名”，贴图); </span><br><span class="line"></span><br><span class="line"><span class="comment">//获取 Shader 中参数的值：</span></span><br><span class="line">material.GetFloat(“参数名”);</span><br><span class="line">material.GetColor(“参数名”); </span><br><span class="line">material.GetTexture(“参数名”); </span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p><strong>给定一个数组，有n(n &gt;= 0)个元素，找到数组中第二大的元素</strong></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//1 5 9 2 1 6 4 2 3 9</span></span><br><span class="line">	<span class="function"><span class="built_in">int</span> <span class="title">GetScendNum</span>(<span class="params"><span class="built_in">int</span>[] number, <span class="built_in">int</span> n</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt; <span class="number">2</span>)</span><br><span class="line">             Console.WriteLine(<span class="string">&quot;不存在&quot;</span>)</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> first=number[<span class="number">0</span>],second=number[<span class="number">0</span>];</span><br><span class="line">    		<span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">        		<span class="keyword">if</span>(number[i]&gt;first)&#123;</span><br><span class="line">            		second=first;</span><br><span class="line">            		first=number[i];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">            		<span class="keyword">if</span>(number[i]&gt;second)</span><br><span class="line">                		second=number[i];</span><br><span class="line">            		<span class="keyword">else</span>&#123;</span><br><span class="line">                        <span class="comment">// 若第二和第一相等，则将当前值赋予第二</span></span><br><span class="line">                		second = first==second ? number[i] : second;</span><br><span class="line">            		&#125;</span><br><span class="line">        		&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>oop的四个特征： 抽象、封装、继承、多态</strong></p>
+<ul>
+<li>抽象就是忽略一个主题中与当前目标无关的那些方面，以便更充分地注意与当前目标有关的方面。抽象并不打算了解全部问题，而只是选择其中的一部分，暂时不用部分细节。比如，我们要设计一个学生成绩管理系统，考察学生这个对象时，我们只关心他的班级、学号、成绩等，而不用去关心他的身高、体重这些信息。抽象包括两个方面，一是过程抽象，二是数据抽象。过程抽象是指任何一个明确定义功能的操作都可被使用者看作单个的实体看待，尽管这个操作实际上可能由一系列更低级的操作来完成。数据抽象定义了数据类型和施加于该类型对象上的操作，并限定了对象的值只能通过使用这些操作修改和观察。</li>
+<li>继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。对象的一个新类可以从现有的类中派生，这个过程称为类继承。新类继承了原始类的特性，新类称为原始类的派生类（子类），而原始类称为新类的基类（父类）。派生类可以从它的基类那里继承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要。这也体现了大自然中一般与特殊的关系。继承性很好的解决了软件的可重用性问题。比如说，所有的Windows应用程序都有一个窗口，它们可以看作都是从一个窗口类派生出来的。但是有的应用程序用于文字处理，有的应用程序用于绘图，这是由于派生出了不同的子类，各个子类添加了不同的特性。</li>
+<li>封装是面向对象的特征之一，是对象和类概念的主要特性。封装是把过程和数据包围起来，对数据的访问只能通过已定义的界面。面向对象计算始于这个基本概念，即现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过一个受保护的接口访问其他对象。一旦定义了一个对象的特性，则有必要决定这些特性的可见性，即哪些特性对外部世界是可见的，哪些特性用于表示内部状态。在这个阶段定义对象的接口。通常，应禁止直接访问一个对象的实际表示，而应通过操作接口访问对象，这称为信息隐藏。事实上，信息隐藏是用户对封装性的认识，封装则为信息隐藏提供支持。封装保证了模块具有较好的独立性，使得程序维护修改较为容易。对应用程序的修改仅限于类的内部，因而可以将应用程序修改带来的影响减少到最低限度。</li>
+<li>多态性是指允许不同类的对象对同一消息作出响应。比如同样的加法，把两个时间加在一起和把两个整数加在一起肯定完全不同。又比如，同样的选择编辑-粘贴操作，在字处理程序和绘图程序中有不同的效果。多态性包括参数化多态性和包含多态性。多态性语言具有灵活、抽象、行为共享、代码共享的优势，很好的解决了应用程序函数同名问题。</li>
+</ul>
+</li>
+<li><p><strong>AssetBundle的打包和加载</strong></p>
+</li>
+</ol>
+<ol>
+<li><p><strong>反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。</strong></p>
+<ul>
+<li>.NET的一个强大功能是它可以通过一种称为反射(reflection)的过程访问应用程序的元数据。简单地说，反射就是运行时查询类型信息的能力</li>
+<li>基本用法：一是用反射来创建实例，二是用反射调用实例的方法，三是用反射调用实例的属性。<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>迭代器和数组的区别</strong></p>
+<p>迭代器：<strong>迭代器</strong>（iterator）有时又称<strong>光标</strong>（cursor）是程序设计的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/软件设计模式">软件设计模式</a>，可在容器对象（container，例如<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/链表">链表</a>或<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/数组">数组</a>）上遍访的接口，设计人员无需关心容器对象的内存分配的实现细节。</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lx2054807/article/details/107981276?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-107981276-blog-123304449.pc_relevant_multi_platform_whitelistv3&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-107981276-blog-123304449.pc_relevant_multi_platform_whitelistv3&amp;utm_relevant_index=2">C#</a> </p>
+<ul>
+<li><p>迭代器模式 指按照一定顺序来访问一个集合对象中的每个元素, 但是同时不会暴露集合对象的内部结构. C#中内置的迭代器模式就是Foreach语句, 它可以顺序遍历容器中的每个元素. 而迭代器的具体实现主要是靠IEnumerable 和IEnumerator.</p>
+</li>
+<li><h4 id="IEnumerator"><a href="#IEnumerator" class="headerlink" title="IEnumerator"></a>IEnumerator</h4><p>IEnumerator接口其实就是<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=foreach&amp;spm=1001.2101.3001.7020">foreach</a>的具体实现, 它只定义了三个函数, 如下</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">IEnumerator</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="built_in">bool</span> <span class="title">MoveNext</span>(<span class="params"></span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">object</span> Current &#123; <span class="keyword">get</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Reset</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>也就是说我们实现一个最简单的IEnumerator接口只需要实现这三个函数即可. MoveNext()表示向集合中的下一个元素移动, 如果有下一个元素返回true, 没有就返回false. Current是一个只读属性, 返回当前迭代器所指元素. Reset()表示重置迭代器到第一个元素.</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyIEnumerator</span>: <span class="title">IEnumerator</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">int</span> count = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">bool</span> <span class="title">MoveNext</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        --count;</span><br><span class="line">        <span class="keyword">return</span> count &gt;= <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">object</span> Current</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123; <span class="keyword">return</span> count; &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Reset</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        count = <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这就是一个简单的IEnumerator, 如果用Foreach输出, 可以得到从9到0的十个计数. 而具体的实现过程还需要IEnumerable.</p>
+</li>
+<li><h4 id="IEnumerable"><a href="#IEnumerable" class="headerlink" title="IEnumerable"></a>IEnumerable</h4><p>IEnumerable可以粗略的理解为可迭代(遍历)的, 如果接口继承了IEnumerable, 那么就可以使用Foreach语句进行迭代操作. 这个接口只定义了一个函数, 如下:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">IEnumerable</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">IEnumerator <span class="title">GetEnumerator</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个函数需要返回一个我们刚才定义的IEnumerator, 即告知上层调用方可以枚举.</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyIEnumerable</span> : <span class="title">IEnumerable</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> IEnumerator <span class="title">GetEnumerator</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MyIEnumerator();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 这个时候我们的迭代器已经实现, 可以使用Foreach语句进行迭代操作.</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="function"><span class="keyword">var</span> VARIABLE <span class="keyword">in</span> <span class="keyword">new</span> <span class="title">MyIEnumerable</span>(<span class="params"></span>))</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Debug.Log(VARIABLE);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们现在有一个完整的迭代器了, 但是有一个问题, 很多时候我们需要的迭代器并不复杂, 如上面的计数装置, 如果每次都需要实现IEnumerator和IEnumerable十分不方便, 显得头重脚轻, 这时我们可以使用yield.</p>
+</li>
+<li><h4 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h4><p>yield是为了方便使用迭代器而产生的语法糖, 他可以直接使用在返回类型为IEnumerable或IEnumerator的函数中直接实现迭代器操作. 它有两种用法yield break 和yield return (something) 效果和break与return一样. 当使用yield return在foreach语句中进行迭代器操作时, 每一次执行到yield return时都会返回后面定义的something并且记录函数内的信息, 下一次运行时继续.</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="function"><span class="keyword">var</span> VARIABLE <span class="keyword">in</span> <span class="title">myIEnumerable</span>(<span class="params"></span>))</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Debug.Log(VARIABLE);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> IEnumerable <span class="title">myIEnumerable</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">9</span>; i &gt;= <span class="number">0</span>; --i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">5</span>) <span class="keyword">yield</span> <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">yield</span> <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>  这里我们在i = 5的时候使用了yield break终止了迭代器操作, 如果去掉它, 这个函数就和我们刚才定义的迭代器作用一样, 产生了9到0, 共10个数的倒数.</p>
+<ul>
+<li><h4 id="协程-coroutine"><a href="#协程-coroutine" class="headerlink" title="协程(coroutine)"></a>协程(coroutine)</h4><p>除了foreach语句, Unity中另一种迭代器模式就是协程, 它是根据每一次IEnumerator的MoveNext()方法调用进行迭代的, 有些类似于Unity的Update方法. 同时它可以结合Unity的yield return new WaitForSeconds(time)等等接口实行迭代器+定时器模式.<br>使用和停止协程比较简单, 都只要传入IEnumerator就可以.</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Coroutine <span class="title">StartCoroutine</span>(<span class="params">IEnumerator routine</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">StopCoroutine</span>(<span class="params">IEnumerator routine</span>)</span></span><br></pre></td></tr></table></figure>
+<p>使用协程的方法实现我们的从9数到0.</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    StartCoroutine(myCoroutine());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> IEnumerator <span class="title">myCoroutine</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">9</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        Debug.Log(i);</span><br><span class="line">        <span class="function"><span class="keyword">yield</span> <span class="keyword">return</span> <span class="keyword">new</span> <span class="title">WaitForSeconds</span>(<span class="params"><span class="number">1f</span></span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">yield</span> <span class="keyword">return</span> <span class="title">StartCoroutine</span>(<span class="params">myCoroutine(</span>))</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  值得注意的是unity里有很多可以和yield结合使用的语句块, 如上的代码不仅实现了从9数到0, 还实现了每隔1秒数一次, 数到0后继续从头开始数, 当然还有很多其他有趣的功能可以通过coroutine和yield实现.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>多态的作用。多态和传统类型Boxing/UnBoxing的区别</strong></p>
+</li>
+</ol>
+<ol>
+<li><p><strong>当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决</strong></p>
+</li>
+<li><p><strong>如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别</strong></p>
+</li>
+</ol>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://kennyyyyyy.github.io/2022/08/19/%E7%AC%94%E8%AF%95%E9%A2%98%E8%AE%B0%E5%BD%95/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://kennyyyyyy.github.io/2022/08/19/%E7%AC%94%E8%AF%95%E9%A2%98%E8%AE%B0%E5%BD%95/";
+            const title         = "「笔试题记录」";
+            const excerpt       = `
+
+从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果
+1234567891011Material material = Render....`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/C/" rel="tag">C#</a>, <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2022-08-20</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" 热更新" href="/2022/08/16/热更新/">&lt; 上一篇</a>
+                </div>
+                
+                
+            </nav>
+        
+        
+    </article>
+</section>
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.jpg" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">Deep♂ Dark♂ Fantasy♂</p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#IEnumerator"><span class="toc-text">IEnumerator</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IEnumerable"><span class="toc-text">IEnumerable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#yield"><span class="toc-text">yield</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8F%E7%A8%8B-coroutine"><span class="toc-text">协程(coroutine)</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c/">c++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E7%94%B5/">数电</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">每日一题</a><span class="category-list-count">1</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/C/" style="font-size: 0.8em;">C#</a> <a href="/tags/C/" style="font-size: 0.6em;">C++</a> <a href="/tags/Leetcode/" style="font-size: 0.6em;">Leetcode</a> <a href="/tags/Lua/" style="font-size: 0.7em;">Lua</a> <a href="/tags/Unity/" style="font-size: 0.8em;">Unity</a> <a href="/tags/c/" style="font-size: 0.6em;">c++</a> <a href="/tags/unity/" style="font-size: 0.7em;">unity</a> <a href="/tags/xlua/" style="font-size: 0.6em;">xlua</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 0.7em;">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 0.6em;">数据结构</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 0.7em;">经验</a> <a href="/tags/%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" style="font-size: 0.7em;">错误总结</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/19/%E7%AC%94%E8%AF%95%E9%A2%98%E8%AE%B0%E5%BD%95/"><i class="fa  fa-book"></i> 笔试题记录</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/16/%E7%83%AD%E6%9B%B4%E6%96%B0/"><i class="fa  fa-book"></i> 热更新</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/12/Lua%E5%AD%A6%E4%B9%A0/"><i class="fa  fa-book"></i> Lua学习</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/05/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"><i class="fa  fa-book"></i> 数据结构与算法</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/09/16/%E5%89%91%E6%8C%87offer/"><i class="fa  fa-book"></i> 剑指offer</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2022 Imperio 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by kennyyy.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+//<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
