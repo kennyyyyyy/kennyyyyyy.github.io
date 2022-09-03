@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="C#, Unity" />
   
-  <meta name="description" content="从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果1234567891011Material material &#x3D; Render.materials;material.shader &#x3D; targetShader;&#x2F;&#x2F;修改 Shader 中参数的值：material.SetFloat(“参数名”，值">
+  <meta name="description" content="Shader 从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果 1234567891011Material material &#x3D; Render.materials;material.shader &#x3D; targetShader;&#x2F;&#x2F;修改 Shader 中参数的值：material.SetFloat(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔试题记录">
 <meta property="og:url" content="http://kennyyyyyy.github.io/2022/08/19/%E7%AC%94%E8%AF%95%E9%A2%98%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Imperio">
-<meta property="og:description" content="从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果1234567891011Material material &#x3D; Render.materials;material.shader &#x3D; targetShader;&#x2F;&#x2F;修改 Shader 中参数的值：material.SetFloat(“参数名”，值">
+<meta property="og:description" content="Shader 从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果 1234567891011Material material &#x3D; Render.materials;material.shader &#x3D; targetShader;&#x2F;&#x2F;修改 Shader 中参数的值：material.SetFloat(">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2022-08-19T14:13:21.000Z">
-<meta property="article:modified_time" content="2022-08-20T07:49:30.534Z">
+<meta property="article:modified_time" content="2022-09-03T06:35:58.779Z">
 <meta property="article:author" content="kennyyy">
 <meta property="article:tag" content="Unity">
 <meta property="article:tag" content="C#">
@@ -138,7 +138,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~5.97K
+                            ~15.15K
                         
                         字
                     </li>
@@ -147,23 +147,23 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1660981770534"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1662186958779"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
-                        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%8ERender%E8%8E%B7%E5%8F%96%E6%9D%90%E8%B4%A8%EF%BC%8C%E8%8E%B7%E5%BE%97%E6%9D%90%E8%B4%A8%E7%9A%84Shader%EF%BC%8C%E8%8E%B7%E5%8F%96Shader%E7%9A%84Uniform-Constant%E5%80%BC%EF%BC%8C%E6%AF%8F%E5%B8%A7%E4%BF%AE%E6%94%B9constant%E5%80%BC%E6%9D%A5%E5%AE%9E%E7%8E%B0%E8%A3%85%E5%A4%87%E7%9A%84%E6%B5%81%E5%85%89%E6%95%88%E6%9E%9C"><span class="toc-number">1.</span> <span class="toc-text">从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%EF%BC%8C%E6%9C%89n-n-gt-0-%E4%B8%AA%E5%85%83%E7%B4%A0%EF%BC%8C%E6%89%BE%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%A4%A7%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">2.</span> <span class="toc-text">给定一个数组，有n(n &gt;&#x3D; 0)个元素，找到数组中第二大的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#oop%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81%EF%BC%9A-%E6%8A%BD%E8%B1%A1%E3%80%81%E5%B0%81%E8%A3%85%E3%80%81%E7%BB%A7%E6%89%BF%E3%80%81%E5%A4%9A%E6%80%81"><span class="toc-number">3.</span> <span class="toc-text">oop的四个特征： 抽象、封装、继承、多态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AssetBundle%E7%9A%84%E6%89%93%E5%8C%85%E5%92%8C%E5%8A%A0%E8%BD%BD"><span class="toc-number">4.</span> <span class="toc-text">AssetBundle的打包和加载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E9%9B%86%EF%BC%8C%E5%B9%B6%E8%8E%B7%E5%BE%97%E5%85%B6%E7%B1%BB%E5%9E%8BT%EF%BC%8C%E8%B0%83%E7%94%A8T%E7%9A%84Create%E5%87%BD%E6%95%B0%E3%80%82"><span class="toc-number">5.</span> <span class="toc-text">反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">6.</span> <span class="toc-text">迭代器和数组的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82%E6%B3%9B%E5%9E%8B%E5%92%8C%E4%BC%A0%E7%BB%9F%E7%B1%BB%E5%9E%8BBoxing-UnBoxing%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">7.</span> <span class="toc-text">泛型的作用。泛型和传统类型Boxing&#x2F;UnBoxing的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%93%E4%BD%A0%E6%8E%A5%E6%89%8B%E4%B8%80%E4%B8%AA%E6%96%B0%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%BD%93%E8%BF%90%E8%A1%8C%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E5%90%8E%EF%BC%8C%E5%8F%91%E7%8E%B0%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E9%AB%98%E4%B8%94%E5%B8%A7%E7%8E%87%E4%BD%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3"><span class="toc-number">8.</span> <span class="toc-text">当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97Prefab%E7%9A%84GameObject%E7%B1%BB%E5%9E%8B%EF%BC%8CPrefabInstance%E5%92%8CModelPrefabInstance%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">9.</span> <span class="toc-text">如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别</span></a></li></ol>
+                        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Shader"><span class="toc-number">1.</span> <span class="toc-text">Shader</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%EF%BC%8C%E6%9C%89n-n-gt-0-%E4%B8%AA%E5%85%83%E7%B4%A0%EF%BC%8C%E6%89%BE%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%A4%A7%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">2.</span> <span class="toc-text">给定一个数组，有n(n &gt;&#x3D; 0)个元素，找到数组中第二大的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#oop%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="toc-number">3.</span> <span class="toc-text">oop的四个特征 </span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AssetBundle%E7%9A%84%E6%89%93%E5%8C%85%E5%92%8C%E5%8A%A0%E8%BD%BD"><span class="toc-number">4.</span> <span class="toc-text">AssetBundle的打包和加载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">5.</span> <span class="toc-text">迭代器和数组的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82%E6%B3%9B%E5%9E%8B%E5%92%8C%E4%BC%A0%E7%BB%9F%E7%B1%BB%E5%9E%8BBoxing-UnBoxing%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">6.</span> <span class="toc-text">泛型的作用。泛型和传统类型Boxing&#x2F;UnBoxing的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%93%E4%BD%A0%E6%8E%A5%E6%89%8B%E4%B8%80%E4%B8%AA%E6%96%B0%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%BD%93%E8%BF%90%E8%A1%8C%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E5%90%8E%EF%BC%8C%E5%8F%91%E7%8E%B0%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E9%AB%98%E4%B8%94%E5%B8%A7%E7%8E%87%E4%BD%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3"><span class="toc-number">7.</span> <span class="toc-text">当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-%E8%AF%AD%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">C#语法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%89%B9%E6%80%A7%EF%BC%88Attribute%EF%BC%89"><span class="toc-number">8.1.</span> <span class="toc-text">C# 特性（Attribute）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AF%86%E5%B0%81%E7%B1%BB%E3%80%81%E6%8E%A5%E5%8F%A3%E7%B1%BB%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="toc-number">8.2.</span> <span class="toc-text">密封类、接口类、抽象类</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E9%9B%86%EF%BC%8C%E5%B9%B6%E8%8E%B7%E5%BE%97%E5%85%B6%E7%B1%BB%E5%9E%8BT%EF%BC%8C%E8%B0%83%E7%94%A8T%E7%9A%84Create%E5%87%BD%E6%95%B0%E3%80%82"><span class="toc-number">9.</span> <span class="toc-text">反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97Prefab%E7%9A%84GameObject%E7%B1%BB%E5%9E%8B%EF%BC%8CPrefabInstance%E5%92%8CModelPrefabInstance%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">10.</span> <span class="toc-text">如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A7%94%E6%89%98%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">11.</span> <span class="toc-text">委托和事件的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E5%8F%AF%E5%8C%85%E5%90%AB%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97%E7%9A%84%E5%BA%8F%E5%88%97-nums-%EF%BC%8C%E6%8C%89%E5%BA%8F%E5%88%97%E5%86%85%E5%AD%97%E5%85%B8%E5%8D%87%E5%BA%8F%E8%BF%94%E5%9B%9E%E6%89%80%E6%9C%89%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%85%A8%E6%8E%92%E5%88%97%E3%80%82"><span class="toc-number">12.</span> <span class="toc-text">给定一个可包含重复数字的序列 nums ，按序列内字典升序返回所有不重复的全排列。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Unity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-number">13.</span> <span class="toc-text">Unity生命周期函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AssetBundle"><span class="toc-number">14.</span> <span class="toc-text">AssetBundle</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#protobuf"><span class="toc-number">15.</span> <span class="toc-text">protobuf</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">16.</span> <span class="toc-text">重写和重载的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A0%86-Heap-%E5%92%8C%E6%A0%88-Stack"><span class="toc-number">17.</span> <span class="toc-text">堆(Heap)和栈(Stack)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#GC"><span class="toc-number">18.</span> <span class="toc-text">GC</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Lua"><span class="toc-number">19.</span> <span class="toc-text">Lua</span></a></li></ol>
                     </div>
                 
                 <hr />
                 <span id="more"></span>
-<ol>
-<li><h5 id="从Render获取材质，获得材质的Shader，获取Shader的Uniform-Constant值，每帧修改constant值来实现装备的流光效果"><a href="#从Render获取材质，获得材质的Shader，获取Shader的Uniform-Constant值，每帧修改constant值来实现装备的流光效果" class="headerlink" title="从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果"></a><strong>从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果</strong></h5><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Material material = Render.materials;</span><br><span class="line">material.shader = targetShader;</span><br><span class="line"><span class="comment">//修改 Shader 中参数的值：</span></span><br><span class="line">material.SetFloat(“参数名”，值); </span><br><span class="line">material.SetColor(“参数名”，颜色值); </span><br><span class="line">material.SetTexture(“参数名”，贴图); </span><br><span class="line"></span><br><span class="line"><span class="comment">//获取 Shader 中参数的值：</span></span><br><span class="line">material.GetFloat(“参数名”);</span><br><span class="line">material.GetColor(“参数名”); </span><br><span class="line">material.GetTexture(“参数名”); </span><br></pre></td></tr></table></figure>
+<h5 id="Shader"><a href="#Shader" class="headerlink" title="Shader"></a>Shader</h5><ol>
+<li><p><strong>从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果</strong></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Material material = Render.materials;</span><br><span class="line">material.shader = targetShader;</span><br><span class="line"><span class="comment">//修改 Shader 中参数的值：</span></span><br><span class="line">material.SetFloat(“参数名”，值); </span><br><span class="line">material.SetColor(“参数名”，颜色值); </span><br><span class="line">material.SetTexture(“参数名”，贴图); </span><br><span class="line"></span><br><span class="line"><span class="comment">//获取 Shader 中参数的值：</span></span><br><span class="line">material.GetFloat(“参数名”);</span><br><span class="line">material.GetColor(“参数名”); </span><br><span class="line">material.GetTexture(“参数名”); </span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<ol>
-<li><h5 id="给定一个数组，有n-n-gt-0-个元素，找到数组中第二大的元素"><a href="#给定一个数组，有n-n-gt-0-个元素，找到数组中第二大的元素" class="headerlink" title="给定一个数组，有n(n &gt;= 0)个元素，找到数组中第二大的元素"></a><strong>给定一个数组，有n(n &gt;= 0)个元素，找到数组中第二大的元素</strong></h5><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//1 5 9 2 1 6 4 2 3 9</span></span><br><span class="line">	<span class="function"><span class="built_in">int</span> <span class="title">GetScendNum</span>(<span class="params"><span class="built_in">int</span>[] number, <span class="built_in">int</span> n</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt; <span class="number">2</span>)</span><br><span class="line">             Console.WriteLine(<span class="string">&quot;不存在&quot;</span>)</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> first=number[<span class="number">0</span>],second=number[<span class="number">0</span>];</span><br><span class="line">    		<span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">        		<span class="keyword">if</span>(number[i]&gt;first)&#123;</span><br><span class="line">            		second=first;</span><br><span class="line">            		first=number[i];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">            		<span class="keyword">if</span>(number[i]&gt;second)</span><br><span class="line">                		second=number[i];</span><br><span class="line">            		<span class="keyword">else</span>&#123;</span><br><span class="line">                        <span class="comment">// 若第二和第一相等，则将当前值赋予第二</span></span><br><span class="line">                		second = first==second ? number[i] : second;</span><br><span class="line">            		&#125;</span><br><span class="line">        		&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><h5 id="oop的四个特征：-抽象、封装、继承、多态"><a href="#oop的四个特征：-抽象、封装、继承、多态" class="headerlink" title="oop的四个特征： 抽象、封装、继承、多态"></a><strong>oop的四个特征： 抽象、封装、继承、多态</strong></h5><ul>
+<h5 id="给定一个数组，有n-n-gt-0-个元素，找到数组中第二大的元素"><a href="#给定一个数组，有n-n-gt-0-个元素，找到数组中第二大的元素" class="headerlink" title="给定一个数组，有n(n &gt;= 0)个元素，找到数组中第二大的元素"></a><strong>给定一个数组，有n(n &gt;= 0)个元素，找到数组中第二大的元素</strong></h5><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//1 5 9 2 1 6 4 2 3 9</span></span><br><span class="line">	<span class="function"><span class="built_in">int</span> <span class="title">GetScendNum</span>(<span class="params"><span class="built_in">int</span>[] number, <span class="built_in">int</span> n</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt; <span class="number">2</span>)</span><br><span class="line">             Console.WriteLine(<span class="string">&quot;不存在&quot;</span>)</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> first=number[<span class="number">0</span>],second=number[<span class="number">0</span>];</span><br><span class="line">    		<span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">        		<span class="keyword">if</span>(number[i]&gt;first)&#123;</span><br><span class="line">            		second=first;</span><br><span class="line">            		first=number[i];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">            		<span class="keyword">if</span>(number[i]&gt;second)</span><br><span class="line">                		second=number[i];</span><br><span class="line">            		<span class="keyword">else</span>&#123;</span><br><span class="line">                        <span class="comment">// 若第二和第一相等，则将当前值赋予第二</span></span><br><span class="line">                		second = first==second ? number[i] : second;</span><br><span class="line">            		&#125;</span><br><span class="line">        		&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="oop的四个特征"><a href="#oop的四个特征" class="headerlink" title="oop的四个特征 "></a><strong>oop的四个特征 </strong></h5><p><strong>抽象、封装、继承、多态</strong></p>
+<ul>
 <li><p>抽象就是忽略一个主题中与当前目标无关的那些方面，以便更充分地注意与当前目标有关的方面。抽象并不打算了解全部问题，而只是选择其中的一部分，暂时不用部分细节。比如，我们要设计一个学生成绩管理系统，考察学生这个对象时，我们只关心他的班级、学号、成绩等，而不用去关心他的身高、体重这些信息。抽象包括两个方面，一是过程抽象，二是数据抽象。过程抽象是指任何一个明确定义功能的操作都可被使用者看作单个的实体看待，尽管这个操作实际上可能由一系列更低级的操作来完成。数据抽象定义了数据类型和施加于该类型对象上的操作，并限定了对象的值只能通过使用这些操作修改和观察。</p>
 </li>
 <li><p>继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。对象的一个新类可以从现有的类中派生，这个过程称为类继承。新类继承了原始类的特性，新类称为原始类的派生类（子类），而原始类称为新类的基类（父类）。派生类可以从它的基类那里继承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要。这也体现了大自然中一般与特殊的关系。继承性很好的解决了软件的可重用性问题。比如说，所有的Windows应用程序都有一个窗口，它们可以看作都是从一个窗口类派生出来的。但是有的应用程序用于文字处理，有的应用程序用于绘图，这是由于派生出了不同的子类，各个子类添加了不同的特性。</p>
@@ -183,19 +183,7 @@
 </ul>
 </li>
 </ul>
-</li>
-<li><h5 id="AssetBundle的打包和加载"><a href="#AssetBundle的打包和加载" class="headerlink" title="AssetBundle的打包和加载"></a><strong>AssetBundle的打包和加载</strong></h5></li>
-</ol>
-<ol>
-<li><h5 id="反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。"><a href="#反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。" class="headerlink" title="反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。"></a><strong>反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。</strong></h5><ul>
-<li>.NET的一个强大功能是它可以通过一种称为反射(reflection)的过程访问应用程序的元数据。简单地说，反射就是运行时查询类型信息的能力</li>
-<li>基本用法：一是用反射来创建实例，二是用反射调用实例的方法，三是用反射调用实例的属性。<ul>
-<li></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="迭代器和数组的区别"><a href="#迭代器和数组的区别" class="headerlink" title="迭代器和数组的区别"></a><strong>迭代器和数组的区别</strong></h5><p>迭代器：<strong>迭代器</strong>（iterator）有时又称<strong>光标</strong>（cursor）是程序设计的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/软件设计模式">软件设计模式</a>，可在容器对象（container，例如<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/链表">链表</a>或<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/数组">数组</a>）上遍访的接口，设计人员无需关心容器对象的内存分配的实现细节。</p>
+<h5 id="AssetBundle的打包和加载"><a href="#AssetBundle的打包和加载" class="headerlink" title="AssetBundle的打包和加载"></a><strong>AssetBundle的打包和加载</strong></h5><h5 id="迭代器和数组的区别"><a href="#迭代器和数组的区别" class="headerlink" title="迭代器和数组的区别"></a><strong>迭代器和数组的区别</strong></h5><p>迭代器：<strong>迭代器</strong>（iterator）有时又称<strong>光标</strong>（cursor）是程序设计的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/软件设计模式">软件设计模式</a>，可在容器对象（container，例如<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/链表">链表</a>或<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/数组">数组</a>）上遍访的接口，设计人员无需关心容器对象的内存分配的实现细节。</p>
 <ul>
 <li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lx2054807/article/details/107981276?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-107981276-blog-123304449.pc_relevant_multi_platform_whitelistv3&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-107981276-blog-123304449.pc_relevant_multi_platform_whitelistv3&amp;utm_relevant_index=2">C#</a> </p>
 <ul>
@@ -234,8 +222,7 @@
 </ul>
 </li>
 </ul>
-</li>
-<li><h5 id="泛型的作用。泛型和传统类型Boxing-UnBoxing的区别"><a href="#泛型的作用。泛型和传统类型Boxing-UnBoxing的区别" class="headerlink" title="泛型的作用。泛型和传统类型Boxing/UnBoxing的区别"></a><strong>泛型的作用。泛型和传统类型Boxing/UnBoxing的区别</strong></h5><ol>
+<h5 id="泛型的作用。泛型和传统类型Boxing-UnBoxing的区别"><a href="#泛型的作用。泛型和传统类型Boxing-UnBoxing的区别" class="headerlink" title="泛型的作用。泛型和传统类型Boxing/UnBoxing的区别"></a><strong>泛型的作用。泛型和传统类型Boxing/UnBoxing的区别</strong></h5><ol>
 <li><p>泛型：即通过参数化类型来实现在同一份代码上操作多种数据类型。泛型编程是一种编程范式，它利用“参数化类型”将类型抽象化，从而实现更为灵活的复用。</p>
 </li>
 <li><p>作用：减少拆装箱，确保类型安全</p>
@@ -250,11 +237,249 @@
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CBase</span></span><br><span class="line">&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">C</span>&lt;<span class="title">T</span>&gt; : <span class="title">CBase</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> T t;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">C1</span>&lt;<span class="title">T</span>&gt; <span class="keyword">where</span> <span class="title">T</span> : <span class="title">CBase</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> T t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-</li>
-<li><h5 id="当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决"><a href="#当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决" class="headerlink" title="当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决"></a><strong>当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决</strong></h5></li>
-<li><h5 id="如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别"><a href="#如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别" class="headerlink" title="如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别"></a><strong>如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别</strong></h5></li>
+<h5 id="当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决"><a href="#当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决" class="headerlink" title="当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决"></a><strong>当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决</strong></h5><p>​    性能优化：</p>
+<h5 id="C-语法"><a href="#C-语法" class="headerlink" title="C#语法"></a>C#语法</h5><h6 id="C-特性（Attribute）"><a href="#C-特性（Attribute）" class="headerlink" title="C# 特性（Attribute）"></a><strong>C# 特性（Attribute）</strong></h6><p><strong>特性（Attribute）</strong>是用于在运行时传递程序中各种元素（比如类、方法、结构、枚举、组件等）的行为信息的声明性标签。可以通过使用特性向程序添加声明性信息。一个声明性标签是通过放置在它所应用的元素前面的方括号（[ ]）来描述的。</p>
+<p><strong>特性（Attribute）</strong>用于添加元数据，如编译器指令和注释、描述、方法、类等其他信息。.Net 框架提供了两种类型的特性：<em>预定义</em>特性和<em>自定义</em>特性。</p>
+<p>规定特性（Attribute）的语法如下：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">attribute(positional_parameters, name_parameter = value, ...)</span>]</span><br><span class="line">element</span><br><span class="line">    </span><br><span class="line"><span class="comment">//特性（Attribute）的名称和值是在方括号内规定的，放置在它所应用的元素之前。</span></span><br><span class="line"><span class="comment">//positional_parameters 规定必需的信息，name_parameter 规定可选的信息。</span></span><br></pre></td></tr></table></figure>
+<p><strong>预定义特性（Attribute）</strong></p>
+<p>.Net 框架提供了三种预定义特性：</p>
+<ul>
+<li><p>AttributeUsage：描述了如何使用一个自定义特性类。它规定了特性可应用到的项目的类型。</p>
+<p>规定该特性的语法如下：<br>[AttributeUsage( validon, AllowMultiple=allowmultiple，Inherited=inherited)]</p>
+<ol>
+<li>参数 validon规定特性可被放置的语言元素。它是枚举器AttributeTargets的值的组合。默认值是AttributeTargets.All。</li>
+<li>参数allowmultiple(可选的)为该特性的AllowMultiple属性(property)提供一个布尔值。如果为true，则该特性是多用的。默认值是false(单用的)</li>
+<li>参数inherited(可选的)为该特性的Inherited 属性(property)提供一个布尔值。如果为true，则该特性可被派生类继承。默认值是false(不被继承)。</li>
 </ol>
-
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * AttributeUsage(AttributeTargets.Class)//只能使用在类上</span></span><br><span class="line"><span class="comment"> * AttributeUsage(AttributeTargets.Method)//只能使用在方法上</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//AttributeTargets.Method|AttributeTargets.Class表示可以在类上用也可以在方法上用</span></span><br><span class="line">[<span class="meta">AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)</span>]<span class="comment">//AllowMultiple =true可以在方法上写多个[C1]</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">C1</span> : <span class="title">Attribute</span></span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">C2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//使用</span></span><br><span class="line">    [<span class="meta">C1</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getStr</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Conditional：我们可以将一些函数隔离出来，使得它们只有在定义了某些环节变量或者设置了某个值之后才能发挥作用</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//若把 #define DEBUG 注释，则Message方法不会执行。即Conditional特性只会只会在其包含的”DEBUG“定义后才能执行</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG</span></span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Diagnostics;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Myclass</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">Conditional(<span class="meta-string">&quot;DEBUG&quot;</span>)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Message</span>(<span class="params"><span class="built_in">string</span> msg</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Console.WriteLine(msg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Test</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">function1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Myclass.Message(<span class="string">&quot;In Function 1.&quot;</span>);</span><br><span class="line">        function2();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">function2</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Myclass.Message(<span class="string">&quot;In Function 2.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Myclass.Message(<span class="string">&quot;In Main function.&quot;</span>);</span><br><span class="line">        function1();</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Obsolete：它标记了不应被使用的程序实体。当一个新方法被用在一个类中，但若仍然想要保持类中的旧方法，可以通过显示一个应该使用新方法，而不是旧方法的消息，来把它标记为 obsolete（过时的）。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">Obsolete(</span></span><br><span class="line"><span class="meta">   message</span></span><br><span class="line"><span class="meta">)</span>]</span><br><span class="line">[<span class="meta">Obsolete(</span></span><br><span class="line"><span class="meta">   message,</span></span><br><span class="line"><span class="meta">   iserror</span></span><br><span class="line"><span class="meta">)</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>参数 <em>message</em>，是一个字符串，描述项目为什么过时以及该替代使用什么。</li>
+<li>参数 <em>iserror</em>，是一个布尔值。如果该值为 true，编译器应把该项目的使用当作一个错误。默认值是 false（编译器生成一个警告）。</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">   [<span class="meta">Obsolete(<span class="meta-string">&quot;Don&#x27;t use OldMethod, use NewMethod instead&quot;</span>, true)</span>]</span><br><span class="line">   <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">OldMethod</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>   &#123;</span><br><span class="line">      Console.WriteLine(<span class="string">&quot;It is the old method&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">NewMethod</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>   &#123;</span><br><span class="line">      Console.WriteLine(<span class="string">&quot;It is the new method&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>   &#123;</span><br><span class="line">      OldMethod();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//当使用OldMethod方法时，编译器会报错，错误信息为Obsolete的内容</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="密封类、接口类、抽象类"><a href="#密封类、接口类、抽象类" class="headerlink" title="密封类、接口类、抽象类"></a>密封类、接口类、抽象类</h6><h5 id="反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。"><a href="#反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。" class="headerlink" title="反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。"></a><strong>反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。</strong></h5><ul>
+<li><p>.NET的一个强大功能是它可以通过一种称为反射(reflection)的过程访问应用程序的元数据。简单地说，反射就是运行时查询类型信息的能力。可以使用反射动态地创建类型的实例，将类型绑定到现有对象，或从现有对象中获取类型。然后，可以调用类型的方法或访问其字段和属性。</p>
+</li>
+<li><p>反射（Reflection）有下列用途：</p>
+<ul>
+<li>它允许在运行时查看特性（attribute）信息。</li>
+<li>它允许审查集合中的各种类型，以及实例化这些类型。</li>
+<li>它允许延迟绑定的方法和属性（property）。</li>
+<li>它允许在运行时创建新类型，然后使用这些类型执行一些任务。</li>
+</ul>
+</li>
+<li><p>优点：</p>
+<ul>
+<li>1、反射提高了程序的灵活性和扩展性。</li>
+<li>2、降低耦合性，提高自适应能力。</li>
+<li>3、它允许程序创建和控制任何类的对象，无需提前硬编码目标类。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>1、性能问题：使用反射基本上是一种解释操作，用于字段和方法接入时要远慢于直接代码。因此反射机制主要应用在对灵活性和拓展性要求很高的系统框架上，普通程序不建议使用。</li>
+<li>2、使用反射会模糊程序内部逻辑；程序员希望在源代码中看到程序的逻辑，反射却绕过了源代码的技术，因而会带来维护的问题，反射代码比相应的直接代码更复杂。</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Rectangle r = <span class="keyword">new</span> Rectangle(<span class="number">4.5</span>, <span class="number">7.5</span>);</span><br><span class="line">        r.Display();</span><br><span class="line">        Type type = <span class="keyword">typeof</span>(Rectangle);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历 Rectangle 类的特性</span></span><br><span class="line">        <span class="keyword">foreach</span> (DeBugInfo attributes <span class="keyword">in</span> type.GetCustomAttributes(<span class="literal">false</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="literal">null</span> != attributes)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;Bug no: &#123;0&#125;&quot;</span>, attributes.BugNo);</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;Developer: &#123;0&#125;&quot;</span>, attributes.Developer);</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;Last Reviewed: &#123;0&#125;&quot;</span>,</span><br><span class="line">                                         attributes.LastReview);</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;Remarks: &#123;0&#125;&quot;</span>, attributes.Message);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别"><a href="#如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别" class="headerlink" title="如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别"></a><strong>如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别</strong></h5><h5 id="委托和事件的区别"><a href="#委托和事件的区别" class="headerlink" title="委托和事件的区别"></a><strong>委托和事件的区别</strong></h5><ol>
+<li><p>委托类似于 C 或 C++ 中函数的指针。<strong>委托（Delegate）</strong> 是存有对某个方法的引用的一种引用类型变量。引用可在运行时被改变。</p>
+<p>委托（Delegate）特别用于实现事件和回调方法。所有的委托（Delegate）都派生自 <strong>System.Delegate</strong> 类</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明语法</span></span><br><span class="line"><span class="built_in">delegate</span> &lt;<span class="keyword">return</span> type&gt; &lt;<span class="built_in">delegate</span>-name&gt; &lt;parameter list&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">TestDelegate</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="built_in">int</span> num = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">AddNum</span>(<span class="params"><span class="built_in">int</span> p</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">    	num += p;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">MultNum</span>(<span class="params"><span class="built_in">int</span> q</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        num *= q;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">getNum</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">    	<span class="comment">// 创建委托实例 ： 新建委托对象，传入函数签名和委托类型一致的函数</span></span><br><span class="line">        NumberChanger nc1 = <span class="keyword">new</span> NumberChanger(AddNum);</span><br><span class="line">        NumberChanger nc2 = <span class="keyword">new</span> NumberChanger(MultNum);</span><br><span class="line">        <span class="comment">// 使用委托对象调用方法，调用委托，传入参数</span></span><br><span class="line">        nc1(<span class="number">25</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Value of Num: &#123;0&#125;&quot;</span>, getNum());</span><br><span class="line">        nc2(<span class="number">5</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Value of Num: &#123;0&#125;&quot;</span>, getNum());</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>事件（Event）</strong> 基本上说是一个用户操作，如按键、点击、鼠标移动等等，或者是一些提示信息，如系统生成的通知。应用程序需要在事件发生时响应事件。例如，中断。</p>
+<p>C# 中使用事件机制实现线程间的通信。</p>
+<p>通过事件使用委托</p>
+<ul>
+<li><p>事件在类中声明且生成，且通过使用同一个类或其他类中的委托与事件处理程序关联。包含事件的类用于发布事件。这被称为 <strong>发布器（publisher）</strong> 类。其他接受该事件的类被称为 <strong>订阅器（subscriber）</strong> 类。事件使用 <strong>发布-订阅（publisher-subscriber）</strong> 模型。</p>
+</li>
+<li><p><strong>发布器（publisher）</strong> 是一个包含事件和委托定义的对象。事件和委托之间的联系也定义在这个对象中。发布器（publisher）类的对象调用这个事件，并通知其他的对象。</p>
+</li>
+<li><p><strong>订阅器（subscriber）</strong> 是一个接受事件并提供事件处理程序的对象。在发布器（publisher）类中的委托调用订阅器（subscriber）类中的方法（事件处理程序）</p>
+</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明委托</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">delegate</span> <span class="keyword">void</span> <span class="title">BoilerLogHandler</span>(<span class="params"><span class="built_in">string</span> status</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//基于上面的委托定义事件， 事件会在生成时调用委托</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">event</span> BoilerLogHandler BoilerEventLog;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>区别</p>
+<ol>
+<li><p>委托</p>
+<ul>
+<li>Delegate 是一个类，在任何可以声明类的地方都可以声明委托。</li>
+<li>可以将多个方法赋给同一个委托，或者叫将多个方法绑定到同一个委托，当调用这个委托的时候，将依次调用其所绑定的方法。</li>
+</ul>
+</li>
+<li><p>事件</p>
+<ul>
+<li><p>在类的内部，它总是private 的。</p>
+</li>
+<li><p>在类的外部，注册“+=”和注销“-=”的访问限定符与你在声明事件时使用的访问符相同。</p>
+</li>
+<li><p>使用事件不仅能获得比委托更好的封装性以外，还能限制含有事件的类型的能力。</p>
+</li>
+<li><p>事件应该由事件发布者触发，而不应该由事件的客户端（客户程序）来触发。</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h5 id="给定一个可包含重复数字的序列-nums-，按序列内字典升序返回所有不重复的全排列。"><a href="#给定一个可包含重复数字的序列-nums-，按序列内字典升序返回所有不重复的全排列。" class="headerlink" title="给定一个可包含重复数字的序列 nums ，按序列内字典升序返回所有不重复的全排列。"></a><strong>给定一个可包含重复数字的序列 nums ，按序列内字典升序返回所有不重复的全排列。</strong></h5><p><strong>其中序列内字典升序指的是， 序列内从左到右的非降序排列，例如 nums=[1,2,3], 则因为[1,2,3] &lt; [1,3,2], [3,1,2] &lt; [3,2,1]， [1,2,3]要先于[1,3,2]输出，[3,1,2]要先于[3,2,1]输出</strong></p>
+<ol>
+<li><p>使用STL库用来计算排列组合关系的算法：next_permutation和prev_permutation。</p>
+<p>即按字典序(lexicographical)来找到下一个或前一个的排列组合。例：{2，1，3}的下一个是{2，3，1}，前一个是{1，3，2}。字典序即两个组合从左往右依次比较，若某一位A比B小，则A的字典序在B之前。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; <span class="built_in">UniquePerm</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">    <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        res.<span class="built_in">push_back</span>(nums);</span><br><span class="line">        <span class="comment">//测试</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> num : nums)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; num &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">    &#125; <span class="keyword">while</span> (<span class="built_in">next_permutation</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>()));</span><br><span class="line">    res.<span class="built_in">shrink_to_fit</span>();</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="Unity生命周期函数"><a href="#Unity生命周期函数" class="headerlink" title="Unity生命周期函数"></a><strong>Unity生命周期函数</strong></h5><p>Awake -&gt; OnEnable -&gt; Start -&gt; FixedUpdate -&gt; OnTrigger/OnCollision -&gt; 输入事件 -&gt; Update -&gt;  LateUpdate -&gt; 渲染(Scene -&gt; Gizmo -&gt; GUI) -&gt; OnDisable -&gt; OnDestroy</p>
+<h5 id="AssetBundle"><a href="#AssetBundle" class="headerlink" title="AssetBundle"></a><strong>AssetBundle</strong></h5><p>AssetBundle是Unity中的一种资源包，这种资源包可以是游戏内要用到的几乎所有资源，并且可以在运行时动态加载。</p>
+<ol>
+<li>卸载Load的asset资源，通过Resources.UnloadAsset(asset)来进行卸载；</li>
+<li>压缩格式：LZMA, LZ4, 以及不压缩。<ol>
+<li>LZMA是一种默认的压缩形式，这种标准压缩格式是一个单一LZMA流序列化数据文件，并且在使用前需要解压缩整个包体。能使压缩后文件达到最小，但是解压相对缓慢。</li>
+<li>LZ4能使得压缩量更大，而且在使用资源包前不需要解压整个包体。</li>
+<li>不压缩的方式打包后包体会很大，导致很占用空间</li>
+</ol>
+</li>
+</ol>
+<h5 id="protobuf"><a href="#protobuf" class="headerlink" title="protobuf"></a><strong>protobuf</strong></h5><h5 id="重写和重载的区别"><a href="#重写和重载的区别" class="headerlink" title="重写和重载的区别"></a><strong>重写和重载的区别</strong></h5><p>1.定义不同—-重载是定义相同的方法名，参数不同；重写是子类重写父类的方法。</p>
+<p>2.范围不同—-重载是在一个类中，重写是子类与父类之间的。</p>
+<p>3.多态不同—-重载是编译时的多态性，重写是运行时的多态性。</p>
+<p>4.返回不同—-重载对返回类型没有要求，而重写要求返回类型，有兼容的返回类型。</p>
+<p>5.参数不同—-重载的参数个数、参数类型、参数顺序可以不同，而重写父子方法参数必须相同。</p>
+<p>6.修饰不同—-重载对访问修饰没有特殊要求，重写访问修饰符的限制一定要大于被重写方法的访问修.</p>
+<h5 id="堆-Heap-和栈-Stack"><a href="#堆-Heap-和栈-Stack" class="headerlink" title="堆(Heap)和栈(Stack)"></a><strong>堆(Heap)和栈(Stack)</strong></h5><ol>
+<li><p>程序内存</p>
+<ul>
+<li><p>栈：由操作系统自动分配释放，用于存放函数的参数值、局部变量等，其操作方式类似于数据结构中的栈。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> b;				<span class="comment">//栈 高地址</span></span><br><span class="line">	<span class="keyword">char</span> s[] = <span class="string">&quot;abc&quot;</span>; 	<span class="comment">//栈</span></span><br><span class="line">	<span class="keyword">char</span> *p2;			<span class="comment">//栈 低地址</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>堆：堆由开发人员分配和释放， 若开发人员不释放，程序结束时由 OS 回收，分配方式类似于链表。</p>
+</li>
+<li><p>区别：</p>
+<ul>
+<li>管理方式不同。栈自动释放；堆手动释放，容易产生内存泄漏</li>
+<li>空间大小不同。栈 &lt;&lt; 堆。</li>
+<li>生长方向不同。堆的内存地址由低到高；栈的内存地址由高到低。</li>
+<li>分配方式不同。堆都是动态分配的；栈有静态分配和动态分配。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数据结构</p>
+<ul>
+<li>栈：线性表。先进后出(First In Last Out).</li>
+<li>堆：树形结构，是一种特殊的完全二叉树。满足所有节点的值总是不大于或不小于父节点的值的完全二叉树。根节点最大称为大顶堆，根节点最小称为小顶堆。</li>
+</ul>
+</li>
+<li><p>值类型存储在栈中；引用类型存储在堆上。</p>
+</li>
+</ol>
+<h5 id="GC"><a href="#GC" class="headerlink" title="GC"></a><strong>GC</strong></h5><p>​    什么是GC：即Garbage Collection，垃圾回收。当使用可用内存不能满足内存请求时，GC会自动进行。</p>
+<ol>
+<li><p><strong>C#</strong>中的GC</p>
+<ol>
+<li><p>GC的四个步骤。</p>
+<ul>
+<li><p>垃圾回收器搜索内存中的托管对象；</p>
+</li>
+<li><p>从托管代码中搜索被引用的对象并标记为有效；</p>
+</li>
+<li><p>释放没有被标记为有效的对象并收回内存；</p>
+</li>
+<li><p>整理内存将有效对象挪动到一起。</p>
+</li>
+</ul>
+</li>
+<li><p>GC的作用：</p>
+<ul>
+<li><p>提高软件系统的内聚。</p>
+</li>
+<li><p>降低编程复杂度，使程序员不必分散精力去处理析构。</p>
+</li>
+<li><p>不妨碍设计师进行系统抽象。</p>
+</li>
+<li><p>减少由于内存运用不当产生的Bug。</p>
+</li>
+<li><p>成功的将内存管理工作从程序的编写时，脱离至运行时，使不可预估的管理漏洞变为可预估的。</p>
+</li>
+</ul>
+</li>
+<li><p>什么是垃圾</p>
+<p>只要判定一个引用类型对象或者其包含的子对象没有任何引用是有效的，那么系统就认为它是垃圾。</p>
+</li>
+<li><p>对象代龄</p>
+<p>CLR初始化后的第一批被创建的对象被列为0代对象。</p>
+</li>
+<li><p>回收方法</p>
+<ul>
+<li><p>Finalizer(析构函数)：一般不用，因为不确定GC调用时间，影响效率。</p>
+</li>
+<li><p>Dispose：继承IDisposable接口，实现Dispose方法；调用Dispose方法，销毁对象，需要显示调用或者通过using语句，在显示调用或者离开using程序块时被调用。’</p>
+</li>
+<li><p>Mark-Compact 标记压缩算法</p>
+</li>
+<li><p>Generational 分代算法</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>Unity</strong>中的CG</p>
+<ol>
+<li>Boehm GC(非分代非压缩)<ol>
+<li>Non-generational（非分代式），即全都堆在一起，因为这样会很快。分代的话就是例如大内存，小内存，超小内存分在不同的内存区域来进行管理（SGen GC的设计思想）。</li>
+<li>Non-Compacting（非压缩式），即当有内存被释放的时候，这块区域就空着。而压缩式的会重新排布，填充空白区域，使内存紧密排布。 </li>
+</ol>
+</li>
+<li>降低GC的方法：<ol>
+<li>使用对象池</li>
+<li>减少string，使用StringBuilder</li>
+<li>减少拆装箱</li>
+<li>struct中不要有引用类型变量</li>
+<li>主动调用GC</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>三色标记清除法</p>
+<ol>
+<li>三色：黑色、灰色、白色<ul>
+<li><code>黑色</code>: <strong>表示对象以及被垃圾收集器访问过，且这个对象的引用都已经扫描过</strong>。黑色的对象代表以及扫描过，他是安全存活的，如果有其他对象引用指向了黑色对象，无需重新扫描一遍。黑色对象不可能直接（不经过灰色对象）指向某个白色对象。</li>
+<li><code>灰色</code>: <strong>表示对象已经被垃圾收集器访问过，但这个对象上至少存在一个引用还没有被扫描到</strong></li>
+<li><code>白色</code>: <strong>表示对象尚未被垃圾收集器访问过</strong>。显然在可达性分析刚刚开始的阶段，所有的对象都是白色，如在分析结束的阶段，仍然是白色的对象，即代表不可达。</li>
+</ul>
+</li>
+<li>步骤：<ol>
+<li>刚开始，所有对象都在<code>白色集合</code>中</li>
+<li>将GC Roots直接引用的对象挪到<code>灰色集合</code>中</li>
+<li>从<code>灰色集合</code>中获取对象：<ul>
+<li>将本对象的引用到的对象放入<code>灰色集合</code>中</li>
+<li>将本对象放入<code>黑色集合</code>中</li>
+</ul>
+</li>
+<li>重复步骤3，直到<code>灰色集合</code>为空结束</li>
+<li>结束后，仍在<code>白色集合</code>的对象即为GC Roots不可达，可以进行回收。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>三代标记清除法</p>
+</li>
+</ol>
+<h5 id="Lua"><a href="#Lua" class="headerlink" title="Lua"></a><strong>Lua</strong></h5>
             </div>
             
                 <div class="kratos-copyright text-center clearfix">
@@ -322,8 +547,9 @@
             const hostUrl       = "http://kennyyyyyy.github.io/2022/08/19/%E7%AC%94%E8%AF%95%E9%A2%98%E8%AE%B0%E5%BD%95/";
             const title         = "「笔试题记录」";
             const excerpt       = `
-
-从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果1234567891011Material material = Render.m...`;
+Shader
+从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果
+1234567891011Material material = R...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -345,7 +571,7 @@
                         <a class="tag-none-link" href="/tags/C/" rel="tag">C#</a>, <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2022-08-20</span>
+                    <span>最后编辑：2022-09-03</span>
                     </div>
                 </div>
             </footer>
@@ -393,7 +619,7 @@
         <span class="toc-progress-bar"></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%8ERender%E8%8E%B7%E5%8F%96%E6%9D%90%E8%B4%A8%EF%BC%8C%E8%8E%B7%E5%BE%97%E6%9D%90%E8%B4%A8%E7%9A%84Shader%EF%BC%8C%E8%8E%B7%E5%8F%96Shader%E7%9A%84Uniform-Constant%E5%80%BC%EF%BC%8C%E6%AF%8F%E5%B8%A7%E4%BF%AE%E6%94%B9constant%E5%80%BC%E6%9D%A5%E5%AE%9E%E7%8E%B0%E8%A3%85%E5%A4%87%E7%9A%84%E6%B5%81%E5%85%89%E6%95%88%E6%9E%9C"><span class="toc-text">从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%EF%BC%8C%E6%9C%89n-n-gt-0-%E4%B8%AA%E5%85%83%E7%B4%A0%EF%BC%8C%E6%89%BE%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%A4%A7%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-text">给定一个数组，有n(n &gt;&#x3D; 0)个元素，找到数组中第二大的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#oop%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81%EF%BC%9A-%E6%8A%BD%E8%B1%A1%E3%80%81%E5%B0%81%E8%A3%85%E3%80%81%E7%BB%A7%E6%89%BF%E3%80%81%E5%A4%9A%E6%80%81"><span class="toc-text">oop的四个特征： 抽象、封装、继承、多态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AssetBundle%E7%9A%84%E6%89%93%E5%8C%85%E5%92%8C%E5%8A%A0%E8%BD%BD"><span class="toc-text">AssetBundle的打包和加载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E9%9B%86%EF%BC%8C%E5%B9%B6%E8%8E%B7%E5%BE%97%E5%85%B6%E7%B1%BB%E5%9E%8BT%EF%BC%8C%E8%B0%83%E7%94%A8T%E7%9A%84Create%E5%87%BD%E6%95%B0%E3%80%82"><span class="toc-text">反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">迭代器和数组的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82%E6%B3%9B%E5%9E%8B%E5%92%8C%E4%BC%A0%E7%BB%9F%E7%B1%BB%E5%9E%8BBoxing-UnBoxing%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">泛型的作用。泛型和传统类型Boxing&#x2F;UnBoxing的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%93%E4%BD%A0%E6%8E%A5%E6%89%8B%E4%B8%80%E4%B8%AA%E6%96%B0%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%BD%93%E8%BF%90%E8%A1%8C%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E5%90%8E%EF%BC%8C%E5%8F%91%E7%8E%B0%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E9%AB%98%E4%B8%94%E5%B8%A7%E7%8E%87%E4%BD%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3"><span class="toc-text">当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97Prefab%E7%9A%84GameObject%E7%B1%BB%E5%9E%8B%EF%BC%8CPrefabInstance%E5%92%8CModelPrefabInstance%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Shader"><span class="toc-text">Shader</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%EF%BC%8C%E6%9C%89n-n-gt-0-%E4%B8%AA%E5%85%83%E7%B4%A0%EF%BC%8C%E6%89%BE%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%A4%A7%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-text">给定一个数组，有n(n &gt;&#x3D; 0)个元素，找到数组中第二大的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#oop%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="toc-text">oop的四个特征 </span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AssetBundle%E7%9A%84%E6%89%93%E5%8C%85%E5%92%8C%E5%8A%A0%E8%BD%BD"><span class="toc-text">AssetBundle的打包和加载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">迭代器和数组的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82%E6%B3%9B%E5%9E%8B%E5%92%8C%E4%BC%A0%E7%BB%9F%E7%B1%BB%E5%9E%8BBoxing-UnBoxing%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">泛型的作用。泛型和传统类型Boxing&#x2F;UnBoxing的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%93%E4%BD%A0%E6%8E%A5%E6%89%8B%E4%B8%80%E4%B8%AA%E6%96%B0%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%BD%93%E8%BF%90%E8%A1%8C%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E5%90%8E%EF%BC%8C%E5%8F%91%E7%8E%B0%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E9%AB%98%E4%B8%94%E5%B8%A7%E7%8E%87%E4%BD%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3"><span class="toc-text">当你接手一个新项目，当运行一段时间后，发现内存占用高且帧率低，如何解决</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-%E8%AF%AD%E6%B3%95"><span class="toc-text">C#语法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%89%B9%E6%80%A7%EF%BC%88Attribute%EF%BC%89"><span class="toc-text">C# 特性（Attribute）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AF%86%E5%B0%81%E7%B1%BB%E3%80%81%E6%8E%A5%E5%8F%A3%E7%B1%BB%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="toc-text">密封类、接口类、抽象类</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E9%9B%86%EF%BC%8C%E5%B9%B6%E8%8E%B7%E5%BE%97%E5%85%B6%E7%B1%BB%E5%9E%8BT%EF%BC%8C%E8%B0%83%E7%94%A8T%E7%9A%84Create%E5%87%BD%E6%95%B0%E3%80%82"><span class="toc-text">反射的作用。动态创建一个数据集，并获得其类型T，调用T的Create函数。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97Prefab%E7%9A%84GameObject%E7%B1%BB%E5%9E%8B%EF%BC%8CPrefabInstance%E5%92%8CModelPrefabInstance%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A7%94%E6%89%98%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">委托和事件的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E5%8F%AF%E5%8C%85%E5%90%AB%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97%E7%9A%84%E5%BA%8F%E5%88%97-nums-%EF%BC%8C%E6%8C%89%E5%BA%8F%E5%88%97%E5%86%85%E5%AD%97%E5%85%B8%E5%8D%87%E5%BA%8F%E8%BF%94%E5%9B%9E%E6%89%80%E6%9C%89%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%85%A8%E6%8E%92%E5%88%97%E3%80%82"><span class="toc-text">给定一个可包含重复数字的序列 nums ，按序列内字典升序返回所有不重复的全排列。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Unity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">Unity生命周期函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AssetBundle"><span class="toc-text">AssetBundle</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#protobuf"><span class="toc-text">protobuf</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">重写和重载的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A0%86-Heap-%E5%92%8C%E6%A0%88-Stack"><span class="toc-text">堆(Heap)和栈(Stack)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#GC"><span class="toc-text">GC</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Lua"><span class="toc-text">Lua</span></a></li></ol>
     </div>
 </aside>
                 
