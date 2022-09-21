@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="/images/logo.jpg">
-  <title>知识点记录 | Imperio</title>
+  <title>知识点记录(Unity/C#) | Imperio</title>
   <meta name="author" content="kennyyy" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -17,14 +17,14 @@
   
   <meta name="description" content="Shader 从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果 1234567891011Material material &#x3D; Render.materials;material.shader &#x3D; targetShader;&#x2F;&#x2F;修改 Shader 中参数的值：material.SetFloat(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="知识点记录">
+<meta property="og:title" content="知识点记录(Unity&#x2F;C#)">
 <meta property="og:url" content="http://kennyyyyyy.github.io/2022/08/19/%E7%AC%94%E8%AF%95%E9%A2%98%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Imperio">
 <meta property="og:description" content="Shader 从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果 1234567891011Material material &#x3D; Render.materials;material.shader &#x3D; targetShader;&#x2F;&#x2F;修改 Shader 中参数的值：material.SetFloat(">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2022-08-19T14:13:21.000Z">
-<meta property="article:modified_time" content="2022-09-04T14:56:11.714Z">
+<meta property="article:modified_time" content="2022-09-21T12:10:22.218Z">
 <meta property="article:author" content="kennyyy">
 <meta property="article:tag" content="Unity">
 <meta property="article:tag" content="C#">
@@ -129,7 +129,7 @@
     <article>
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
-                <h1 class="kratos-entry-title text-center">知识点记录</h1>
+                <h1 class="kratos-entry-title text-center">知识点记录(Unity/C#)</h1>
                 
                 <ul class="kratos-post-meta text-center">
                     <li><i class="fa fa-calendar"></i> 2022-08-19</li>
@@ -138,7 +138,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~19.81K
+                            ~19.82K
                         
                         字
                     </li>
@@ -147,11 +147,11 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1662303371714"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1663762222218"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
-                        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Shader"><span class="toc-number">1.</span> <span class="toc-text">Shader</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#oop%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="toc-number">3.</span> <span class="toc-text">oop的四个特征 </span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">迭代器和数组的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82"><span class="toc-number">5.</span> <span class="toc-text">泛型的作用。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">6.</span> <span class="toc-text">性能优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-%E8%AF%AD%E6%B3%95"><span class="toc-number">7.</span> <span class="toc-text">C#语法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%89%B9%E6%80%A7%EF%BC%88Attribute%EF%BC%89"><span class="toc-number">7.1.</span> <span class="toc-text">C# 特性（Attribute）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%B1%BB"><span class="toc-number">7.2.</span> <span class="toc-text">特殊类</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">8.</span> <span class="toc-text">反射的作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97Prefab%E7%9A%84GameObject%E7%B1%BB%E5%9E%8B%EF%BC%8CPrefabInstance%E5%92%8CModelPrefabInstance%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">9.</span> <span class="toc-text">如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A7%94%E6%89%98%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">10.</span> <span class="toc-text">委托和事件的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Unity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-number">11.</span> <span class="toc-text">Unity生命周期函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AssetBundle"><span class="toc-number">12.</span> <span class="toc-text">AssetBundle</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#protobuf"><span class="toc-number">13.</span> <span class="toc-text">protobuf</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">14.</span> <span class="toc-text">重写和重载的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A0%86-Heap-%E5%92%8C%E6%A0%88-Stack"><span class="toc-number">15.</span> <span class="toc-text">堆(Heap)和栈(Stack)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#GC"><span class="toc-number">16.</span> <span class="toc-text">GC</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Lua"><span class="toc-number">17.</span> <span class="toc-text">Lua</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5"><span class="toc-number">18.</span> <span class="toc-text">网络同步</span></a></li></ol>
+                        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Shader"><span class="toc-number">1.</span> <span class="toc-text">Shader</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#oop%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="toc-number">3.</span> <span class="toc-text">oop的四个特征 </span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">迭代器和数组的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82"><span class="toc-number">5.</span> <span class="toc-text">泛型的作用。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">6.</span> <span class="toc-text">性能优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-%E8%AF%AD%E6%B3%95"><span class="toc-number">7.</span> <span class="toc-text">C#语法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%89%B9%E6%80%A7%EF%BC%88Attribute%EF%BC%89"><span class="toc-number">7.1.</span> <span class="toc-text">C# 特性（Attribute）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%B1%BB"><span class="toc-number">7.2.</span> <span class="toc-text">特殊类</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">8.</span> <span class="toc-text">反射的作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Prefab"><span class="toc-number">9.</span> <span class="toc-text">Prefab</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A7%94%E6%89%98%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">10.</span> <span class="toc-text">委托和事件的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Unity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-number">11.</span> <span class="toc-text">Unity生命周期函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AssetBundle"><span class="toc-number">12.</span> <span class="toc-text">AssetBundle</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#protobuf"><span class="toc-number">13.</span> <span class="toc-text">protobuf</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">14.</span> <span class="toc-text">重写和重载的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A0%86-Heap-%E5%92%8C%E6%A0%88-Stack"><span class="toc-number">15.</span> <span class="toc-text">堆(Heap)和栈(Stack)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#GC"><span class="toc-number">16.</span> <span class="toc-text">GC</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Lua"><span class="toc-number">17.</span> <span class="toc-text">Lua</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5"><span class="toc-number">18.</span> <span class="toc-text">网络同步</span></a></li></ol>
                     </div>
                 
                 <hr />
@@ -328,7 +328,8 @@
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Rectangle r = <span class="keyword">new</span> Rectangle(<span class="number">4.5</span>, <span class="number">7.5</span>);</span><br><span class="line">        r.Display();</span><br><span class="line">        Type type = <span class="keyword">typeof</span>(Rectangle);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历 Rectangle 类的特性</span></span><br><span class="line">        <span class="keyword">foreach</span> (DeBugInfo attributes <span class="keyword">in</span> type.GetCustomAttributes(<span class="literal">false</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="literal">null</span> != attributes)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;Bug no: &#123;0&#125;&quot;</span>, attributes.BugNo);</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;Developer: &#123;0&#125;&quot;</span>, attributes.Developer);</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;Last Reviewed: &#123;0&#125;&quot;</span>,</span><br><span class="line">                                         attributes.LastReview);</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;Remarks: &#123;0&#125;&quot;</span>, attributes.Message);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h5 id="如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别"><a href="#如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别" class="headerlink" title="如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别"></a><strong>如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别</strong></h5><h5 id="委托和事件的区别"><a href="#委托和事件的区别" class="headerlink" title="委托和事件的区别"></a><strong>委托和事件的区别</strong></h5><ol>
+<h5 id="Prefab"><a href="#Prefab" class="headerlink" title="Prefab"></a>Prefab</h5><p><strong>如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别</strong></p>
+<h5 id="委托和事件的区别"><a href="#委托和事件的区别" class="headerlink" title="委托和事件的区别"></a><strong>委托和事件的区别</strong></h5><ol>
 <li><p>委托类似于 C 或 C++ 中函数的指针。<strong>委托（Delegate）</strong> 是存有对某个方法的引用的一种引用类型变量。引用可在运行时被改变。</p>
 <p>委托（Delegate）特别用于实现事件和回调方法。所有的委托（Delegate）都派生自 <strong>System.Delegate</strong> 类</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明语法</span></span><br><span class="line"><span class="built_in">delegate</span> &lt;<span class="keyword">return</span> type&gt; &lt;<span class="built_in">delegate</span>-name&gt; &lt;parameter list&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">TestDelegate</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="built_in">int</span> num = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">AddNum</span>(<span class="params"><span class="built_in">int</span> p</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">    	num += p;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">MultNum</span>(<span class="params"><span class="built_in">int</span> q</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        num *= q;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">getNum</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">    	<span class="comment">// 创建委托实例 ： 新建委托对象，传入函数签名和委托类型一致的函数</span></span><br><span class="line">        NumberChanger nc1 = <span class="keyword">new</span> NumberChanger(AddNum);</span><br><span class="line">        NumberChanger nc2 = <span class="keyword">new</span> NumberChanger(MultNum);</span><br><span class="line">        <span class="comment">// 使用委托对象调用方法，调用委托，传入参数</span></span><br><span class="line">        nc1(<span class="number">25</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Value of Num: &#123;0&#125;&quot;</span>, getNum());</span><br><span class="line">        nc2(<span class="number">5</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Value of Num: &#123;0&#125;&quot;</span>, getNum());</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -723,7 +724,7 @@
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "http://kennyyyyyy.github.io/2022/08/19/%E7%AC%94%E8%AF%95%E9%A2%98%E8%AE%B0%E5%BD%95/";
-            const title         = "「知识点记录」";
+            const title         = "「知识点记录(Unity/C#)」";
             const excerpt       = `
 Shader
 从Render获取材质，获得材质的Shader，获取Shader的Uniform Constant值，每帧修改constant值来实现装备的流光效果
@@ -749,7 +750,7 @@ Shader
                         <a class="tag-none-link" href="/tags/C/" rel="tag">C#</a>, <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2022-09-04</span>
+                    <span>最后编辑：2022-09-21</span>
                     </div>
                 </div>
             </footer>
@@ -761,6 +762,10 @@ Shader
                     <a title=" 热更新" href="/2022/08/16/热更新/">&lt; 上一篇</a>
                 </div>
                 
+                
+                <div class="nav-next clearfix">
+                    <a title=" C/C++相关记录" href="/2022/09/21/C-C-相关记录/">下一篇 &gt;</a>
+                </div>
                 
             </nav>
         
@@ -797,7 +802,7 @@ Shader
         <span class="toc-progress-bar"></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Shader"><span class="toc-text">Shader</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-text">算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#oop%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="toc-text">oop的四个特征 </span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">迭代器和数组的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82"><span class="toc-text">泛型的作用。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-text">性能优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-%E8%AF%AD%E6%B3%95"><span class="toc-text">C#语法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%89%B9%E6%80%A7%EF%BC%88Attribute%EF%BC%89"><span class="toc-text">C# 特性（Attribute）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%B1%BB"><span class="toc-text">特殊类</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">反射的作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97Prefab%E7%9A%84GameObject%E7%B1%BB%E5%9E%8B%EF%BC%8CPrefabInstance%E5%92%8CModelPrefabInstance%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">如何获得Prefab的GameObject类型，PrefabInstance和ModelPrefabInstance的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A7%94%E6%89%98%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">委托和事件的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Unity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">Unity生命周期函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AssetBundle"><span class="toc-text">AssetBundle</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#protobuf"><span class="toc-text">protobuf</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">重写和重载的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A0%86-Heap-%E5%92%8C%E6%A0%88-Stack"><span class="toc-text">堆(Heap)和栈(Stack)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#GC"><span class="toc-text">GC</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Lua"><span class="toc-text">Lua</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5"><span class="toc-text">网络同步</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Shader"><span class="toc-text">Shader</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-text">算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#oop%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="toc-text">oop的四个特征 </span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">迭代器和数组的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82"><span class="toc-text">泛型的作用。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-text">性能优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-%E8%AF%AD%E6%B3%95"><span class="toc-text">C#语法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E7%89%B9%E6%80%A7%EF%BC%88Attribute%EF%BC%89"><span class="toc-text">C# 特性（Attribute）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%B1%BB"><span class="toc-text">特殊类</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">反射的作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Prefab"><span class="toc-text">Prefab</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A7%94%E6%89%98%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">委托和事件的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Unity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">Unity生命周期函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AssetBundle"><span class="toc-text">AssetBundle</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#protobuf"><span class="toc-text">protobuf</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">重写和重载的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A0%86-Heap-%E5%92%8C%E6%A0%88-Stack"><span class="toc-text">堆(Heap)和栈(Stack)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#GC"><span class="toc-text">GC</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Lua"><span class="toc-text">Lua</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5"><span class="toc-text">网络同步</span></a></li></ol>
     </div>
 </aside>
                 
@@ -813,7 +818,7 @@ Shader
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/C/" style="font-size: 0.8em;">C#</a> <a href="/tags/C/" style="font-size: 0.6em;">C++</a> <a href="/tags/Leetcode/" style="font-size: 0.6em;">Leetcode</a> <a href="/tags/Lua/" style="font-size: 0.7em;">Lua</a> <a href="/tags/Unity/" style="font-size: 0.8em;">Unity</a> <a href="/tags/c/" style="font-size: 0.6em;">c++</a> <a href="/tags/unity/" style="font-size: 0.7em;">unity</a> <a href="/tags/xlua/" style="font-size: 0.6em;">xlua</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 0.6em;">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 0.6em;">数据结构</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 0.7em;">经验</a> <a href="/tags/%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" style="font-size: 0.7em;">错误总结</a>
+        <a href="/tags/C/" style="font-size: 0.8em;">C#</a> <a href="/tags/C/" style="font-size: 0.6em;">C++</a> <a href="/tags/C-C/" style="font-size: 0.6em;">C/C++</a> <a href="/tags/Leetcode/" style="font-size: 0.6em;">Leetcode</a> <a href="/tags/Lua/" style="font-size: 0.7em;">Lua</a> <a href="/tags/Unity/" style="font-size: 0.8em;">Unity</a> <a href="/tags/c/" style="font-size: 0.6em;">c++</a> <a href="/tags/unity/" style="font-size: 0.7em;">unity</a> <a href="/tags/xlua/" style="font-size: 0.6em;">xlua</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 0.6em;">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 0.6em;">数据结构</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 0.7em;">经验</a> <a href="/tags/%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" style="font-size: 0.7em;">错误总结</a>
       </div>
   </aside>
 
@@ -827,7 +832,13 @@ Shader
         
           
           
-            <a class="list-group-item" href="/2022/08/19/%E7%AC%94%E8%AF%95%E9%A2%98%E8%AE%B0%E5%BD%95/"><i class="fa  fa-book"></i> 知识点记录</a>
+            <a class="list-group-item" href="/2022/09/21/C-C-%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/"><i class="fa  fa-book"></i> C/C++相关记录</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/19/%E7%AC%94%E8%AF%95%E9%A2%98%E8%AE%B0%E5%BD%95/"><i class="fa  fa-book"></i> 知识点记录(Unity/C#)</a>
             
           
         
@@ -850,11 +861,7 @@ Shader
           
         
           
-          
-            <a class="list-group-item" href="/2021/09/16/%E5%89%91%E6%8C%87offer/"><i class="fa  fa-book"></i> 剑指offer</a>
             
-          
-        
           
             
           
@@ -963,20 +970,5 @@ Shader
 <!-- Extra support for third-party plguins  -->
 
 
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-//<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+    </body>
 </html>
