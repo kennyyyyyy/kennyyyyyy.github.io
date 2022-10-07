@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="/images/logo.jpg">
-  <title>VRTK学习记录 | Imperio</title>
+  <title>3D数学基础：图形与游戏开发 | Imperio</title>
   <meta name="author" content="kennyyy" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -13,21 +13,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="经验, 错误总结" />
+    <meta name="keywords" content="Unity, 图形学" />
   
-  <meta name="description" content="配置环境unity 2018.4.14VRTK 3.3.0steamVR 1.2.3 键鼠模拟基本操作 wasd控制人物移动 鼠标默认控制人物方向 alt切换控制模式 鼠标：控制人物方向 —&gt;控制左右Controller的水平位置 ctrl：按住ctrl控制Controller的垂直位置   tab切换左右Controller ctrl 切换为抓取物体模式 鼠标右键为右Controller">
+  <meta name="description" content="2、笛卡尔坐标系3、多坐标系3.2 一些有用的坐标系3.2.1 世界坐标系​    世界坐标系建立了描述其他坐标系所需要的参考框架，能够用世界坐标系描述其他坐标系的位置，而不能用更大的、外部的坐标系来描述世界坐标系。 ​    世界坐标系的典型问题都是关于初始位置和环境的，如：  每个物体的位置和方向； 摄像机的位置和方向； 世界中没一点的地形是什么（如山丘、湖泊等）； 个物体从哪里来，到哪里去">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VRTK学习记录">
-<meta property="og:url" content="http://kennyyyyyy.github.io/2021/06/06/VRTK%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:title" content="3D数学基础：图形与游戏开发">
+<meta property="og:url" content="http://kennyyyyyy.github.io/2022/10/07/3D%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%9B%BE%E5%BD%A2%E4%B8%8E%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/index.html">
 <meta property="og:site_name" content="Imperio">
-<meta property="og:description" content="配置环境unity 2018.4.14VRTK 3.3.0steamVR 1.2.3 键鼠模拟基本操作 wasd控制人物移动 鼠标默认控制人物方向 alt切换控制模式 鼠标：控制人物方向 —&gt;控制左右Controller的水平位置 ctrl：按住ctrl控制Controller的垂直位置   tab切换左右Controller ctrl 切换为抓取物体模式 鼠标右键为右Controller">
+<meta property="og:description" content="2、笛卡尔坐标系3、多坐标系3.2 一些有用的坐标系3.2.1 世界坐标系​    世界坐标系建立了描述其他坐标系所需要的参考框架，能够用世界坐标系描述其他坐标系的位置，而不能用更大的、外部的坐标系来描述世界坐标系。 ​    世界坐标系的典型问题都是关于初始位置和环境的，如：  每个物体的位置和方向； 摄像机的位置和方向； 世界中没一点的地形是什么（如山丘、湖泊等）； 个物体从哪里来，到哪里去">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
-<meta property="article:published_time" content="2021-06-06T11:27:43.000Z">
-<meta property="article:modified_time" content="2021-07-20T12:41:43.122Z">
+<meta property="article:published_time" content="2022-10-07T11:38:59.000Z">
+<meta property="article:modified_time" content="2022-10-07T12:05:39.460Z">
 <meta property="article:author" content="kennyyy">
-<meta property="article:tag" content="错误总结">
-<meta property="article:tag" content="经验">
+<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="图形学">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta name="twitter:site" content="@null">
@@ -129,16 +129,16 @@
     <article>
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
-                <h1 class="kratos-entry-title text-center">VRTK学习记录</h1>
+                <h1 class="kratos-entry-title text-center">3D数学基础：图形与游戏开发</h1>
                 
                 <ul class="kratos-post-meta text-center">
-                    <li><i class="fa fa-calendar"></i> 2021-06-06</li>
+                    <li><i class="fa fa-calendar"></i> 2022-10-07</li>
                     <li><i class="fa fa-user"></i> 作者 kennyyy</li>
                     <li>
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~4.04K
+                            597
                         
                         字
                     </li>
@@ -147,68 +147,38 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1626784903122"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1665144339460"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
-                        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">配置环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%AE%E9%BC%A0%E6%A8%A1%E6%8B%9F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">键鼠模拟基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Controller%E7%9B%B8%E5%85%B3"><span class="toc-number">4.</span> <span class="toc-text">Controller相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8%E5%9F%BA%E6%9C%AC%E7%BB%84%E4%BB%B6"><span class="toc-number">4.1.</span> <span class="toc-text">控制器基本组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%84%E7%BA%BF%E4%B8%8E%E5%9C%BA%E6%99%AF%E4%BA%92%E5%8A%A8"><span class="toc-number">4.2.</span> <span class="toc-text">射线与场景互动</span></a></li></ol></li></ol>
+                        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E7%AC%9B%E5%8D%A1%E5%B0%94%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">1.</span> <span class="toc-text">2、笛卡尔坐标系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E5%A4%9A%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">2.</span> <span class="toc-text">3、多坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">2.1.</span> <span class="toc-text">3.2 一些有用的坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#3-2-1-%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">2.1.1.</span> <span class="toc-text">3.2.1 世界坐标系</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-2-2-%E7%89%A9%E4%BD%93%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">2.1.2.</span> <span class="toc-text">3.2.2 物体坐标系</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-2-3-%E6%91%84%E5%83%8F%E6%9C%BA%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">2.1.3.</span> <span class="toc-text">3.2.3 摄像机坐标系</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-2-4-%E6%83%AF%E6%80%A7%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">2.1.4.</span> <span class="toc-text">3.2.4 惯性坐标系</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81%E5%90%91%E9%87%8F%E4%B8%8E%E6%A0%87%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">4、向量与标量</span></a></li></ol>
                     </div>
                 
                 <hr />
                 <span id="more"></span>
-<h3 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h3><p>unity 2018.4.14<br>VRTK 3.3.0<br>steamVR 1.2.3</p>
-<h3 id="键鼠模拟基本操作"><a href="#键鼠模拟基本操作" class="headerlink" title="键鼠模拟基本操作"></a>键鼠模拟基本操作</h3><ul>
-<li>wasd控制人物移动</li>
-<li>鼠标默认控制人物方向</li>
-<li>alt切换控制模式<ul>
-<li>鼠标：控制人物方向 —&gt;控制左右Controller的水平位置</li>
-<li>ctrl：按住ctrl控制Controller的垂直位置</li>
-</ul>
-</li>
-<li>tab切换左右Controller</li>
-<li>ctrl 切换为抓取物体模式<ul>
-<li>鼠标右键为右Controller抓取</li>
-<li>鼠标左键为左Controller抓取</li>
-</ul>
-</li>
-<li>shift 奔跑</li>
-<li>q 发出射线<ul>
-<li>鼠标右键代表Controller的扳机</li>
-</ul>
-</li>
-</ul>
-<h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><ol>
-<li><p>新建场景，删除原本的Camera。</p>
-</li>
-<li><p>simulator为键鼠模拟；steamVr为设备操作；[VRSimulator_CameraRig]是VRTK的prefab，可直接使用；</p>
-<p>RightController 为右控制器； LeftController 为左控制器； PlayArea 为需要传送时添加。</p>
-<p><img src="/images/VRTK学习记录/基本结构.png" alt="基本结构"></p>
-</li>
-</ol>
-<ol>
-<li><p>VRTK SDK 需要添加VRTK_SDKManager 组件，并将子物体simulator和steamVR添加到组件中Setups的列表中（因为只需要键鼠模拟，所以只添加了simulator），然后将左右手控制器分别添加到Scripts Aliases中。</p>
-<p><img src="/images/VRTK学习记录/VRTK_SDKManager.png" alt="Manager"></p>
-</li>
-</ol>
-<ol>
-<li><p>Simulator和SteamVR需要添加VRTK_SDK Setup 组件，并将Quick Select设置为相应的模式</p>
-<p><img src="/images/VRTK学习记录/VRTK_SDKSetup.png" alt="Setup"></p>
-</li>
-</ol>
-<h3 id="Controller相关"><a href="#Controller相关" class="headerlink" title="Controller相关"></a>Controller相关</h3><h4 id="控制器基本组件"><a href="#控制器基本组件" class="headerlink" title="控制器基本组件"></a>控制器基本组件</h4><p>​    <img src="/images/VRTK学习记录/Controller1.png" alt="Controller基本组件"></p>
-<p>​    <img src="/images/VRTK学习记录/grab.png" alt="Controller抓取物体所需组件"></p>
-<p>​    <img src="/images/VRTK学习记录/point.png" alt="Controller射线组件"></p>
+<h4 id="2、笛卡尔坐标系"><a href="#2、笛卡尔坐标系" class="headerlink" title="2、笛卡尔坐标系"></a>2、笛卡尔坐标系</h4><h4 id="3、多坐标系"><a href="#3、多坐标系" class="headerlink" title="3、多坐标系"></a>3、多坐标系</h4><h5 id="3-2-一些有用的坐标系"><a href="#3-2-一些有用的坐标系" class="headerlink" title="3.2 一些有用的坐标系"></a>3.2 一些有用的坐标系</h5><h6 id="3-2-1-世界坐标系"><a href="#3-2-1-世界坐标系" class="headerlink" title="3.2.1 世界坐标系"></a>3.2.1 世界坐标系</h6><p>​    世界坐标系建立了描述其他坐标系所需要的参考框架，能够用世界坐标系描述其他坐标系的位置，而不能用更大的、外部的坐标系来描述世界坐标系。</p>
+<p>​    世界坐标系的典型问题都是关于<strong>初始位置和环境</strong>的，如：</p>
 <ul>
-<li>​    射线类型可以为直线(VRTK_Straight Pointer Renderer)或贝塞尔曲线(VRTK_Bezier Pointer Renderer)</li>
+<li>每个物体的位置和方向；</li>
+<li>摄像机的位置和方向；</li>
+<li>世界中没一点的地形是什么（如山丘、湖泊等）；</li>
+<li>个物体从哪里来，到哪里去（NPC的运动策略）。</li>
 </ul>
-<p>​    <img src="/images/VRTK学习记录/Controller_UI.png" alt="Controller_UI"></p>
+<h6 id="3-2-2-物体坐标系"><a href="#3-2-2-物体坐标系" class="headerlink" title="3.2.2 物体坐标系"></a>3.2.2 物体坐标系</h6><p>​    物体坐标系是特定物体相关联的坐标系，每个物体都有独立的坐标系，当物体移动或改变方向时，该物体相关联的坐标系也会移动或改变方向。</p>
+<p>​    世界坐标系也叫模型坐标系。</p>
 <ul>
-<li>Heighlighter …. ； VRTK_UI Pointer为ui互动所必须组件</li>
+<li>周围有需要相互作用的物体吗？（我要攻击他吗？）</li>
+<li>哪个方向？前面？左边？</li>
 </ul>
-<h4 id="射线与场景互动"><a href="#射线与场景互动" class="headerlink" title="射线与场景互动"></a>射线与场景互动</h4><p>控制器上可以添加自定义脚本，使之可以与场景中的物体进行互动,脚本参考VRTK_ControllerPointerEvents_ListenerExample</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">VRTK_ControllerPointerEvents_ListenerExample</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">bool</span> showHoverState = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Start</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">if</span> (GetComponent&lt;VRTK_DestinationMarker&gt;() == <span class="literal">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                VRTK_Logger.Error(VRTK_Logger.GetCommonMessage(VRTK_Logger.CommonMessageKeys.REQUIRED_COMPONENT_MISSING_FROM_GAMEOBJECT, <span class="string">&quot;VRTK_ControllerPointerEvents_ListenerExample&quot;</span>, <span class="string">&quot;VRTK_DestinationMarker&quot;</span>, <span class="string">&quot;the Controller Alias&quot;</span>));</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//Setup controller event listeners</span></span><br><span class="line">            GetComponent&lt;VRTK_DestinationMarker&gt;().DestinationMarkerEnter += <span class="keyword">new</span> DestinationMarkerEventHandler(DoPointerIn);</span><br><span class="line">            <span class="keyword">if</span> (showHoverState)</span><br><span class="line">            &#123;</span><br><span class="line">                GetComponent&lt;VRTK_DestinationMarker&gt;().DestinationMarkerHover += <span class="keyword">new</span> DestinationMarkerEventHandler(DoPointerHover);</span><br><span class="line">            &#125;</span><br><span class="line">            GetComponent&lt;VRTK_DestinationMarker&gt;().DestinationMarkerExit += <span class="keyword">new</span> DestinationMarkerEventHandler(DoPointerOut);</span><br><span class="line">            GetComponent&lt;VRTK_DestinationMarker&gt;().DestinationMarkerSet += <span class="keyword">new</span> DestinationMarkerEventHandler(DoPointerDestinationSet);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DebugLogger</span>(<span class="params"><span class="built_in">uint</span> index, <span class="built_in">string</span> action, Transform target, RaycastHit raycastHit, <span class="built_in">float</span> distance, Vector3 tipPosition</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="built_in">string</span> targetName = (target ? target.name : <span class="string">&quot;&lt;NO VALID TARGET&gt;&quot;</span>);</span><br><span class="line">            <span class="built_in">string</span> colliderName = (raycastHit.collider ? raycastHit.collider.name : <span class="string">&quot;&lt;NO VALID COLLIDER&gt;&quot;</span>);</span><br><span class="line">            VRTK_Logger.Info(<span class="string">&quot;Controller on index &#x27;&quot;</span> + index + <span class="string">&quot;&#x27; is &quot;</span> + action + <span class="string">&quot; at a distance of &quot;</span> + distance + <span class="string">&quot; on object named [&quot;</span> + targetName + <span class="string">&quot;] on the collider named [&quot;</span> + colliderName + <span class="string">&quot;] - the pointer tip position is/was: &quot;</span> + tipPosition);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DoPointerIn</span>(<span class="params"><span class="built_in">object</span> sender, DestinationMarkerEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), <span class="string">&quot;POINTER IN&quot;</span>, e.target, e.raycastHit, e.distance, e.destinationPosition);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DoPointerOut</span>(<span class="params"><span class="built_in">object</span> sender, DestinationMarkerEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), <span class="string">&quot;POINTER OUT&quot;</span>, e.target, e.raycastHit, e.distance, e.destinationPosition);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DoPointerHover</span>(<span class="params"><span class="built_in">object</span> sender, DestinationMarkerEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), <span class="string">&quot;POINTER HOVER&quot;</span>, e.target, e.raycastHit, e.distance, e.destinationPosition);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DoPointerDestinationSet</span>(<span class="params"><span class="built_in">object</span> sender, DestinationMarkerEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), <span class="string">&quot;POINTER DESTINATION&quot;</span>, e.target, e.raycastHit, e.distance, e.destinationPosition);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>​    </p>
-
+<h6 id="3-2-3-摄像机坐标系"><a href="#3-2-3-摄像机坐标系" class="headerlink" title="3.2.3 摄像机坐标系"></a>3.2.3 摄像机坐标系</h6><p>​    摄像机坐标系是和观察者密切相关的坐标系。可以被看做是一种特殊的“物体“坐标系，该”物体“坐标系定义在摄像机的屏幕可视区域。</p>
+<ul>
+<li>3D空间中的给定点在摄像机前方吗？</li>
+<li>某个物体是否在屏幕上？</li>
+<li>两个物体，谁在前？</li>
+</ul>
+<h6 id="3-2-4-惯性坐标系"><a href="#3-2-4-惯性坐标系" class="headerlink" title="3.2.4 惯性坐标系"></a>3.2.4 惯性坐标系</h6><p>​    为了简化世界坐标系到物体坐标系的转换，引入的新的坐标系。惯性坐标系的原点和物体坐标系的原点重合，轴和世界坐标系的轴平行。</p>
+<p>​    从世界坐标系到惯性坐标系只需要平移，从惯性坐标系到物体坐标系只需要旋转。</p>
+<h4 id="4、向量与标量"><a href="#4、向量与标量" class="headerlink" title="4、向量与标量"></a>4、向量与标量</h4>
             </div>
             
                 <div class="kratos-copyright text-center clearfix">
@@ -261,7 +231,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://kennyyyyyy.github.io/2021/06/06/VRTK%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/",
+                text: "http://kennyyyyyy.github.io/2022/10/07/3D%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%9B%BE%E5%BD%A2%E4%B8%8E%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -273,15 +243,11 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://kennyyyyyy.github.io/2021/06/06/VRTK%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/";
-            const title         = "「VRTK学习记录」";
+            const hostUrl       = "http://kennyyyyyy.github.io/2022/10/07/3D%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%9B%BE%E5%BD%A2%E4%B8%8E%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/";
+            const title         = "「3D数学基础：图形与游戏开发」";
             const excerpt       = `
-配置环境unity 2018.4.14VRTK 3.3.0steamVR 1.2.3
-键鼠模拟基本操作
-wasd控制人物移动
-鼠标默认控制人物方向
-alt切换控制模式
-鼠标：控制人物方向 —&gt;控制左右Controller的水平...`;
+2、笛卡尔坐标系3、多坐标系3.2 一些有用的坐标系3.2.1 世界坐标系​    世界坐标系建立了描述其他坐标系所需要的参考框架，能够用世界坐标系描述其他坐标系的位置，而不能用更大的、外部的坐标系来描述世界坐标系。
+​    世界...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -300,10 +266,10 @@ alt切换控制模式
                 <div class="footer-tag clearfix">
                     <div class="pull-left">
                     <i class="fa fa-tags"></i>
-                        <a class="tag-none-link" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag">经验</a>, <a class="tag-none-link" href="/tags/%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" rel="tag">错误总结</a>
+                        <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>, <a class="tag-none-link" href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/" rel="tag">图形学</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-07-20</span>
+                    <span>最后编辑：2022-10-07</span>
                     </div>
                 </div>
             </footer>
@@ -312,13 +278,9 @@ alt切换控制模式
             <nav class="navigation post-navigation clearfix" role="navigation">
                 
                 <div class="nav-previous clearfix">
-                    <a title=" JavaScript" href="/2021/04/25/Web/">&lt; 上一篇</a>
+                    <a title=" 操作系统/计网/数据库" href="/2022/09/22/八股/">&lt; 上一篇</a>
                 </div>
                 
-                
-                <div class="nav-next clearfix">
-                    <a title=" 每日一题" href="/2021/07/19/每日一题/">下一篇 &gt;</a>
-                </div>
                 
             </nav>
         
@@ -355,7 +317,7 @@ alt切换控制模式
         <span class="toc-progress-bar"></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="toc-text">配置环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%AE%E9%BC%A0%E6%A8%A1%E6%8B%9F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">键鼠模拟基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Controller%E7%9B%B8%E5%85%B3"><span class="toc-text">Controller相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8%E5%9F%BA%E6%9C%AC%E7%BB%84%E4%BB%B6"><span class="toc-text">控制器基本组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%84%E7%BA%BF%E4%B8%8E%E5%9C%BA%E6%99%AF%E4%BA%92%E5%8A%A8"><span class="toc-text">射线与场景互动</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E7%AC%9B%E5%8D%A1%E5%B0%94%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">2、笛卡尔坐标系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E5%A4%9A%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">3、多坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">3.2 一些有用的坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#3-2-1-%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">3.2.1 世界坐标系</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-2-2-%E7%89%A9%E4%BD%93%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">3.2.2 物体坐标系</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-2-3-%E6%91%84%E5%83%8F%E6%9C%BA%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">3.2.3 摄像机坐标系</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-2-4-%E6%83%AF%E6%80%A7%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">3.2.4 惯性坐标系</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81%E5%90%91%E9%87%8F%E4%B8%8E%E6%A0%87%E9%87%8F"><span class="toc-text">4、向量与标量</span></a></li></ol>
     </div>
 </aside>
                 

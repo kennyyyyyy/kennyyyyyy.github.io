@@ -6,7 +6,7 @@
   <link href="http://kennyyyyyy.github.io/atom.xml" rel="self"/>
   
   <link href="http://kennyyyyyy.github.io/"/>
-  <updated>2022-09-27T09:31:54.766Z</updated>
+  <updated>2022-10-07T12:05:39.460Z</updated>
   <id>http://kennyyyyyy.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>3D数学基础：图形与游戏开发</title>
+    <link href="http://kennyyyyyy.github.io/2022/10/07/3D%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%9B%BE%E5%BD%A2%E4%B8%8E%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    <id>http://kennyyyyyy.github.io/2022/10/07/3D%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%9B%BE%E5%BD%A2%E4%B8%8E%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</id>
+    <published>2022-10-07T11:38:59.000Z</published>
+    <updated>2022-10-07T12:05:39.460Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span><h4 id="2、笛卡尔坐标系"><a href="#2、笛卡尔坐标系" class="headerlink" title="2、笛卡尔坐标系"></a>2、笛卡尔坐标系</h4><h4 id="3、多坐标系"><a href="#3、多坐标系" class="headerlink" title="3、多坐标系"></a>3、多坐标系</h4><h5 id="3-2-一些有用的坐标系"><a href="#3-2-一些有用的坐标系" class="headerlink" title="3.2 一些有用的坐标系"></a>3.2 一些有用的坐标系</h5><h6 id="3-2-1-世界坐标系"><a href="#3-2-1-世界坐标系" class="headerlink" title="3.2.1 世界坐标系"></a>3.2.1 世界坐标系</h6><p>​    世界坐标系建立了描述其他坐标系所需要的参考框架，能够用世界坐标系描述其他坐标系的位置，而不能用更大的、外部的坐标系来描述世界坐标系。</p><p>​    世界坐标系的典型问题都是关于<strong>初始位置和环境</strong>的，如：</p><ul><li>每个物体的位置和方向；</li><li>摄像机的位置和方向；</li><li>世界中没一点的地形是什么（如山丘、湖泊等）；</li><li>个物体从哪里来，到哪里去（NPC的运动策略）。</li></ul><h6 id="3-2-2-物体坐标系"><a href="#3-2-2-物体坐标系" class="headerlink" title="3.2.2 物体坐标系"></a>3.2.2 物体坐标系</h6><p>​    物体坐标系是特定物体相关联的坐标系，每个物体都有独立的坐标系，当物体移动或改变方向时，该物体相关联的坐标系也会移动或改变方向。</p><p>​    世界坐标系也叫模型坐标系。</p><ul><li>周围有需要相互作用的物体吗？（我要攻击他吗？）</li><li>哪个方向？前面？左边？</li></ul><h6 id="3-2-3-摄像机坐标系"><a href="#3-2-3-摄像机坐标系" class="headerlink" title="3.2.3 摄像机坐标系"></a>3.2.3 摄像机坐标系</h6><p>​    摄像机坐标系是和观察者密切相关的坐标系。可以被看做是一种特殊的“物体“坐标系，该”物体“坐标系定义在摄像机的屏幕可视区域。</p><ul><li>3D空间中的给定点在摄像机前方吗？</li><li>某个物体是否在屏幕上？</li><li>两个物体，谁在前？</li></ul><h6 id="3-2-4-惯性坐标系"><a href="#3-2-4-惯性坐标系" class="headerlink" title="3.2.4 惯性坐标系"></a>3.2.4 惯性坐标系</h6><p>​    为了简化世界坐标系到物体坐标系的转换，引入的新的坐标系。惯性坐标系的原点和物体坐标系的原点重合，轴和世界坐标系的轴平行。</p><p>​    从世界坐标系到惯性坐标系只需要平移，从惯性坐标系到物体坐标系只需要旋转。</p><h4 id="4、向量与标量"><a href="#4、向量与标量" class="headerlink" title="4、向量与标量"></a>4、向量与标量</h4>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;h4 id=&quot;2、笛卡尔坐标系&quot;&gt;&lt;a href=&quot;#2、笛卡尔坐标系&quot; class=&quot;headerlink&quot; title=&quot;2、笛卡尔坐标系&quot;&gt;&lt;/a&gt;2、笛卡尔坐标系&lt;/h4&gt;&lt;h4 id=&quot;3、多坐标系&quot;&gt;&lt;a href=&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="Unity" scheme="http://kennyyyyyy.github.io/tags/Unity/"/>
+    
+    <category term="图形学" scheme="http://kennyyyyyy.github.io/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统/计网/数据库</title>
@@ -114,9 +139,9 @@
     
     
     
-    <category term="Lua" scheme="http://kennyyyyyy.github.io/tags/Lua/"/>
-    
     <category term="Unity" scheme="http://kennyyyyyy.github.io/tags/Unity/"/>
+    
+    <category term="Lua" scheme="http://kennyyyyyy.github.io/tags/Lua/"/>
     
     <category term="C#" scheme="http://kennyyyyyy.github.io/tags/C/"/>
     
