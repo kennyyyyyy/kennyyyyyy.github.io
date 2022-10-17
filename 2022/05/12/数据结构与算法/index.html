@@ -24,7 +24,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2022-05-12T02:30:23.000Z">
-<meta property="article:modified_time" content="2022-10-17T12:15:49.153Z">
+<meta property="article:modified_time" content="2022-10-17T12:45:42.982Z">
 <meta property="article:author" content="kennyyy">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="数据结构">
@@ -147,7 +147,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1666008949153"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1666010742982"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
@@ -173,7 +173,7 @@
 <p><strong>应用</strong>：词汇量统计</p>
 <h5 id="映射（Reflection）："><a href="#映射（Reflection）：" class="headerlink" title="映射（Reflection）："></a><strong>映射（Reflection）</strong>：</h5><p>特殊集合，例如Dictionary，存储的是键值对</p>
 <p><strong>应用</strong>：词汇量统计</p>
-<h5 id="有序数组："><a href="#有序数组：" class="headerlink" title="有序数组："></a><strong>有序数组：</strong></h5><p><img src="../images/数据结构与算法/image-20220323182228705.png" alt="image-20220323182228705" style="zoom:50%;"></p>
+<h5 id="有序数组："><a href="#有序数组：" class="headerlink" title="有序数组："></a><strong>有序数组：</strong></h5><p><img src="/images/数据结构与算法/image-20220323182228705.png" alt="image-20220323182228705" style="zoom:50%;"></p>
 <ul>
 <li>Rank使用二分查找找到target的对应位置，方便add 和 remove 的操作，保证数组始终有序</li>
 </ul>
@@ -211,7 +211,7 @@
 </li>
 <li><p><strong>三路快排</strong>：<font color="red">有重复元素的快速排序</font> ，即相比上一个方法，多了等于flag的情况</p>
 <p>即将数组中的元素分为三个区域，大于[gt, right] 小于[l+1, lt]和等于选定值flag的情况</p>
-<p><img src="../images/数据结构与算法/70.png" alt="img"></p>
+<p><img src="/images/数据结构与算法/70.png" alt="img"></p>
 <p>i 指向当前元素</p>
 <ul>
 <li>若 i 指向元素等于flag，则i++；</li>
@@ -361,7 +361,9 @@
 </li>
 </ul>
 <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><h6 id="智能指针-shared-ptr"><a href="#智能指针-shared-ptr" class="headerlink" title="智能指针(shared_ptr)"></a>智能指针(shared_ptr)</h6><ul>
-<li><h6 id="字典序"><a href="#字典序" class="headerlink" title="字典序"></a>字典序</h6></li>
+<li>ss</li>
+</ul>
+<h6 id="字典序"><a href="#字典序" class="headerlink" title="字典序"></a>字典序</h6><ul>
 <li></li>
 </ul>
 <h6 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h6><ul>
@@ -689,5 +691,20 @@
 <!-- Extra support for third-party plguins  -->
 
 
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+//<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
