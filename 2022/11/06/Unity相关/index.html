@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="/images/logo.jpg">
-  <title>FSM状态机 | Imperio</title>
+  <title>Unity相关 | Imperio</title>
   <meta name="author" content="kennyyy" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -13,20 +13,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="unity" />
+    <meta name="keywords" content="Unity" />
   
-  <meta name="description" content="介绍FSM是一个可以枚举出有限个状态，并且这些个状态在特定条件下能够来回切换的机器。 是一种设计模式  代码设计">
+  <meta name="description" content="UIToolkit 可视化UI编辑器，类似于网页前端的编写  缺点（暂时，官方已在优化）  不依赖于GameObject工作流，难以制作放置在3D世界中的可互动的UI； 不支持Shader，特效制作不方便； 不支持Animator，无法制作实时循环动画（自带了Transition动画系统）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FSM状态机">
-<meta property="og:url" content="http://kennyyyyyy.github.io/2021/07/29/FSM%E7%8A%B6%E6%80%81%E6%9C%BA/index.html">
+<meta property="og:title" content="Unity相关">
+<meta property="og:url" content="http://kennyyyyyy.github.io/2022/11/06/Unity%E7%9B%B8%E5%85%B3/index.html">
 <meta property="og:site_name" content="Imperio">
-<meta property="og:description" content="介绍FSM是一个可以枚举出有限个状态，并且这些个状态在特定条件下能够来回切换的机器。 是一种设计模式  代码设计">
+<meta property="og:description" content="UIToolkit 可视化UI编辑器，类似于网页前端的编写  缺点（暂时，官方已在优化）  不依赖于GameObject工作流，难以制作放置在3D世界中的可互动的UI； 不支持Shader，特效制作不方便； 不支持Animator，无法制作实时循环动画（自带了Transition动画系统）。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
-<meta property="article:published_time" content="2021-07-29T11:36:24.000Z">
-<meta property="article:modified_time" content="2021-07-29T13:47:44.736Z">
+<meta property="article:published_time" content="2022-11-06T05:46:42.000Z">
+<meta property="article:modified_time" content="2022-11-06T06:41:40.345Z">
 <meta property="article:author" content="kennyyy">
-<meta property="article:tag" content="unity">
+<meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta name="twitter:site" content="@null">
@@ -128,16 +128,16 @@
     <article>
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
-                <h1 class="kratos-entry-title text-center">FSM状态机</h1>
+                <h1 class="kratos-entry-title text-center">Unity相关</h1>
                 
                 <ul class="kratos-post-meta text-center">
-                    <li><i class="fa fa-calendar"></i> 2021-07-29</li>
+                    <li><i class="fa fa-calendar"></i> 2022-11-06</li>
                     <li><i class="fa fa-user"></i> 作者 kennyyy</li>
                     <li>
                         <i class="fa fa-edit"></i> 
                         
                         
-                            60
+                            152
                         
                         字
                     </li>
@@ -146,21 +146,27 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1627566464736"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1667716900345"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
-                        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.1.</span> <span class="toc-text">代码设计</span></a></li></ol></li></ol>
+                        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#UI"><span class="toc-number">1.</span> <span class="toc-text">UI</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Toolkit"><span class="toc-number">1.1.</span> <span class="toc-text">Toolkit</span></a></li></ol></li></ol>
                     </div>
                 
                 <hr />
                 <span id="more"></span>
-<ol>
-<li><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>FSM是一个可以枚举出有限个状态，并且这些个状态在特定条件下能够来回切换的机器。</p>
-<p>是一种设计模式</p>
+<hr>
+<h4 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h4><h5 id="Toolkit"><a href="#Toolkit" class="headerlink" title="Toolkit"></a>Toolkit</h5><ul>
+<li><p>可视化UI编辑器，类似于网页前端的编写</p>
 </li>
-<li><h3 id="代码设计"><a href="#代码设计" class="headerlink" title="代码设计"></a>代码设计</h3></li>
+<li><p>缺点（暂时，官方已在优化）</p>
+<ol>
+<li>不依赖于GameObject工作流，难以制作放置在3D世界中的可互动的UI；</li>
+<li>不支持Shader，特效制作不方便；</li>
+<li>不支持Animator，无法制作实时循环动画（自带了Transition动画系统）。</li>
 </ol>
+</li>
+</ul>
 
             </div>
             
@@ -214,7 +220,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://kennyyyyyy.github.io/2021/07/29/FSM%E7%8A%B6%E6%80%81%E6%9C%BA/",
+                text: "http://kennyyyyyy.github.io/2022/11/06/Unity%E7%9B%B8%E5%85%B3/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -226,16 +232,18 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://kennyyyyyy.github.io/2021/07/29/FSM%E7%8A%B6%E6%80%81%E6%9C%BA/";
-            const title         = "「FSM状态机」";
+            const hostUrl       = "http://kennyyyyyy.github.io/2022/11/06/Unity%E7%9B%B8%E5%85%B3/";
+            const title         = "「Unity相关」";
             const excerpt       = `
 
-介绍FSM是一个可以枚举出有限个状态，并且这些个状态在特定条件下能够来回切换的机器。
-是一种设计模式
+UIToolkit
+可视化UI编辑器，类似于网页前端的编写
 
-代码设计
+缺点（暂时，官方已在优化）
 
-`;
+不依赖于GameObject工作流，难以制作放置在3D世界中的可互动的UI；
+不支持Shader，特效制作不方便；
+不支持Animator...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -254,10 +262,10 @@
                 <div class="footer-tag clearfix">
                     <div class="pull-left">
                     <i class="fa fa-tags"></i>
-                        <a class="tag-none-link" href="/tags/unity/" rel="tag">unity</a>
+                        <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-07-29</span>
+                    <span>最后编辑：2022-11-06</span>
                     </div>
                 </div>
             </footer>
@@ -266,13 +274,9 @@
             <nav class="navigation post-navigation clearfix" role="navigation">
                 
                 <div class="nav-previous clearfix">
-                    <a title=" 3D RPG 学习笔记" href="/2021/07/23/3D-RPG-学习笔记/">&lt; 上一篇</a>
+                    <a title=" 3D数学基础：图形与游戏开发" href="/2022/10/07/3D数学基础：图形与游戏开发/">&lt; 上一篇</a>
                 </div>
                 
-                
-                <div class="nav-next clearfix">
-                    <a title=" 剑指offer" href="/2021/09/16/剑指offer/">下一篇 &gt;</a>
-                </div>
                 
             </nav>
         
@@ -309,7 +313,7 @@
         <span class="toc-progress-bar"></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1"><span class="toc-text">代码设计</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#UI"><span class="toc-text">UI</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Toolkit"><span class="toc-text">Toolkit</span></a></li></ol></li></ol>
     </div>
 </aside>
                 
@@ -339,6 +343,12 @@
         
           
           
+            <a class="list-group-item" href="/2022/11/06/Unity%E7%9B%B8%E5%85%B3/"><i class="fa  fa-book"></i> Unity相关</a>
+            
+          
+        
+          
+          
             <a class="list-group-item" href="/2022/10/07/3D%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%9B%BE%E5%BD%A2%E4%B8%8E%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"><i class="fa  fa-book"></i> 3D数学基础：图形与游戏开发</a>
             
           
@@ -362,11 +372,7 @@
           
         
           
-          
-            <a class="list-group-item" href="/2022/08/16/%E7%83%AD%E6%9B%B4%E6%96%B0/"><i class="fa  fa-book"></i> 热更新</a>
             
-          
-        
           
             
           
