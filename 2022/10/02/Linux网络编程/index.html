@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/logo.jpg">
+  <title>Linux网络编程 | Imperio</title>
+  <meta name="author" content="kennyyy" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Linux, Socket" />
+  
+  <meta name="description" content="Socket编程GitHub基础知识 Socket地址结构 123456789struct sockaddr_in&amp;#123;    uint8_t sin_len;			&#x2F;&#x2F;结构体长度    sa_family_t sin_family;		&#x2F;&#x2F;指定该地址家族，设为AF——INET，表示使用的是IPv4协议    in_port_t sin_port;			&#x2F;&#x2F;端口    struct in_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux网络编程">
+<meta property="og:url" content="http://kennyyyyyy.github.io/2022/10/02/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Imperio">
+<meta property="og:description" content="Socket编程GitHub基础知识 Socket地址结构 123456789struct sockaddr_in&amp;#123;    uint8_t sin_len;			&#x2F;&#x2F;结构体长度    sa_family_t sin_family;		&#x2F;&#x2F;指定该地址家族，设为AF——INET，表示使用的是IPv4协议    in_port_t sin_port;			&#x2F;&#x2F;端口    struct in_">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
+<meta property="article:published_time" content="2022-10-01T17:01:40.000Z">
+<meta property="article:modified_time" content="2022-12-03T14:53:03.390Z">
+<meta property="article:author" content="kennyyy">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Socket">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Imperio" type="application/atom+xml">
+</head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">Imperio</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://imperio.cn">作者</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/kennyyyyyy/kennyyyyyy.github.io">链接</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Imperio</h2> <br />
+                        <span>Boy♂ Next♂ Door~</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">Linux网络编程</h1>
+                
+                <ul class="kratos-post-meta text-center">
+                    <li><i class="fa fa-calendar"></i> 2022-10-02</li>
+                    <li><i class="fa fa-user"></i> 作者 kennyyy</li>
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~15.40K
+                        
+                        字
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1670079183390"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                    <div class="kratos-post-inner-toc">
+                        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Socket%E7%BC%96%E7%A8%8BGitHub"><span class="toc-number">1.</span> <span class="toc-text">Socket编程GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#cs%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">cs模型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-number">1.3.</span> <span class="toc-text">简单的客户端和服务端</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E7%B2%98%E5%8C%85"><span class="toc-number">1.4.</span> <span class="toc-text">流协议与粘包</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Socket%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="toc-number">1.5.</span> <span class="toc-text">Socket相关函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.6.</span> <span class="toc-text">僵尸进程</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#TCP"><span class="toc-number">1.7.</span> <span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BA%94%E7%A7%8DIO%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.8.</span> <span class="toc-text">五种IO模型</span></a></li></ol></li></ol>
+                    </div>
+                
+                <hr />
+                <span id="more"></span>
+<h5 id="Socket编程GitHub"><a href="#Socket编程GitHub" class="headerlink" title="Socket编程GitHub"></a>Socket编程<a target="_blank" rel="noopener" href="https://github.com/kennyyyyyy/Linux-Network-Programming">GitHub</a></h5><h6 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h6><ul>
+<li><p>Socket地址结构</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">uint8_t</span> sin_len;			<span class="comment">//结构体长度</span></span><br><span class="line">    <span class="keyword">sa_family_t</span> sin_family;		<span class="comment">//指定该地址家族，设为AF——INET，表示使用的是IPv4协议</span></span><br><span class="line">    <span class="keyword">in_port_t</span> sin_port;			<span class="comment">//端口</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">in_addr</span> <span class="title">sin_addr</span>;</span>	<span class="comment">//IPv4 地址</span></span><br><span class="line">    <span class="keyword">char</span> sin_zero[<span class="number">8</span>];			<span class="comment">//一般设为0</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/images/Linux网络编程/image-20221202011444543.png" alt="man 7 ip"></p>
+</li>
+<li><p>字节序（大端/小端）</p>
+<p><img src="/images/Linux网络编程/image-20221202011643976.png" alt="字节序"></p>
+<ul>
+<li><p>字节序转换</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//h代表host；n代表network；s代表short；l代表long</span></span><br><span class="line"><span class="function"><span class="keyword">uint32_t</span> <span class="title">htonl</span><span class="params">(<span class="keyword">uint32_t</span> hostlong)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">uint16_t</span> <span class="title">htons</span><span class="params">(<span class="keyword">uint16_t</span> hostshort)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">uint32_t</span> <span class="title">ntohl</span><span class="params">(<span class="keyword">uint32_t</span> netlong)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">uint16_t</span> <span class="title">ntohs</span><span class="params">(<span class="keyword">uint16_t</span> netshort)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>地址转换函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">inet_aton</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *cp, struct in_addr *inp)</span></span>;	<span class="comment">//将点分十进制转换为地址结构</span></span><br><span class="line"><span class="function"><span class="keyword">in_addr_t</span> <span class="title">inet_addr</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *cp)</span></span>;				<span class="comment">//点分十进制-&gt;32位整数</span></span><br><span class="line"><span class="function"><span class="keyword">in_addr_t</span> <span class="title">inet_network</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *cp)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">inet_ntoa</span><span class="params">(struct in_addr in)</span></span>;					<span class="comment">//地址结构转换成点分十进制IP</span></span><br><span class="line"><span class="function">struct in_addr <span class="title">inet_makeaddr</span><span class="params">(<span class="keyword">in_addr_t</span> net, <span class="keyword">in_addr_t</span> host)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">in_addr_t</span> <span class="title">inet_lnaof</span><span class="params">(struct in_addr in)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">in_addr_t</span> <span class="title">inet_netof</span><span class="params">(struct in_addr in)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>套接字类型</p>
+<ul>
+<li>流式套接字：TCP</li>
+<li>数据包套接字：UDP</li>
+<li>原始套接字</li>
+</ul>
+</li>
+<li><p>测试代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">int</span> val = <span class="number">0x12345678</span>;</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">char</span> *p = (<span class="keyword">unsigned</span> <span class="keyword">char</span>*)&amp;val;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%0x %0x %0x %0x\n&quot;</span>, p[<span class="number">0</span>], p[<span class="number">1</span>], p[<span class="number">2</span>], p[<span class="number">3</span>]);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">int</span> val2 = htonl(val);</span><br><span class="line">        p = (<span class="keyword">unsigned</span> <span class="keyword">char</span>*)&amp;val2;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%0x %0x %0x %0x\n&quot;</span>, p[<span class="number">0</span>], p[<span class="number">1</span>], p[<span class="number">2</span>], p[<span class="number">3</span>]);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">char</span>* cp = <span class="string">&quot;192.168.0.1&quot;</span>;</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> num = inet_addr(cp);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%u\n&quot;</span>, ntohl(num));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//Makefile 多文件编译</span><br><span class="line">CXX = gcc</span><br><span class="line">CXX_FLAGS = -Wall -g</span><br><span class="line">SRC = <span class="variable">$(<span class="built_in">wildcard</span> *.c)</span></span><br><span class="line">NOTDIR_SRC  = <span class="variable">$(<span class="built_in">notdir</span> <span class="variable">$(SRC)</span>)</span></span><br><span class="line">OBJS = <span class="variable">$(<span class="built_in">patsubst</span> %.c, ./bin/%.o, <span class="variable">$(NOTDIR_SRC)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>:all</span></span><br><span class="line"><span class="comment"># 多目标</span></span><br><span class="line">TARGET_LIST = <span class="variable">$(<span class="built_in">patsubst</span> %.c, %, <span class="variable">$(NOTDIR_SRC)</span>)</span></span><br><span class="line"><span class="section">all:<span class="variable">$(TARGET_LIST)</span></span></span><br><span class="line"><span class="variable">$(TARGET_LIST)</span>:<span class="variable">$(OBJS)</span></span><br><span class="line">        @echo <span class="variable">$@</span></span><br><span class="line">        <span class="variable">$(CXX)</span> -o ./bin/<span class="variable">$@</span> ./bin/<span class="variable">$@</span>.o</span><br><span class="line">        @echo <span class="variable">$(TARGET_LIST)</span></span><br><span class="line"><span class="section">./bin/%.o:%.c</span></span><br><span class="line">        <span class="variable">$(CXX)</span> -c  <span class="variable">$(CFLAGS)</span> <span class="variable">$&lt;</span> -o <span class="variable">$@</span>  </span><br><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>:clean</span></span><br><span class="line"><span class="section">clean:  </span></span><br><span class="line">        -rm -f ./bin/*</span><br></pre></td></tr></table></figure>
+<p>结果</p>
+<p><img src="/images/Linux网络编程/image-20221202144939842.png" alt="测试结果"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="cs模型"><a href="#cs模型" class="headerlink" title="cs模型"></a>cs模型</h6><p><img src="/images/Linux网络编程/image-20221202145048263.png" alt="cs模型结构"></p>
+<h6 id="简单的客户端和服务端"><a href="#简单的客户端和服务端" class="headerlink" title="简单的客户端和服务端"></a>简单的客户端和服务端</h6><ul>
+<li><p>服务端</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERR_EXIT(m) \</span></span><br><span class="line">        <span class="keyword">do</span>  \</span><br><span class="line">        &#123;   \</span><br><span class="line">            perror(m);  \</span><br><span class="line">            <span class="built_in">exit</span>(EXIT_FAILURE); \</span><br><span class="line">        &#125; <span class="keyword">while</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//创建套接字</span></span><br><span class="line">	<span class="keyword">int</span> listenfd;</span><br><span class="line">	<span class="keyword">if</span>((listenfd = socket(PF_INET, SOCK_STREAM, <span class="number">0</span>)) &lt; <span class="number">0</span> )</span><br><span class="line">	&#123;</span><br><span class="line">		ERR_EXIT(<span class="string">&quot;socket&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//创建套接字地址</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">servaddr</span>;</span></span><br><span class="line">	<span class="built_in">memset</span>(&amp;servaddr, <span class="number">0</span>, <span class="keyword">sizeof</span>(servaddr));</span><br><span class="line">	servaddr.sin_family = AF_INET;</span><br><span class="line">	servaddr.sin_port = htons(<span class="number">6666</span>);</span><br><span class="line">	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);</span><br><span class="line">	<span class="comment">//servaddr.sin_addr.s_addr = inet_addr(&quot;127.0.0.1&quot;); </span></span><br><span class="line">	<span class="comment">//inet_aton()&quot;127.0.0.1&quot;, &amp;servaddr.sin_addr);</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//绑定地址</span></span><br><span class="line">	<span class="keyword">if</span>(bind(listenfd, (struct sockaddr*)&amp;servaddr, <span class="keyword">sizeof</span>(servaddr)) &lt; <span class="number">0</span>)</span><br><span class="line">		ERR_EXIT(<span class="string">&quot;bind&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//监听，等待连接请求</span></span><br><span class="line">	<span class="keyword">if</span>(listen(listenfd, SOMAXCONN) &lt; <span class="number">0</span>)</span><br><span class="line">		ERR_EXIT(<span class="string">&quot;listen&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">peeraddr</span>;</span></span><br><span class="line">	<span class="keyword">socklen_t</span> peerlen = <span class="keyword">sizeof</span>(peeraddr);</span><br><span class="line">	<span class="keyword">int</span> conn;</span><br><span class="line">    <span class="comment">//从已完成连接中会的第一个连接，若无连接，则阻塞（被动套接字）</span></span><br><span class="line">	<span class="keyword">if</span>((conn = accept(listenfd, (struct sockaddr*)&amp;peeraddr, &amp;peerlen)) &lt; <span class="number">0</span>)</span><br><span class="line">		ERR_EXIT(<span class="string">&quot;accept&quot;</span>);</span><br><span class="line">	<span class="keyword">char</span> recvbud[<span class="number">1024</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//数据交换</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">memset</span>(recvbud, <span class="number">0</span>, <span class="keyword">sizeof</span>(recvbud));</span><br><span class="line">		<span class="keyword">int</span> ret = read(conn, recvbud, <span class="keyword">sizeof</span>(recvbud));</span><br><span class="line">		<span class="built_in">fputs</span>(recvbud, <span class="built_in">stdout</span>);</span><br><span class="line">		write(conn, recvbud, ret);</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//断开连接</span></span><br><span class="line">	close(conn);</span><br><span class="line">	close(listenfd);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>客户端</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERR_EXIT(m) \</span></span><br><span class="line">        <span class="keyword">do</span>  \</span><br><span class="line">        &#123;   \</span><br><span class="line">            perror(m);  \</span><br><span class="line">            <span class="built_in">exit</span>(EXIT_FAILURE); \</span><br><span class="line">        &#125; <span class="keyword">while</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> sock;</span><br><span class="line">	<span class="keyword">if</span>((sock = socket(AF_INET, SOCK_STREAM, <span class="number">0</span>) )&lt; <span class="number">0</span> )</span><br><span class="line">	&#123;</span><br><span class="line">		ERR_EXIT(<span class="string">&quot;socket&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">servaddr</span>;</span></span><br><span class="line">	<span class="built_in">memset</span>(&amp;servaddr, <span class="number">0</span>, <span class="keyword">sizeof</span>(servaddr));</span><br><span class="line">	servaddr.sin_family = AF_INET;</span><br><span class="line">	servaddr.sin_port = htons(<span class="number">6666</span>);</span><br><span class="line">	servaddr.sin_addr.s_addr = inet_addr(<span class="string">&quot;127.0.0.1&quot;</span>); </span><br><span class="line">	</span><br><span class="line">    <span class="comment">//向服务端发起连接（主动套接字）</span></span><br><span class="line">	<span class="keyword">if</span>(connect(sock, (struct sockaddr*)&amp;servaddr, <span class="keyword">sizeof</span>(servaddr) )&lt; <span class="number">0</span>)</span><br><span class="line">		ERR_EXIT(<span class="string">&quot;Connect&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> sendbuf[<span class="number">1024</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">char</span> recvbuf[<span class="number">1024</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">while</span>(fgets(sendbuf, <span class="keyword">sizeof</span>(sendbuf), <span class="built_in">stdin</span>) != <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		write(sock, sendbuf, <span class="built_in">strlen</span>(sendbuf));</span><br><span class="line">		read(sock, recvbuf, <span class="keyword">sizeof</span>(recvbuf));</span><br><span class="line">		<span class="built_in">fputs</span>(recvbuf, <span class="built_in">stdout</span>);</span><br><span class="line"></span><br><span class="line">		<span class="built_in">memset</span>(recvbuf, <span class="number">0</span>, <span class="keyword">sizeof</span>(recvbuf));</span><br><span class="line">		<span class="built_in">memset</span>(sendbuf, <span class="number">0</span>, <span class="keyword">sizeof</span>(sendbuf));</span><br><span class="line">	&#125;</span><br><span class="line">	close(sock);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>结果</p>
+<p><img src="/images/Linux网络编程/image-20221202160710011.png" alt="服务端"></p>
+<p><img src="/images/Linux网络编程/image-20221202160726885.png" alt="客户端"></p>
+</li>
+<li><p>REUSEADDR</p>
+<p>服务端断开连接的一段时间内会处于TIME_WAIT状态，再此状态下无法进行绑定连接。</p>
+<ul>
+<li><p>服务端尽可能使用REUSERADDR</p>
+</li>
+<li><p>绑定前尽可能调用setsockopt来设置REUSERADDR套接字选项</p>
+</li>
+<li><p>使用REUSERADDR选项可以使得不必等待TIME_WAIT状态结束就可以重启服务器</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//set REUSEADDR opt</span></span><br><span class="line"><span class="keyword">int</span> on = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span>(setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, &amp;on, <span class="keyword">sizeof</span>(on)) &lt; <span class="number">0</span>)</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;setsocektopt&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>处理多个客户端的连接：通过一个连接一个进程来处理并发</p>
+<p>服务端在获得连接时创建子进程进行消息处理</p>
+<p>客户端关闭后退出循环，并关闭进程。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">do_service</span><span class="params">(<span class="keyword">int</span> conn)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> recvbud[<span class="number">1024</span>];</span><br><span class="line">    <span class="comment">//数据交换</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(recvbud, <span class="number">0</span>, <span class="keyword">sizeof</span>(recvbud));</span><br><span class="line">        <span class="keyword">int</span> ret = read(conn, recvbud, <span class="keyword">sizeof</span>(recvbud));</span><br><span class="line">        <span class="keyword">if</span>(ret == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Client closed.&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">fputs</span>(recvbud, <span class="built_in">stdout</span>);</span><br><span class="line">        write(conn, recvbud, ret);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> conn;</span><br><span class="line"><span class="keyword">pid_t</span> pid;</span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//从已完成连接中会的第一个连接，若无连接，则阻塞（被动套接字）</span></span><br><span class="line">    <span class="keyword">if</span> ((conn = accept(listenfd, (struct sockaddr *)&amp;peeraddr, &amp;peerlen)) &lt; <span class="number">0</span>)</span><br><span class="line">        ERR_EXIT(<span class="string">&quot;accept&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;ip = %s port = %d\n&quot;</span>, inet_ntoa(peeraddr.sin_addr), ntohs(peeraddr.sin_port));</span><br><span class="line">	</span><br><span class="line">    <span class="comment">//创建子进程</span></span><br><span class="line">    pid = fork();</span><br><span class="line">    <span class="keyword">if</span> (pid == <span class="number">-1</span>)</span><br><span class="line">        ERR_EXIT(<span class="string">&quot;fork&quot;</span>);</span><br><span class="line">    <span class="comment">//子进程不需要关注listenfd，父进程不需要关注conn</span></span><br><span class="line">    <span class="keyword">if</span> (pid == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        close(listenfd);</span><br><span class="line">        do_service(conn);</span><br><span class="line">        <span class="built_in">exit</span>(EXIT_SUCCESS);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        close(conn);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//断开连接</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服务端发送消息（一对一）</p>
+<p>使用多进程向处理消息发送和接收</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//主要逻辑</span></span><br><span class="line"><span class="comment">//子进程处理消息接收，父进程处理消息发送</span></span><br><span class="line"><span class="comment">//服务端和客户端父子进程逻辑对调</span></span><br><span class="line"><span class="comment">//若接收进程为子进程时，则接收到断开连接消息时，只会结束子进程，因此采用信号，来发送消息，结束父进程</span></span><br><span class="line"><span class="keyword">pid_t</span> pid;</span><br><span class="line">pid = fork();</span><br><span class="line"><span class="keyword">if</span>(pid == <span class="number">-1</span>)</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;fork&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(pid == <span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> recvbud[<span class="number">1024</span>];</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(recvbud, <span class="number">0</span>, <span class="keyword">sizeof</span>(recvbud));</span><br><span class="line">        <span class="keyword">int</span> ret = read(sock, recvbud, <span class="keyword">sizeof</span>(recvbud));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(ret == <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ERR_EXIT(<span class="string">&quot;read&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(ret == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;peer closed\n&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">fputs</span>(recvbud, <span class="built_in">stdout</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    kill(pid, SIGUSR1);</span><br><span class="line">    <span class="built_in">exit</span>(EXIT_SUCCESS);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    signal(SIGUSR1, handler);</span><br><span class="line">    <span class="keyword">char</span> sendbuf[<span class="number">1024</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">while</span>(fgets(sendbuf, <span class="keyword">sizeof</span>(sendbuf), <span class="built_in">stdin</span>) != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        write(sock, sendbuf, <span class="built_in">strlen</span>(sendbuf));</span><br><span class="line"></span><br><span class="line">        <span class="built_in">memset</span>(sendbuf, <span class="number">0</span>, <span class="keyword">sizeof</span>(sendbuf));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">exit</span>(EXIT_SUCCESS);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//接收信号后的回调</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">handler</span><span class="params">(<span class="keyword">int</span> sign)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;received a sign = %d\n&quot;</span>, sign);</span><br><span class="line">	<span class="built_in">exit</span>(EXIT_SUCCESS);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="流协议与粘包"><a href="#流协议与粘包" class="headerlink" title="流协议与粘包"></a>流协议与粘包</h6><ul>
+<li><p>流式协议：基于字节流，无边界</p>
+</li>
+<li><p>粘包问题</p>
+<p><img src="/images/Linux网络编程/image-20221202222355082.png" alt="粘包"></p>
+</li>
+<li><p>粘包解决办法</p>
+<ul>
+<li>本质是在应用层维护消息与消息的边界<ul>
+<li>固定包的长度</li>
+<li>包结尾加上分隔符 \r\n (ftp)</li>
+<li>包头加上包的长度</li>
+<li>其他复杂应用层协议</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>readn &amp; writen</p>
+<p>对 read 和 wirte 函数进行封装</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//读取消息，只有读取了count大小的数据或无数据可读时才会退出循环</span></span><br><span class="line"><span class="function"><span class="keyword">ssize_t</span> <span class="title">readn</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> count)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">size_t</span> nleft = count;</span><br><span class="line">	<span class="keyword">ssize_t</span> nread;</span><br><span class="line">	<span class="keyword">char</span> *bufp = (<span class="keyword">char</span>*) buf;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(nleft &gt; <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		nread = read(fd, bufp, nleft);</span><br><span class="line">		<span class="keyword">if</span>(nread &lt; <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(errno == EINTR)</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(nread == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> count - nleft;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			bufp += nread;</span><br><span class="line">			nleft -= nread;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//发送数据，只有在发送了count大小的数据才退出</span></span><br><span class="line"><span class="function"><span class="keyword">ssize_t</span> <span class="title">written</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">const</span> <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> count)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">size_t</span> nleft = count;</span><br><span class="line">	<span class="keyword">ssize_t</span> nwritten;</span><br><span class="line">	<span class="keyword">char</span> *bufp = (<span class="keyword">char</span>*) buf;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(nleft &gt; <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		nwritten = write(fd, bufp, nleft);</span><br><span class="line">		<span class="keyword">if</span>(nwritten &lt; <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(errno == EINTR)</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(nwritten == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			bufp += nwritten;</span><br><span class="line">			nleft -= nwritten;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>包头添加长度解决粘包</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数据包结构，包含数据长度和数据体</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">packet</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> len;</span><br><span class="line">	<span class="keyword">char</span> buf[<span class="number">1024</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">do_service</span><span class="params">(<span class="keyword">int</span> conn)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">packet</span> <span class="title">recvbuf</span>;</span></span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(&amp;recvbuf, <span class="number">0</span>, <span class="keyword">sizeof</span>(recvbuf));</span><br><span class="line">        <span class="comment">//读取包头的长度消息</span></span><br><span class="line">        <span class="keyword">int</span> ret = readn(conn, &amp;recvbuf.len, <span class="number">4</span>);</span><br><span class="line">        <span class="keyword">if</span>(ret == <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ERR_EXIT(<span class="string">&quot;read&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(ret &lt; <span class="number">4</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Client closed.\n&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        len = ntohl(recvbuf.len);</span><br><span class="line">        <span class="comment">//读取包体内容</span></span><br><span class="line">        ret = readn(conn, recvbuf.buf, len);</span><br><span class="line">		</span><br><span class="line">        <span class="keyword">if</span>(ret == <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ERR_EXIT(<span class="string">&quot;read&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(ret &lt; len)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Client closed.\n&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">	</span><br><span class="line">        <span class="built_in">fputs</span>(recvbuf.buf, <span class="built_in">stdout</span>);</span><br><span class="line">        written(conn, &amp;recvbuf, <span class="number">4</span> + len);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>read、write与recv、send</p>
+<p><code>ssize_t recv(int sockfd, void *buf, size_t len, int flags);</code></p>
+<p><code>ssize_t send(int sockfd, const void *buf, size_t len, int flags);</code> </p>
+<p><code>ssize_t read(int fd, void *buf, size_t count);</code> </p>
+<p><code>ssize_t write(int fd, const void *buf, size_t count);</code></p>
+<ul>
+<li><p>recv与read一样，都能从套接口缓冲区中获得数据</p>
+</li>
+<li><p>recv只能用于套接口IO，read能用于所有的IO</p>
+</li>
+<li><p>recv可以通过选项指定接收数据的行为</p>
+<ul>
+<li><strong>MSG_OOB</strong>：接收紧急指针发送的数据（out-of-band）</li>
+<li><strong>MSG_PEEK</strong>：接收缓冲区的数据，但不清除缓冲区的数据</li>
+</ul>
+</li>
+<li><p>封装recv_peek函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//读取到数据就返回</span></span><br><span class="line"><span class="function"><span class="keyword">ssize_t</span> <span class="title">recv_peek</span><span class="params">(<span class="keyword">int</span> sockfd, <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> ret = recv(sockfd, buf, len, MSG_PEEK);</span><br><span class="line">        <span class="keyword">if</span>(ret == <span class="number">-1</span> &amp; errno == EINTR)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>通过包尾添加对应字符解决粘包问题（\n）</p>
+<p>使用recv_peek实现readline</p>
+<p>使用recv_peek读取缓存区中的内容，直到读取到 <code>\n</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">ssize_t</span> <span class="title">readline</span><span class="params">(<span class="keyword">int</span> sockfd, <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> maxline)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret;</span><br><span class="line">    <span class="keyword">int</span> nread;</span><br><span class="line">    <span class="keyword">char</span> *bufp = buf;</span><br><span class="line">    <span class="keyword">int</span> nleft = maxline;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//读取一行数据</span></span><br><span class="line">        ret = recv_peek(sockfd, bufp, nleft);</span><br><span class="line">        <span class="keyword">if</span>(ret &lt;= <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> ret;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        nread = ret;</span><br><span class="line">        <span class="comment">//判断读取的数据中是否存在\n</span></span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; nread; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//存在结尾标志，清空缓存区，返回</span></span><br><span class="line">            <span class="keyword">if</span>(bufp[i] == <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                ret = readn(sockfd, bufp, i + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">if</span>(ret != i + <span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> ret;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">		</span><br><span class="line">        <span class="keyword">if</span>(nread &gt; nleft)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//不存在结尾标志，继续往后读取</span></span><br><span class="line">        nleft -= nread;</span><br><span class="line">        ret = readn(sockfd, bufp, nread);</span><br><span class="line">        <span class="keyword">if</span>(ret != nread)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">        &#125;    </span><br><span class="line">        bufp += nread;</span><br><span class="line">        nleft -= nread;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="Socket相关函数"><a href="#Socket相关函数" class="headerlink" title="Socket相关函数"></a>Socket相关函数</h6><ul>
+<li><p><strong>getsockname</strong> ：获得连接套接字本地的sockaddr</p>
+<p><code>int getsockname(int sockfd, struct sockaddr *addr, socklen_t *addrlen);</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">loacladdr</span>;</span></span><br><span class="line"><span class="keyword">socklen_t</span> addrlen = <span class="keyword">sizeof</span>(loacladdr);</span><br><span class="line"><span class="keyword">if</span>(getsockname(sock, (struct sockaddr*)&amp;loacladdr, &amp;addrlen) &lt; <span class="number">0</span>)</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;getsockname&quot;</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;ip = %s port = %d\n&quot;</span>, inet_ntoa(loacladdr.sin_addr), ntohs(loacladdr.sin_port));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p><strong>getpeername</strong>：获得连接套接字对方的sockaddr</p>
+<p><code>int getpeername(int sockfd, struct sockaddr *addr, socklen_t *addrlen);</code></p>
+</li>
+<li><p><strong>gethostname</strong></p>
+<p><code>int gethostname(char *name, size_t len);</code></p>
+<p>0 for success</p>
+<p>-1 for failure</p>
+</li>
+<li><p><strong>gethostbyname</strong></p>
+<p><code>struct hostent *gethostbyname(const char *name);</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">hostent</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span>  *h_name;            <span class="comment">/* official name of host */</span></span><br><span class="line">    <span class="keyword">char</span> **h_aliases;         <span class="comment">/* alias list */</span></span><br><span class="line">    <span class="keyword">int</span>    h_addrtype;        <span class="comment">/* host address type */</span></span><br><span class="line">    <span class="keyword">int</span>    h_length;          <span class="comment">/* length of address */</span></span><br><span class="line">    <span class="keyword">char</span> **h_addr_list;       <span class="comment">/* list of addresses */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>h_addr</strong>  equals  <strong>h_addr_list[0]</strong></p>
+</li>
+<li><p><strong>gethostbyaddr</strong></p>
+<p><code>struct hostent *gethostbyaddr(const void *addr, socklen_t len, int type);</code></p>
+</li>
+</ul>
+<h6 id="僵尸进程"><a href="#僵尸进程" class="headerlink" title="僵尸进程"></a>僵尸进程</h6><ul>
+<li><p>进程中的指令已经执行完成，但是进程PCB结构还没有回收。<br>即子进程先于父进程退出后，子进程的PCB需要其父进程释放，但是父进程并没有释放子进程的PCB，这样的子进程就称为僵尸进程。</p>
+</li>
+<li><p>父进程未结束，子进程结束，但父进程没有处理子进程的退出状态（当子进程先于父进程结束，父进程没有获取子进程的退出码，子进程的PCB会保留一段时间等待父进程在PCB中获取退出码，，且该进程不可执行，此时子进程变成僵尸进程）。<br>直到父进程获取到子进程的退出状态，子进程的PCB才会被移除。</p>
+</li>
+<li><p>采用信号的方式对僵尸进程进行忽略</p>
+<p><code>signal(SIGCHLD, SIG_IGN)</code></p>
+</li>
+<li><p>捕捉SIGCHLD信号来避免僵尸进程</p>
+<p><code>signal(SIGCHLD, handle_sigchld)</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">handle_sigchld</span><span class="params">(<span class="keyword">int</span> sig)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//捕捉到SIGCHLD状态后调用wait等待子进程状态</span></span><br><span class="line">    <span class="comment">//wait(NULL);		//只等待一个信号就会返回</span></span><br><span class="line">    <span class="keyword">while</span>(waitpid(<span class="number">-1</span>, <span class="literal">NULL</span>, WNOHANG) &gt; <span class="number">0</span>); 	<span class="comment">//接收到信号后，循环等待子进程，直到没有子进程</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h6><ul>
+<li><p>TCP的十一种状态</p>
+<p>还有一种状态为 CLOSING，其产生原因是双方同时关闭</p>
+<p><img src="/images/Linux网络编程/image-20221203191932559.png" alt="TCP的十一种状态" style="zoom: 67%;"></p>
+</li>
+<li><p>SIGPIPE信号</p>
+<ul>
+<li><p>收到FIN信号的套接字还可以接收数据，接收到FIN只代表对方不在发送数据</p>
+</li>
+<li><p>在收到RST段之后，即在接收到FIN之后，再调用wirte就会产生SIGPIPE信号，对于这个信号，一般忽略处理</p>
+<p><code>signal(SIGPIPE, GIS_IGN)</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="五种IO模型"><a href="#五种IO模型" class="headerlink" title="五种IO模型"></a>五种IO模型</h6><ul>
+<li><p>阻塞IO</p>
+<p><img src="/images/Linux网络编程/image-20221203211022074.png" alt="阻塞IO"></p>
+</li>
+<li><p>非阻塞IO</p>
+<p>将套接口设置为非阻塞模式</p>
+<p><code>fcntl(fd, F_SETFL, flag|0_NCNBLOCK)</code></p>
+<p><img src="/images/Linux网络编程/image-20221203211604927.png" alt="非阻塞IO"></p>
+</li>
+<li><p>I/O复用（select和poll）</p>
+<ul>
+<li><p>select</p>
+<p><img src="/images/Linux网络编程/image-20221203212032485.png" alt="select"></p>
+</li>
+</ul>
+</li>
+<li><p>信号驱动I/O</p>
+<p><img src="/images/Linux网络编程/image-20221203213430216.png" alt="信号驱动I/O"></p>
+</li>
+<li><p>异步I/O：效率最高</p>
+<p><img src="/images/Linux网络编程/image-20221203213740909.png" alt="image-20221203213740909"></p>
+</li>
+<li><p>select模型</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">select</span><span class="params">(<span class="keyword">int</span> nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FD_CLR</span><span class="params">(<span class="keyword">int</span> fd, fd_set *<span class="built_in">set</span>)</span></span>;	<span class="comment">//将fd从set中一处</span></span><br><span class="line"><span class="function"><span class="keyword">int</span>  <span class="title">FD_ISSET</span><span class="params">(<span class="keyword">int</span> fd, fd_set *<span class="built_in">set</span>)</span></span>;	<span class="comment">//判断fd是否再set中</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FD_SET</span><span class="params">(<span class="keyword">int</span> fd, fd_set *<span class="built_in">set</span>)</span></span>;	<span class="comment">//将fd放入set中</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FD_ZERO</span><span class="params">(fd_set *<span class="built_in">set</span>)</span></span>;			<span class="comment">//将集合清空</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>用select来管理多个I/O，一旦其中一个或多个I/O检测到感兴趣时间，select返回，返回值为事件个数和哪些事件，然后遍历并处理这些事件。</p>
+</li>
+<li><p>nfds：读、写、异常集合中的文件描述符的最大值+1</p>
+</li>
+<li><p>readfds：可读fd集合</p>
+</li>
+<li><p>writefds：可写fd集合</p>
+</li>
+<li><p>exceptfds：异常fd集合</p>
+</li>
+<li><p>timeout：超时时间结构体</p>
+</li>
+<li><p>select模型处理标准输入和sock I/O</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">echo_cli</span><span class="params">(<span class="keyword">int</span> sock)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//初始化ready集合</span></span><br><span class="line">	fd_set rset;</span><br><span class="line">	FD_ZERO(&amp;rset);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> nready;</span><br><span class="line">	<span class="keyword">int</span> maxfd;</span><br><span class="line">	<span class="keyword">int</span> fd_stdin = fileno(<span class="built_in">stdin</span>);</span><br><span class="line">	maxfd = fd_stdin &gt; sock ? fd_stdin : sock;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> sendbuf[<span class="number">1204</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">char</span> recvbuf[<span class="number">1024</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">        <span class="comment">//将标准输入I/O和sock加入集合</span></span><br><span class="line">		FD_SET(fd_stdin, &amp;rset);</span><br><span class="line">		FD_SET(sock, &amp;rset);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//调用select，获得ready集合</span></span><br><span class="line">		nready = select(maxfd + <span class="number">1</span>, &amp;rset, <span class="literal">NULL</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">		</span><br><span class="line">        <span class="comment">//错误和未有ready可以处理</span></span><br><span class="line">		<span class="keyword">if</span>(nready == <span class="number">-1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			ERR_EXIT(<span class="string">&quot;select&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(nready == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="comment">//sock I/O 有数据处理</span></span><br><span class="line">		<span class="keyword">if</span>(FD_ISSET(sock, &amp;rset))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> ret = readline(sock, recvbuf, <span class="keyword">sizeof</span>(recvbuf));</span><br><span class="line">			<span class="keyword">if</span> (ret == <span class="number">-1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				ERR_EXIT(<span class="string">&quot;read&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (ret == <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;server closed.\n&quot;</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="built_in">fputs</span>(recvbuf, <span class="built_in">stdout</span>);</span><br><span class="line">			<span class="built_in">memset</span>(recvbuf, <span class="number">0</span>, <span class="keyword">sizeof</span>(recvbuf));</span><br><span class="line">		&#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//标准输入有数据处理</span></span><br><span class="line">		<span class="keyword">if</span>(FD_ISSET(fd_stdin, &amp;rset))</span><br><span class="line">		&#123;</span><br><span class="line">			 <span class="keyword">if</span>(fgets(sendbuf, <span class="keyword">sizeof</span>(sendbuf), <span class="built_in">stdin</span>) == <span class="literal">NULL</span>)</span><br><span class="line">			 	<span class="keyword">break</span>;</span><br><span class="line">			written(sock, sendbuf, <span class="built_in">strlen</span>(sendbuf));</span><br><span class="line">			<span class="built_in">memset</span>(sendbuf, <span class="number">0</span>, <span class="keyword">sizeof</span>(sendbuf));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	close(sock);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://kennyyyyyy.github.io/2022/10/02/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://kennyyyyyy.github.io/2022/10/02/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/";
+            const title         = "「Linux网络编程」";
+            const excerpt       = `
+Socket编程GitHub基础知识
+Socket地址结构
+123456789struct sockaddr_in&#123;    uint8_t sin_len;			//结构体长度    sa_family_t sin_fam...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="tag-none-link" href="/tags/Socket/" rel="tag">Socket</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2022-12-03</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" 操作系统/计网/数据库" href="/2022/09/22/八股/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 3D数学基础：图形与游戏开发" href="/2022/10/07/3D数学基础：图形与游戏开发/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.jpg" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">Deep♂ Dark♂ Fantasy♂</p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Socket%E7%BC%96%E7%A8%8BGitHub"><span class="toc-text">Socket编程GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#cs%E6%A8%A1%E5%9E%8B"><span class="toc-text">cs模型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">简单的客户端和服务端</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E7%B2%98%E5%8C%85"><span class="toc-text">流协议与粘包</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Socket%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="toc-text">Socket相关函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B"><span class="toc-text">僵尸进程</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#TCP"><span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BA%94%E7%A7%8DIO%E6%A8%A1%E5%9E%8B"><span class="toc-text">五种IO模型</span></a></li></ol></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c/">c++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">每日一题</a><span class="category-list-count">1</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/C/" style="font-size: 0.73em;">C#</a> <a href="/tags/C/" style="font-size: 0.6em;">C++</a> <a href="/tags/C-C/" style="font-size: 0.6em;">C/C++</a> <a href="/tags/Leetcode/" style="font-size: 0.6em;">Leetcode</a> <a href="/tags/Linux/" style="font-size: 0.6em;">Linux</a> <a href="/tags/Lua/" style="font-size: 0.67em;">Lua</a> <a href="/tags/Socket/" style="font-size: 0.6em;">Socket</a> <a href="/tags/Unity/" style="font-size: 0.8em;">Unity</a> <a href="/tags/c/" style="font-size: 0.6em;">c++</a> <a href="/tags/unity/" style="font-size: 0.67em;">unity</a> <a href="/tags/xlua/" style="font-size: 0.6em;">xlua</a> <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 0.6em;">图形学</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 0.6em;">学习</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 0.6em;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.6em;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 0.6em;">数据结构</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 0.67em;">经验</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.6em;">计算机网络</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2022/11/21/Unity%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E6%95%B4%E7%90%86/"><i class="fa  fa-book"></i> Unity功能模块整理</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/11/06/Unity%E7%9B%B8%E5%85%B3/"><i class="fa  fa-book"></i> Unity相关</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/07/3D%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%9B%BE%E5%BD%A2%E4%B8%8E%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"><i class="fa  fa-book"></i> 3D数学基础：图形与游戏开发</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/02/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"><i class="fa  fa-book"></i> Linux网络编程</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/09/22/%E5%85%AB%E8%82%A1/"><i class="fa  fa-book"></i> 操作系统/计网/数据库</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2022 Imperio 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by kennyyy.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+//<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

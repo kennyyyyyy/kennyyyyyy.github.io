@@ -24,7 +24,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2022-08-16T01:41:04.000Z">
-<meta property="article:modified_time" content="2022-11-11T16:13:18.911Z">
+<meta property="article:modified_time" content="2022-11-22T08:10:07.736Z">
 <meta property="article:author" content="kennyyy">
 <meta property="article:tag" content="Unity">
 <meta property="article:tag" content="Lua">
@@ -140,7 +140,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~8.29K
+                            ~15.57K
                         
                         字
                     </li>
@@ -149,11 +149,11 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1668183198911"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1669104607736"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
-                        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E5%88%92%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text">资源目录划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">框架内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">框架开发流程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%9ABundle%E5%A4%84%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">第一阶段：Bundle处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%9AC-%E8%B0%83%E7%94%A8Lua"><span class="toc-number">3.2.</span> <span class="toc-text">第二阶段：C#调用Lua</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%90%91Lua%E6%8F%90%E4%BE%9B%E6%8E%A5%E5%8F%A3"><span class="toc-number">3.3.</span> <span class="toc-text">第三阶段：向Lua提供接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%AE%8C%E5%96%84%E5%92%8C%E4%BC%98%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">第四阶段：完善和优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#UI%E7%AE%A1%E7%90%86"><span class="toc-number">3.5.</span> <span class="toc-text">UI管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E7%AE%A1%E7%90%86"><span class="toc-number">3.6.</span> <span class="toc-text">实体管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E7%AE%A1%E7%90%86"><span class="toc-number">3.7.</span> <span class="toc-text">场景管理</span></a></li></ol></li></ol>
+                        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E5%88%92%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text">资源目录划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">框架内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">框架开发流程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%9ABundle%E5%A4%84%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">第一阶段：Bundle处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%9AC-%E8%B0%83%E7%94%A8Lua"><span class="toc-number">3.2.</span> <span class="toc-text">第二阶段：C#调用Lua</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%90%91Lua%E6%8F%90%E4%BE%9B%E6%8E%A5%E5%8F%A3"><span class="toc-number">3.3.</span> <span class="toc-text">第三阶段：向Lua提供接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%AE%8C%E5%96%84%E5%92%8C%E4%BC%98%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">第四阶段：完善和优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#UI%E7%AE%A1%E7%90%86"><span class="toc-number">3.5.</span> <span class="toc-text">UI管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E7%AE%A1%E7%90%86"><span class="toc-number">3.6.</span> <span class="toc-text">实体管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E7%AE%A1%E7%90%86"><span class="toc-number">3.7.</span> <span class="toc-text">场景管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A3%B0%E9%9F%B3%E7%AE%A1%E7%90%86"><span class="toc-number">3.8.</span> <span class="toc-text">声音管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">3.9.</span> <span class="toc-text">事件管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.10.</span> <span class="toc-text">对象池设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97"><span class="toc-number">3.11.</span> <span class="toc-text">网络模块</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0"><span class="toc-number">4.</span> <span class="toc-text">热更新</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%9B%B4%E6%96%B0"><span class="toc-number">4.1.</span> <span class="toc-text">为什么需要更新</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">4.2.</span> <span class="toc-text">热更新是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Lua%E7%83%AD%E6%9B%B4%E7%9A%84%E5%87%A0%E4%B8%AA%E7%82%B9"><span class="toc-number">4.2.1.</span> <span class="toc-text">Lua热更的几个点</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Xlua%E6%A1%86%E6%9E%B6%E4%B8%8E%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6"><span class="toc-number">4.3.</span> <span class="toc-text">Xlua框架与项目框架</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#lua%E6%A1%86%E6%9E%B6%E2%80%94%E4%B8%BB%E7%A8%8B%E6%89%80%E8%80%83%E8%99%91%E7%9A%84"><span class="toc-number">4.3.1.</span> <span class="toc-text">lua框架—主程所考虑的</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%AD%E5%90%8E%E6%9C%9F%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%83%AD%E6%9B%B4%E9%87%8D%E6%9E%84%E5%BB%BA%E8%AE%AE"><span class="toc-number">4.3.2.</span> <span class="toc-text">中后期项目的热更重构建议</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#XLua%E6%A1%86%E6%9E%B6"><span class="toc-number">4.3.3.</span> <span class="toc-text">XLua框架</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-number">4.4.</span> <span class="toc-text">框架基本功能</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86"><span class="toc-number">4.4.1.</span> <span class="toc-text">资源目录结构划分</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%93%8D%E4%BD%9C"><span class="toc-number">4.4.2.</span> <span class="toc-text">功能模块的引用与操作</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">4.4.3.</span> <span class="toc-text">配置文件的使用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8E%E9%A2%84%E5%88%B6%E4%BD%93%E8%B5%84%E6%BA%90%E7%9A%84%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96"><span class="toc-number">4.4.4.</span> <span class="toc-text">图片与预制体资源的动态获取</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8D%95%E6%9C%BADemo%E7%83%AD%E6%9B%B4%E6%96%B0%E5%88%B6%E4%BD%9C%E8%A7%84%E5%88%92"><span class="toc-number">4.4.5.</span> <span class="toc-text">单机Demo热更新制作规划</span></a></li></ol></li></ol></li></ol>
                     </div>
                 
                 <hr />
@@ -221,7 +221,7 @@
 </li>
 <li><p>解析版本文件，加载依赖，加载自身，加载资源</p>
 <p><img src="/images/热更新/image-20221106183101232.png" alt="资源加载流程"></p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 异步加载资源</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 读取字典中存储的依赖资源路径</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 递归加载所有依赖资源，当所有以来资源加载完之后加载自身</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 最后回调</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;assetName&quot;&gt;</span>资源名<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;action&quot;&gt;</span>完成加载后的回调<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function">IEnumerator <span class="title">LoadBundleAsync</span>(<span class="params"><span class="built_in">string</span> assetName, Action&lt;Object&gt; action = <span class="literal">null</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> bundleName = BundleInfosDic[assetName].BundleName;</span><br><span class="line">    <span class="built_in">string</span> bundlePath = Path.Combine(PathUtil.BundleResourcePath, bundleName);</span><br><span class="line">    List&lt;<span class="built_in">string</span>&gt; dependences = BundleInfosDic[assetName].Dependences;</span><br><span class="line">    <span class="keyword">if</span>(dependences != <span class="literal">null</span> &amp;&amp; dependences.Count &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; dependences.Count; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="function"><span class="keyword">yield</span> <span class="keyword">return</span> <span class="title">LoadBundleAsync</span>(<span class="params">dependences[i]</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    AssetBundleCreateRequest assetBundleCreateRequest = AssetBundle.LoadFromFileAsync(bundlePath);</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">return</span> assetBundleCreateRequest;</span><br><span class="line"></span><br><span class="line">    AssetBundleRequest assetBundleRequest = assetBundleCreateRequest.assetBundle.LoadAssetAsync(assetName);</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">return</span> assetBundleRequest;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//问号判断前面的变量是否为空</span></span><br><span class="line">    action?.Invoke(assetBundleRequest?.asset);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 异步加载资源</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 读取字典中存储的依赖资源路径</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 递归加载所有依赖资源，当所有以来资源加载完之后加载自身</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> TODO：需要解决重复加载bundle包的问题，且对于场景，不需要对资源惊醒加载</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 最后回调</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;assetName&quot;&gt;</span>资源名<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;action&quot;&gt;</span>完成加载后的回调<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function">IEnumerator <span class="title">LoadBundleAsync</span>(<span class="params"><span class="built_in">string</span> assetName, Action&lt;Object&gt; action = <span class="literal">null</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> bundleName = BundleInfosDic[assetName].BundleName;</span><br><span class="line">    <span class="built_in">string</span> bundlePath = Path.Combine(PathUtil.BundleResourcePath, bundleName);</span><br><span class="line">    List&lt;<span class="built_in">string</span>&gt; dependences = BundleInfosDic[assetName].Dependences;</span><br><span class="line">    <span class="keyword">if</span>(dependences != <span class="literal">null</span> &amp;&amp; dependences.Count &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; dependences.Count; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="function"><span class="keyword">yield</span> <span class="keyword">return</span> <span class="title">LoadBundleAsync</span>(<span class="params">dependences[i]</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    AssetBundleCreateRequest assetBundleCreateRequest = AssetBundle.LoadFromFileAsync(bundlePath);</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">return</span> assetBundleCreateRequest;</span><br><span class="line"></span><br><span class="line">    AssetBundleRequest assetBundleRequest = assetBundleCreateRequest.assetBundle.LoadAssetAsync(assetName);</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">return</span> assetBundleRequest;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//问号判断前面的变量是否为空</span></span><br><span class="line">    action?.Invoke(assetBundleRequest?.asset);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>开放接口，方便用户调用</p>
 <p><img src="/images/热更新/image-20221106235358622.png" alt="PathUtil路径接口"></p>
@@ -386,12 +386,12 @@
 <ul>
 <li><p>场景叠加</p>
 <ul>
-<li>即<code>LoadSceneMode.Additive</code>模式加载场景</li>
+<li>即<code>LoadSceneMode.Additive</code>模式加载场景，即打开一个新的场景至当前场景</li>
 </ul>
 </li>
 <li><p>场景切换</p>
 <ul>
-<li>即<code>LoadSceneMode.Additive</code>模式加载场景</li>
+<li>即<code>LoadSceneMode.Additive</code>模式加载场景，即关闭当前所有场景，打开新的场景 </li>
 </ul>
 </li>
 <li><p>场景激活</p>
@@ -405,12 +405,214 @@
 </li>
 </ul>
 </li>
-</ul>
-<ul>
 <li><p>场景卸载</p>
-<p>和加载类似，通过协程调用异步卸载场景的方法。</p>
+<p>和加载类似，通过协程调用异步卸载场景的方法。、</p>
 </li>
 </ul>
+<h5 id="声音管理"><a href="#声音管理" class="headerlink" title="声音管理"></a>声音管理</h5><ul>
+<li><p>背景音乐</p>
+<ul>
+<li><p>播放</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 播放音乐，需要判断需要播放的是否是当前正在播放的</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 防止重复加载</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PlayMusic</span>(<span class="params"><span class="built_in">string</span> name</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (MusicVolume &lt; <span class="number">0.1f</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">string</span> oldName = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span> (musicAudio != <span class="literal">null</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        oldName = musicAudio.clip.name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (oldName == name)</span><br><span class="line">    &#123;</span><br><span class="line">        musicAudio.Play();</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Manager.ResourceManager.LoadAsset(ResourceManager.AssetType.Music, name, (UnityEngine.Object obj) =&gt;</span><br><span class="line">                                      &#123;</span><br><span class="line">                                          musicAudio.clip = obj <span class="keyword">as</span> AudioClip;</span><br><span class="line">                                          musicAudio.Play();</span><br><span class="line">                                      &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>除播放外，其余只需要调用相关方法即可</p>
+</li>
+<li><p>暂停</p>
+</li>
+<li><p>恢复</p>
+</li>
+<li><p>停止</p>
+</li>
+<li><p>音量</p>
+</li>
+</ul>
+</li>
+<li><p>音效</p>
+<ul>
+<li>音量</li>
+<li>播放</li>
+</ul>
+</li>
+</ul>
+<h5 id="事件管理"><a href="#事件管理" class="headerlink" title="事件管理"></a>事件管理</h5><p>时间管理可以对所有的事件进行一个统一的管理</p>
+<ul>
+<li>订阅</li>
+<li>取消订阅</li>
+<li>执行调用</li>
+</ul>
+<h5 id="对象池设计"><a href="#对象池设计" class="headerlink" title="对象池设计"></a>对象池设计</h5><p>对象类型</p>
+<ul>
+<li>AssetBundle</li>
+<li>GameObject</li>
+</ul>
+<p>特点</p>
+<p>使用自定义类，该类有上次使用时间，使用的对象和销毁的时间间隔 PoolObject</p>
+<ul>
+<li><p>对象池中存放多种类型</p>
+<p>用一个List\<PoolObject>对所有对象进行存储</PoolObject></p>
+</li>
+<li><p>短时间内重复使用</p>
+<p>在销毁的间隔时间内能以一直使用</p>
+</li>
+<li><p>过期自动销毁</p>
+<p>当过了销毁时间间隔还未被使用，则将对象进行销毁</p>
+</li>
+</ul>
+<p>设计原理：池内不创建对象，对象在外部创建，使用完放入对象池，</p>
+<p>使用时再取出。即不预先创建对象，当需要时向对象池中取，池中没有则创建</p>
+<ol>
+<li><p>由于存在两种对象，且加载和释放的方式有不同，所以定义一个基类PoolBase和两个类继承基类</p>
+</li>
+<li><p>生成</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//从对象池中获得物体</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">virtual</span> Object <span class="title">Spwan</span>(<span class="params"><span class="built_in">string</span> name</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> go <span class="keyword">in</span> poolObjects)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(go.name == name)</span><br><span class="line">        &#123;</span><br><span class="line">            poolObjects.Remove(go);</span><br><span class="line">            <span class="keyword">return</span> go.@object;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>回收</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">UnSpwan</span>(<span class="params"><span class="built_in">string</span> name, Object obj</span>) </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    PoolObject poolObject = <span class="keyword">new</span> PoolObject(name, obj);</span><br><span class="line">    poolObjects.Add(poolObject);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>对于AssetBundle，在游戏中可能存在多个物体对其的引用，只有当没有物体的引用时，才能将其放回对象池中。因此，可以定义一个数据结构对bundle的引用进行计数。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">BundleData</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> AssetBundle Bundle;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Count;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BundleData</span>(<span class="params">AssetBundle ab</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Bundle = ab;</span><br><span class="line">        Count = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="网络模块"><a href="#网络模块" class="headerlink" title="网络模块"></a>网络模块</h5><p>通信协议：用于服务端和客户端通信的数据格式</p>
+<ul>
+<li>protobuf、sproto、pbc、json等</li>
+<li>xlua使用通信协议需要添加第三方库，此项目中直接使用的是<a target="_blank" rel="noopener" href="https://github.com/chexiongsheng/build_xlua_with_libs">github</a>上的编译好的库</li>
+</ul>
+<p>客户端C#</p>
+<ul>
+<li><p>NetClient：客户端的网络消息处理类</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span><span class="doctag">///</span>/</span></span><br><span class="line"><span class="comment">//主要协议相关</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span><span class="doctag">///</span>/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//缓冲区大小</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">int</span> BufferSize = <span class="number">1024</span> * <span class="number">64</span>;</span><br><span class="line"><span class="comment">//基于TCP协议的客户端协议</span></span><br><span class="line"><span class="keyword">private</span> TcpClient client;</span><br><span class="line"><span class="comment">//网络数据流，用于发送和接收数据</span></span><br><span class="line"><span class="keyword">private</span> NetworkStream tcpStream;</span><br><span class="line"><span class="comment">//缓冲区</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">byte</span>[] buffer = <span class="keyword">new</span> <span class="built_in">byte</span>[BufferSize];</span><br><span class="line"></span><br><span class="line"><span class="comment">//解析接收的数据</span></span><br><span class="line"><span class="keyword">private</span> MemoryStream memStream;</span><br><span class="line"><span class="keyword">private</span> BinaryReader binaryReader;</span><br><span class="line"></span><br><span class="line"><span class="comment">//开始连接</span></span><br><span class="line">client.BeginConnect(host, port, OnConnect, <span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//读取数据</span></span><br><span class="line">tcpStream.BeginRead(buffer, <span class="number">0</span>, BufferSize, OnRead, <span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//读取对应长度的字节数</span></span><br><span class="line"><span class="built_in">byte</span>[] data = binaryReader.ReadBytes(msgLen);</span><br><span class="line"></span><br><span class="line"><span class="comment">//发送数据</span></span><br><span class="line">tcpStream.BeginWrite(sendData, <span class="number">0</span>, sendData.Length, OnEndSend, <span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>NetManager：提供消息处理的中转接口，调用lua</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//消息队列，接收到消息就放入消息队列中</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">Queue</span>&lt;<span class="title">KeyValuePair</span>&lt;<span class="title">int</span>, <span class="title">string</span>&gt;&gt; messageQueue</span> = <span class="keyword">new</span> Queue&lt;KeyValuePair&lt;<span class="built_in">int</span>, <span class="built_in">string</span>&gt;&gt;();</span><br><span class="line"><span class="comment">//lua的function</span></span><br><span class="line"><span class="keyword">private</span> XLua.LuaFunction ReceiveMessage;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SendMessage</span>(<span class="params"><span class="built_in">int</span> msgID, <span class="built_in">string</span> message</span>)</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ConnectedServer</span>(<span class="params"><span class="built_in">string</span> host, <span class="built_in">int</span> port</span>)</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OnNetConneted</span>(<span class="params"></span>)</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OnDisConnected</span>(<span class="params"></span>)</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Receive</span>(<span class="params"><span class="built_in">int</span> msgID, <span class="built_in">string</span> message</span>)</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>客户端Lua</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 提供一个基础类定义</span></span><br><span class="line"><span class="comment">--super 父类</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Class</span><span class="params">(super)</span></span></span><br><span class="line">    <span class="keyword">local</span> class = <span class="literal">nil</span>;</span><br><span class="line">    <span class="comment">-- 存在父类则设置原表</span></span><br><span class="line">    <span class="keyword">if</span> super <span class="keyword">then</span></span><br><span class="line">        class = <span class="built_in">setmetatable</span>(&#123;&#125;, &#123;<span class="built_in">__index</span> = super&#125;);</span><br><span class="line">        class.super = super;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment">--不存在则新建一个表，并有一个构造函数</span></span><br><span class="line">        class = &#123;ctor = <span class="function"><span class="keyword">function</span><span class="params">()</span></span> <span class="keyword">end</span>&#125;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    class.<span class="built_in">__index</span> = class</span><br><span class="line">    </span><br><span class="line">    <span class="comment">-- 为子类提供一个new方法，用于调用构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">class.new</span><span class="params">(...)</span></span></span><br><span class="line">        <span class="keyword">local</span> instance = <span class="built_in">setmetatable</span>(&#123;&#125;, class);</span><br><span class="line">        <span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">(inst, ...)</span></span></span><br><span class="line">            <span class="comment">-- 存在父类则递归创建构造函数</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">type</span>(inst.super) == <span class="string">&quot;table&quot;</span> <span class="keyword">then</span></span><br><span class="line">                <span class="built_in">create</span>(inst.super, ...);</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">type</span>(inst.ctor) == <span class="string">&quot;function&quot;</span> <span class="keyword">then</span></span><br><span class="line">                inst.ctor(instance, ...);</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="built_in">create</span>(instance, ...);</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> class;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>基于Class存在一个baseMessage类，存在消息注册的方法。在该模块中会存在对消息请求和接收的处理。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--消息注册</span></span><br><span class="line"><span class="comment">-- msgName 消息名称 </span></span><br><span class="line"><span class="comment">-- msgID 消息ID</span></span><br><span class="line"><span class="comment">-- ... 参数列表的Key</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baseMessage:addReqRes</span><span class="params">(msgName, msgID, ...)</span></span></span><br><span class="line">    <span class="keyword">local</span> keys = &#123;...&#125;;</span><br><span class="line">    <span class="comment">-- 消息请求</span></span><br><span class="line">    <span class="built_in">self</span>[<span class="string">&quot;req_&quot;</span>..msgName] = <span class="function"><span class="keyword">function</span><span class="params">(self, ...)</span></span></span><br><span class="line">        <span class="keyword">local</span> values = &#123;...&#125;;</span><br><span class="line">        <span class="keyword">if</span> #keys ~= #values <span class="keyword">then</span></span><br><span class="line">            Log.Error(<span class="string">&quot;参数不正确: &quot;</span>, msgName);</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">local</span> sendData = &#123;&#125;;</span><br><span class="line">        <span class="comment">-- 将key和value对应</span></span><br><span class="line">        <span class="keyword">for</span> i = <span class="number">1</span>, #keys <span class="keyword">do</span></span><br><span class="line">            sendData[keys[i]] = values[i];</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="comment">--发送消息</span></span><br><span class="line">        msgManager.sendMsg(msgID, sendData);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">--消息接收，要先对消息接收进行注册</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(<span class="built_in">self</span>[<span class="string">&quot;res_&quot;</span>..msgName] == <span class="string">&quot;function&quot;</span>) <span class="keyword">then</span></span><br><span class="line">        msgManager.register(msgID, </span><br><span class="line">        <span class="comment">-- 收到消息的回调</span></span><br><span class="line">        <span class="function"><span class="keyword">function</span><span class="params">(data)</span></span></span><br><span class="line">            <span class="keyword">local</span> msg = Json.decode(data);</span><br><span class="line">            <span class="keyword">if</span> msg.code ~= <span class="number">0</span> <span class="keyword">then</span></span><br><span class="line">                Log.Error(<span class="string">&quot;错误码：&quot;</span>, msg.code);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">            <span class="built_in">self</span>[<span class="string">&quot;res_&quot;</span>..msgName](<span class="built_in">self</span>, msg);</span><br><span class="line">        <span class="keyword">end</span>)</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        Log.Error(<span class="string">&quot;请注册消息返回回调：&quot;</span>..msgName);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>功能模块化</p>
+<ul>
+<li>消息注册</li>
+<li>消息发送</li>
+<li>消息接收  </li>
+</ul>
+</li>
+<li><p>模块管理器</p>
+<p>模块管理器即消息管理，在此类中保存所有的模块列表和所有的回调列表。所有的模块的名字需要手动添加</p>
+<ul>
+<li><p>模块化初始化</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 遍历名字列表msgNameList，将所有的模块实例放入模块列表中</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">msgManager.init</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">for</span> k,v <span class="keyword">in</span> <span class="built_in">pairs</span>(msgNameList) <span class="keyword">do</span></span><br><span class="line">        <span class="comment">-- 获得Message目录下的所有相关的模块</span></span><br><span class="line">        msgModelList[v] = <span class="built_in">require</span>(<span class="string">&quot;Message.&quot;</span>..v).new();</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模块获取</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 获取模块实例</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">msgManager.getMsg</span><span class="params">(key)</span></span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> msgModelList[key] <span class="keyword">then</span></span><br><span class="line">        Log.Error(key .. <span class="string">&quot;不存在&quot;</span>);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> msgModelList[key];</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>消息接收</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 接收消息，用于在C# NetManager 中进行调用</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">receiveMsg</span><span class="params">(msgID, msg)</span></span></span><br><span class="line">    Log.Info(<span class="string">&quot;reveived msg id = &quot;</span> .. msgID .. <span class="string">&quot; : &quot;</span> .. msg);</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(msgResponses[msgID]) == <span class="string">&quot;function&quot;</span> <span class="keyword">then</span></span><br><span class="line">        msgResponses[msgID](msg);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        Log.Error(msgID .. <span class="string">&quot; 消息不存在回调&quot;</span>);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>消息发送</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 消息发送，调用C# NetManager中方法进行处理</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">msgManager.sendMsg</span><span class="params">(msgID, sendData)</span></span></span><br><span class="line">    <span class="keyword">local</span> str = Json.encode(sendData);</span><br><span class="line">    Log.Info(<span class="string">&quot;send msg id = &quot;</span> .. msgID .. <span class="string">&quot; : &quot;</span> .. str);</span><br><span class="line">    Manager.NetManager:SendMessage(msgID, str);</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>简单服务器</p>
+<h4 id="热更新"><a href="#热更新" class="headerlink" title="热更新"></a>热更新</h4><h5 id="为什么需要更新"><a href="#为什么需要更新" class="headerlink" title="为什么需要更新"></a>为什么需要更新</h5><ol>
+<li>修复产品问题</li>
+<li>游戏内容扩充/删减</li>
+</ol>
+<h5 id="热更新是什么"><a href="#热更新是什么" class="headerlink" title="热更新是什么"></a>热更新是什么</h5><ul>
+<li><p>普通更新流程</p>
+<p><img src="/images/热更新/image-20221119161708686.png" alt="普通更新流程"></p>
+<p>需要商店审核，周期长，更新需要重新安装。</p>
+</li>
+<li><p>热更新流程 </p>
+<p><img src="/images/热更新/image-20221119162621384.png" alt="热更新流程 "></p>
+<p>不需要商店审核，提交便捷，在游戏内自动完成资源下载和更新</p>
+</li>
+<li><p>为什么选择LUA</p>
+<p>Unity3D        资源热更</p>
+<p>C# 编译型语言    脚本打包成动态链接库DLL    </p>
+<p>Lua 解释型语言    脚本运行时翻译成机器语言，不需要编译。脚本和资源都可以动态替换 </p>
+<p><img src="/images/热更新/image-20221119163531878.png" alt="流程"></p>
+</li>
+</ul>
+<h6 id="Lua热更的几个点"><a href="#Lua热更的几个点" class="headerlink" title="Lua热更的几个点"></a>Lua热更的几个点</h6><ol>
+<li>需要导入热更插件（XLua、ToLua、SLua等） 稳定易用，不用重复造轮子</li>
+<li>综合考量，划分项目功能结构。 需要频繁更新的部分就采用热性新，即使用Lua脚本实现</li>
+<li>编写框架或使用成熟的热更行框架，便于之后开发流程的进行</li>
+</ol>
+<h5 id="Xlua框架与项目框架"><a href="#Xlua框架与项目框架" class="headerlink" title="Xlua框架与项目框架"></a>Xlua框架与项目框架</h5><p>引入xLua插件， 制定整体架构，选择对应的技术方案</p>
+<h6 id="lua框架—主程所考虑的"><a href="#lua框架—主程所考虑的" class="headerlink" title="lua框架—主程所考虑的"></a>lua框架—主程所考虑的</h6><ol>
+<li>游戏类型：强联网、若联网</li>
+<li>功能划分与Scene场景规划：背包，战斗等</li>
+<li>特殊需求</li>
+<li>制定模块系统：版本更新检测系统、登录等。C#仅调用lua的主要接口，lua脚本中的功能或操作均在lua中处理</li>
+</ol>
+<h6 id="中后期项目的热更重构建议"><a href="#中后期项目的热更重构建议" class="headerlink" title="中后期项目的热更重构建议"></a>中后期项目的热更重构建议</h6><ol>
+<li>核心数据Lua存储</li>
+<li>配置文件挪到Lua</li>
+<li>网络交互使用Lua封装和调用</li>
+<li>业务功能模块不在绑定C#</li>
+<li>每个UI功能使用Lua处理</li>
+<li>战斗等复合功能模块，增加辅助Lua处理</li>
+<li>原框架核心功能部分改成Lua实现，部分打上LUACALLCSHARP标签</li>
+<li>实现Lua模块间的通信。 </li>
+</ol>
+<h6 id="XLua框架"><a href="#XLua框架" class="headerlink" title="XLua框架"></a>XLua框架</h6><p><img src="/images/热更新/image-20221119183806517.png" alt="Xlua框架执行流程"></p>
+<h5 id="框架基本功能"><a href="#框架基本功能" class="headerlink" title="框架基本功能"></a>框架基本功能</h5><h6 id="资源目录结构划分"><a href="#资源目录结构划分" class="headerlink" title="资源目录结构划分"></a>资源目录结构划分</h6><p>以资源类型划分一级目录</p>
+<ul>
+<li>Custom：用户自定义功能</li>
+<li>Font：字体</li>
+<li>Module：所有功能模块，每个功能对应Lua脚本</li>
+<li>Prefab：预制体</li>
+<li>Sound：音效等</li>
+<li>Sprite：图片</li>
+<li>Texture：纹理</li>
+</ul>
+<h6 id="功能模块的引用与操作"><a href="#功能模块的引用与操作" class="headerlink" title="功能模块的引用与操作"></a>功能模块的引用与操作</h6><ol>
+<li><p>功能预制体资源</p>
+<ul>
+<li><p>按照功能将模块封装为预制体</p>
+</li>
+<li><p>存放于Module目录对应的目录下</p>
+</li>
+<li><p>Tag设置为uiComponent</p>
+</li>
+</ul>
+</li>
+<li><p>功能脚本资源</p>
+<ul>
+<li>功能名.lua （逻辑脚本）<ul>
+<li>Create() 加载并创建功能模块预制体</li>
+<li>Awake() 完成View脚本的初始化和逻辑脚本初始化</li>
+<li>BottonClickHander() 按钮对应方法的调用</li>
+</ul>
+</li>
+<li>功能名View.lua （试图脚本）<ul>
+<li>Create() 指向模块路径和模块名</li>
+<li>SetUICompenent() 绑定模块下的物体 按钮 图片 预制体</li>
+<li>StartInit() 按钮功能监听</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h6 id="配置文件的使用"><a href="#配置文件的使用" class="headerlink" title="配置文件的使用"></a>配置文件的使用</h6><h6 id="图片与预制体资源的动态获取"><a href="#图片与预制体资源的动态获取" class="headerlink" title="图片与预制体资源的动态获取"></a>图片与预制体资源的动态获取</h6><h6 id="单机Demo热更新制作规划"><a href="#单机Demo热更新制作规划" class="headerlink" title="单机Demo热更新制作规划"></a>单机Demo热更新制作规划</h6><ol>
+<li><p>ARPG游戏DEMO的需求分析</p>
+</li>
+<li><p>正式确定DEMO的功能模块</p>
+<p><img src="/images/热更新/image-20221120171602129.png" alt="功能模块分析"></p>
+</li>
+<li><p>功能模块与技术支持</p>
+<p>功能模块</p>
+<p><img src="/images/热更新/image-20221120172833796.png" alt="功能模块需求"></p>
+<p>技术支撑</p>
+<p><img src="/images/热更新/image-20221120173635985.png" alt="1"></p>
+</li>
+</ol>
+<ol>
+<li>准备开发</li>
+</ol>
 
             </div>
             
@@ -526,7 +728,7 @@ UI
                         <a class="tag-none-link" href="/tags/C/" rel="tag">C#</a>, <a class="tag-none-link" href="/tags/Lua/" rel="tag">Lua</a>, <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>, <a class="tag-none-link" href="/tags/xlua/" rel="tag">xlua</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2022-11-12</span>
+                    <span>最后编辑：2022-11-22</span>
                     </div>
                 </div>
             </footer>
@@ -540,7 +742,7 @@ UI
                 
                 
                 <div class="nav-next clearfix">
-                    <a title=" 知识点记录(Unity/C#)" href="/2022/08/19/笔试题记录/">下一篇 &gt;</a>
+                    <a title=" 知识点记录(Unity/C#)" href="/2022/08/19/知识点记录/">下一篇 &gt;</a>
                 </div>
                 
             </nav>
@@ -578,7 +780,7 @@ UI
         <span class="toc-progress-bar"></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E5%88%92%E5%88%86"><span class="toc-text">资源目录划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%86%85%E5%AE%B9"><span class="toc-text">框架内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-text">框架开发流程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%9ABundle%E5%A4%84%E7%90%86"><span class="toc-text">第一阶段：Bundle处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%9AC-%E8%B0%83%E7%94%A8Lua"><span class="toc-text">第二阶段：C#调用Lua</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%90%91Lua%E6%8F%90%E4%BE%9B%E6%8E%A5%E5%8F%A3"><span class="toc-text">第三阶段：向Lua提供接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%AE%8C%E5%96%84%E5%92%8C%E4%BC%98%E5%8C%96"><span class="toc-text">第四阶段：完善和优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#UI%E7%AE%A1%E7%90%86"><span class="toc-text">UI管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E7%AE%A1%E7%90%86"><span class="toc-text">实体管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E7%AE%A1%E7%90%86"><span class="toc-text">场景管理</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E5%88%92%E5%88%86"><span class="toc-text">资源目录划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%86%85%E5%AE%B9"><span class="toc-text">框架内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-text">框架开发流程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%9ABundle%E5%A4%84%E7%90%86"><span class="toc-text">第一阶段：Bundle处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%9AC-%E8%B0%83%E7%94%A8Lua"><span class="toc-text">第二阶段：C#调用Lua</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%90%91Lua%E6%8F%90%E4%BE%9B%E6%8E%A5%E5%8F%A3"><span class="toc-text">第三阶段：向Lua提供接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%AE%8C%E5%96%84%E5%92%8C%E4%BC%98%E5%8C%96"><span class="toc-text">第四阶段：完善和优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#UI%E7%AE%A1%E7%90%86"><span class="toc-text">UI管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E7%AE%A1%E7%90%86"><span class="toc-text">实体管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E7%AE%A1%E7%90%86"><span class="toc-text">场景管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A3%B0%E9%9F%B3%E7%AE%A1%E7%90%86"><span class="toc-text">声音管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-text">事件管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0%E8%AE%BE%E8%AE%A1"><span class="toc-text">对象池设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97"><span class="toc-text">网络模块</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0"><span class="toc-text">热更新</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%9B%B4%E6%96%B0"><span class="toc-text">为什么需要更新</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">热更新是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Lua%E7%83%AD%E6%9B%B4%E7%9A%84%E5%87%A0%E4%B8%AA%E7%82%B9"><span class="toc-text">Lua热更的几个点</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Xlua%E6%A1%86%E6%9E%B6%E4%B8%8E%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6"><span class="toc-text">Xlua框架与项目框架</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#lua%E6%A1%86%E6%9E%B6%E2%80%94%E4%B8%BB%E7%A8%8B%E6%89%80%E8%80%83%E8%99%91%E7%9A%84"><span class="toc-text">lua框架—主程所考虑的</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%AD%E5%90%8E%E6%9C%9F%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%83%AD%E6%9B%B4%E9%87%8D%E6%9E%84%E5%BB%BA%E8%AE%AE"><span class="toc-text">中后期项目的热更重构建议</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#XLua%E6%A1%86%E6%9E%B6"><span class="toc-text">XLua框架</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-text">框架基本功能</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86"><span class="toc-text">资源目录结构划分</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%93%8D%E4%BD%9C"><span class="toc-text">功能模块的引用与操作</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">配置文件的使用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8E%E9%A2%84%E5%88%B6%E4%BD%93%E8%B5%84%E6%BA%90%E7%9A%84%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96"><span class="toc-text">图片与预制体资源的动态获取</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8D%95%E6%9C%BADemo%E7%83%AD%E6%9B%B4%E6%96%B0%E5%88%B6%E4%BD%9C%E8%A7%84%E5%88%92"><span class="toc-text">单机Demo热更新制作规划</span></a></li></ol></li></ol></li></ol>
     </div>
 </aside>
                 
@@ -594,7 +796,7 @@ UI
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/C/" style="font-size: 0.73em;">C#</a> <a href="/tags/C/" style="font-size: 0.6em;">C++</a> <a href="/tags/C-C/" style="font-size: 0.6em;">C/C++</a> <a href="/tags/Leetcode/" style="font-size: 0.6em;">Leetcode</a> <a href="/tags/Lua/" style="font-size: 0.67em;">Lua</a> <a href="/tags/Unity/" style="font-size: 0.8em;">Unity</a> <a href="/tags/c/" style="font-size: 0.6em;">c++</a> <a href="/tags/unity/" style="font-size: 0.67em;">unity</a> <a href="/tags/xlua/" style="font-size: 0.6em;">xlua</a> <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 0.6em;">图形学</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 0.6em;">学习</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 0.6em;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.6em;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 0.6em;">数据结构</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 0.67em;">经验</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.6em;">计算机网络</a> <a href="/tags/%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" style="font-size: 0.67em;">错误总结</a>
+        <a href="/tags/C/" style="font-size: 0.73em;">C#</a> <a href="/tags/C/" style="font-size: 0.6em;">C++</a> <a href="/tags/C-C/" style="font-size: 0.6em;">C/C++</a> <a href="/tags/Leetcode/" style="font-size: 0.6em;">Leetcode</a> <a href="/tags/Linux/" style="font-size: 0.6em;">Linux</a> <a href="/tags/Lua/" style="font-size: 0.67em;">Lua</a> <a href="/tags/Socket/" style="font-size: 0.6em;">Socket</a> <a href="/tags/Unity/" style="font-size: 0.8em;">Unity</a> <a href="/tags/c/" style="font-size: 0.6em;">c++</a> <a href="/tags/unity/" style="font-size: 0.67em;">unity</a> <a href="/tags/xlua/" style="font-size: 0.6em;">xlua</a> <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 0.6em;">图形学</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 0.6em;">学习</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 0.6em;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.6em;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 0.6em;">数据结构</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 0.67em;">经验</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.6em;">计算机网络</a>
       </div>
   </aside>
 
@@ -605,6 +807,12 @@ UI
   <div class="tab-content">
       <ul class="list-group">
         
+        
+          
+          
+            <a class="list-group-item" href="/2022/11/21/Unity%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E6%95%B4%E7%90%86/"><i class="fa  fa-book"></i> Unity功能模块整理</a>
+            
+          
         
           
           
@@ -620,22 +828,20 @@ UI
         
           
           
+            <a class="list-group-item" href="/2022/10/02/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"><i class="fa  fa-book"></i> Linux网络编程</a>
+            
+          
+        
+          
+          
             <a class="list-group-item" href="/2022/09/22/%E5%85%AB%E8%82%A1/"><i class="fa  fa-book"></i> 操作系统/计网/数据库</a>
             
           
         
           
-          
-            <a class="list-group-item" href="/2022/09/21/C-C-%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/"><i class="fa  fa-book"></i> C/C++相关记录</a>
             
           
-        
-          
-          
-            <a class="list-group-item" href="/2022/08/19/%E7%AC%94%E8%AF%95%E9%A2%98%E8%AE%B0%E5%BD%95/"><i class="fa  fa-book"></i> 知识点记录(Unity/C#)</a>
             
-          
-        
           
             
           

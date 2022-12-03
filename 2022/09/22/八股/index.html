@@ -24,7 +24,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2022-09-22T09:33:32.000Z">
-<meta property="article:modified_time" content="2022-11-05T06:57:54.763Z">
+<meta property="article:modified_time" content="2022-12-01T12:01:21.816Z">
 <meta property="article:author" content="kennyyy">
 <meta property="article:tag" content="操作系统">
 <meta property="article:tag" content="计算机网络">
@@ -139,7 +139,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~3.89K
+                            ~6.73K
                         
                         字
                     </li>
@@ -148,7 +148,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1667631474763"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1669896081816"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
@@ -170,12 +170,15 @@
 </li>
 </ul>
 <h6 id="谷歌浏览器为什么是多进程"><a href="#谷歌浏览器为什么是多进程" class="headerlink" title="谷歌浏览器为什么是多进程"></a>谷歌浏览器为什么是多进程</h6><ul>
-<li>浏览器存在单进程架构和多进程架构</li>
-<li>单进程架构<ul>
+<li><p>浏览器存在单进程架构和多进程架构</p>
+</li>
+<li><p>单进程架构</p>
+<ul>
 <li>所有的功能模块都是运行在同一个进程里的。可能会导致 不稳定、不流畅、不安全。</li>
 </ul>
 </li>
-<li>对进程架构<ul>
+<li><p>对进程架构</p>
+<ul>
 <li>具备更好的容错性，提供安全性和沙盒性。</li>
 <li>谷歌浏览器的进程：<ul>
 <li>浏览器进程（Browser Process），浏览器的主进程，负责包括地址栏、前进后退按钮、处理网络访问、文件访问等。</li>
@@ -183,6 +186,102 @@
 <li>插件进程（Plugin Process），控制网站使用的所有插件。</li>
 <li>GPU（GPU Process），与其他进程隔离处理GPU任务，由于GPU处理来自多个应用程序的请求并将它们绘制在同一表面上，因此将其分为不同的过程。</li>
 <li>网络进程（NetWork Process），负责页面的网络资源加载，之前是放在浏览器进程中的一个线程运行，现在独立出来。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://deepu.tech/memory-management-in-programming/">编程语言中的内存管理</a></p>
+<ul>
+<li><p>当软件在计算机上的目标操作系统上运行时，它需要访问计算机<strong>RAM</strong>（随机存取存储器）：</p>
+<ul>
+<li>加载自己需要执行的<strong>字节码</strong></li>
+<li>存储被执行的程序使用的<strong>数据值</strong>和<strong>数据结构</strong></li>
+<li>加载程序执行所需的任何<strong>运行时系统</strong></li>
+</ul>
+<p>当软件程序使用内存时，除了用于加载字节码的空间外，它们还使用两个内存区域，堆栈和堆内存</p>
+</li>
+<li><p><strong>Stack</strong></p>
+<ul>
+<li><strong>静态内存分配</strong>，后进先出 ( <strong>LIFO</strong> ).</li>
+<li><strong>多线程应用程序</strong>的每个线程可以有一个<strong>堆栈</strong>。</li>
+<li>堆栈的内存管理由操作系统完成。</li>
+<li>存储在堆栈上的典型数据是<strong>局部变量</strong>（值类型或原语、原语常量）、<strong>指针</strong>和<strong>函数帧</strong>。</li>
+</ul>
+</li>
+<li><p><strong>Heap</strong></p>
+<ul>
+<li>堆用于<strong>动态内存分配，与堆栈不同，程序需要使用指针</strong>在堆中查找数据。</li>
+<li>储存具有<strong>动态大小的数据</strong>。</li>
+<li>堆在程序的线程之间共享。</li>
+<li>存储在堆上的典型数据是<strong>全局变量</strong>、<strong>引用类型</strong>（如对象、字符串、映射和其他复杂数据结构）。</li>
+</ul>
+</li>
+<li><p>JAVA和C++的区别（GC）</p>
+<ul>
+<li><p><strong>Mark &amp; Sweep GC</strong>（JVM(Java/Scala/Groovy/Kotlin)<strong>、</strong>JavaScript）</p>
+<p>遍历所有的被引用的对象，并标记。清理所有的未被标记的对象</p>
+<p><img src="/images/八股/AZaR0LP.gif" alt="标记清除 GC"></p>
+</li>
+<li><p>引用计数GC（c++）</p>
+<p>在这种方法中，每个对象都会获得一个引用计数，该计数会随着对其引用的更改而递增或递减，并且当计数变为零时完成垃圾收集。</p>
+<ul>
+<li>无法处理循环引用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/memory-management-in-operating-system/">操作系统中的内存管理</a></p>
+<ul>
+<li><p>主存储器（Main Memory）</p>
+<p>主存储器是计算机运行的核心，是CPU和 I/O 设备共享的快速存储库，也称为RAM。</p>
+<p>是易失性内存，断电时数据回丢失</p>
+<p><img src="/images/八股/1white-660x453.png" alt></p>
+</li>
+<li><p>内存管理</p>
+<p>在不同进程之间细分内存的任务称为内存管理，用于管理进程执行期间主存和磁盘之间的操作，主要目的时实现内存的高效利用</p>
+<ul>
+<li>在进程执行之前和之后分配和取消分配内存。</li>
+<li>跟踪进程使用的内存空间。</li>
+<li>尽量减少碎片问题。</li>
+<li>正确使用主存。</li>
+<li>在执行流程时保持数据完整性。</li>
+</ul>
+</li>
+<li><p>逻辑地址和物理地址</p>
+<ul>
+<li>逻辑地址：虚拟地址，由cpu生成。可以定义进程的大小，更改逻辑地址</li>
+<li>物理地址：真实地址，由MMU计算.</li>
+</ul>
+</li>
+<li><p>静态加载和动态加载</p>
+<p>将进程加载到主内存中是由加载程序完成的。</p>
+<ul>
+<li>静态加载：将整个程序加载到固定地址，需要较多的内存空间</li>
+<li>动态加载：在动态加载中，例程在调用之前不会加载。所有例程都以可重定位加载格式驻留在磁盘上。动态加载的优点之一是永远不会加载未使用的例程。</li>
+</ul>
+</li>
+<li><p>静态链接和动态链接</p>
+<p>要执行链接任务，需要使用链接器。链接器是一种程序，它接受一个或多个由编译器生成的目标文件，并将它们组合成一个单一的可执行文件。</p>
+<ul>
+<li>静态链接：在静态链接中，链接器将所有必需的程序模块组合成单个可执行程序。所以没有运行时依赖。</li>
+<li>动态链接：在动态链接中，每个适当的库例程引用都包含“存根”。存根是一小段代码。执行存根时，它会检查所需的例程是否已在内存中。如果不可用，则程序将例程加载到内存中。</li>
+</ul>
+</li>
+<li><p>分页</p>
+</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://medium.com/@akhandmishra/operating-system-process-and-process-management-108d83e8ce60">进程和进程管理</a></p>
+<ul>
+<li><p>进程生命周期</p>
+<p><img src="/images/八股/0gbMa8zMgZTDImMU6.png" alt="进程生命周期"></p>
+<ul>
+<li>new：进程首次启动/创建时的初始状态。</li>
+<li>ready：进程在就绪队列中等待分配给处理器。</li>
+<li>running：一旦被分配给处理器，就改为运行态。</li>
+<li>terminated：完成或遇到错误，进入终止状态。等待从主存中删除。</li>
 </ul>
 </li>
 </ul>
@@ -225,6 +324,7 @@
 </ul>
 </li>
 <li><p>Socket通信：</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av33813135/?vd_source=54dc3dfdd22adc8b2340096bbe891dad">网络编程</a></p>
 <ol>
 <li><p>流程：服务端监听，客户端请求，确认连接进行通信</p>
 </li>
@@ -257,6 +357,139 @@
 </ol>
 </li>
 </ol>
+</li>
+<li><p>通信</p>
+<p><img src="/images/八股/image-20221130172037684.png" alt="image-20221130172037684"></p>
+<ul>
+<li><p>Application 层        </p>
+<ul>
+<li>对数据进行编码</li>
+<li>发送者信息</li>
+</ul>
+</li>
+<li><p>TCP 层</p>
+<ul>
+<li>全双工通信（可以接收和发送）、可靠的（确认和重传、数据校验、分片和排序）、stream流的、协议（protocal）</li>
+<li><p>stream 流 ：即连续的，有前后、有顺序的。<strong>在任意指定时刻，可读的数据量都是不确定的</strong></p>
+<ul>
+<li>如何优化包传输/即包大小</li>
+</ul>
+</li>
+<li><p>packet 包：不连续的，以包为发送单位。</p>
+</li>
+</ul>
+</li>
+<li><p>IP 层</p>
+<ul>
+<li>对端的身份的定位</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Domain Name Service DNS：域名解析服务</p>
+<ul>
+<li>将网址翻译成一个能够在互联网上找到相应的服务器的IP地址。</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/YoYuanZhizheng/article/details/122904884">网络编程模型</a></p>
+<ul>
+<li><p>select</p>
+<ul>
+<li><p>单线程模型，阻塞操作</p>
+</li>
+<li><p>只能同时处理一个client的连接，没有处理多个连接的能力</p>
+</li>
+</ul>
+<p><img src="/images/八股/image-20221130225729388.png" alt="image-20221130225729388"></p>
+</li>
+<li><p>多线程模型</p>
+<ul>
+<li>每个client对应一个线程连接</li>
+<li>管理线程过多，效率过低</li>
+</ul>
+<p><img src="/images/八股/image-20221130230326372.png" alt="image-20221130230326372"></p>
+</li>
+<li><p>多路复用模型(epoll)</p>
+<ul>
+<li>一个线程可以对应多个连接</li>
+<li>相当于线程池</li>
+</ul>
+<p><img src="/images/八股/image-20221130231630577.png" alt="image-20221130231630577"></p>
+</li>
+<li><p>一个线程处理多个连接（epoll）</p>
+<ul>
+<li>ready list 保存所有的就绪fd的指针</li>
+<li>每次挂起操作只会从ready list中查找就绪的fd</li>
+</ul>
+<p><img src="/images/八股/image-20221201005424487.png" alt="image-20221201005424487"></p>
+</li>
+<li><p>io uring</p>
+<ul>
+<li>submission：提交的请求操作列表</li>
+<li>complete：请求操作的返回结果</li>
+<li>用户态可访问的无锁环形队列</li>
+</ul>
+<p><img src="/images/八股/image-20221201010248312.png" alt="image-20221201010248312"></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.cloudflare.com/zh-cn/learning/ddos/glossary/hypertext-transfer-protocol-http/">HTTP</a>：超文本传输协议</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://kamranahmed.info/blog/2016/08/13/http-in-depth">发展过程</a></p>
+<ul>
+<li><p>HTTP/0.9</p>
+<ul>
+<li>只有 GET</li>
+<li>没有标题/响应的必须是HTML</li>
+</ul>
+</li>
+<li><p>HTTP/1.0</p>
+<ul>
+<li><p>增加了HOST</p>
+</li>
+<li><p>可以处理其他格式的响应（图像、视频等）</p>
+</li>
+<li><p>添加了跟多的方法（POST、HEAD）</p>
+</li>
+<li><p>添加了状态码以识别响应</p>
+</li>
+<li><p>响应格式</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">HTTP/1.0</span> <span class="number">200</span> OK </span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>text/plain</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>137582</span><br><span class="line"><span class="attribute">Expires</span><span class="punctuation">: </span>Thu, 05 Dec 1997 16:00:00 GMT</span><br><span class="line"><span class="attribute">Last-Modified</span><span class="punctuation">: </span>Wed, 5 August 1996 15:55:28 GMT</span><br><span class="line"><span class="attribute">Server</span><span class="punctuation">: </span>Apache 0.84</span><br><span class="line"></span><br><span class="line">(response body)</span><br><span class="line">(connection closed)</span><br></pre></td></tr></table></figure>
+<p>不能有多个请求，对于任意的下一个请求，都需要新建一个连接</p>
+</li>
+</ul>
+</li>
+<li><p>HTTP/1.1</p>
+<ul>
+<li>添加了新的方法（PUT、PATCH、OPTIONS、DELETE）</li>
+<li>持久连接：一个链接可以处理多个请求</li>
+<li>引入了对流水线（pipelining）的支持，即客户端可以发送多个请求，不需要等待服务器的响应，而服务器必须按接收顺序发送响应</li>
+</ul>
+</li>
+<li><p>HTTP/2</p>
+<ul>
+<li>二进制 替换 文本 </li>
+<li>多路复用：通过单个连接处理多个http请求</li>
+<li>使用HPACK进行header压缩：文字值使用霍夫曼代码编码，标头表由客户端和服务器以及客户端和服务器维护在后续请求中省略任何重复的标头。</li>
+<li>Server Push ：单个请求可以有多个响应</li>
+<li>请求优先级</li>
+<li>安全  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>状态代码</p>
+<ul>
+<li>1xx 信息性</li>
+<li>2xx 成功</li>
+<li>3xx Redirection</li>
+<li>4xx 客户端错误</li>
+<li>5xx 服务器错误</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <h4 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a>编译原理</h4><ul>
@@ -301,6 +534,23 @@
 <li><p>缺点：</p>
 <p>1、更改比较繁琐：如果更改范围大到需要对输入存储过程的参数进行更改，或者要更改由其返回的数据，则仍需要更新程序集中的代码以添加参数、更新 GetValue() 调用。</p>
 <p>2、可移植性差：由于存储过程将应用程序绑定到 SQL Server，因此使用存储过程封装业务逻辑将限制应用程序的可移植性。如果应用程序的可移植性在您的环境中非常重要，则需要将业务逻辑封装在不特定于 RDBMS 的中间层中。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Vonng/ddia">设计数据密集型应用</a></p>
+<ul>
+<li><p>要求</p>
+<ul>
+<li><p>可靠性（Reliability）</p>
+<p>系统在 <strong>困境</strong>（adversity，比如硬件故障、软件故障、人为错误）中仍可正常工作（正确完成功能，并能达到期望的性能水准）。</p>
+</li>
+<li><p>可伸缩性（Scalability）</p>
+<p>有合理的办法应对系统的增长（数据量、流量、复杂性）。</p>
+</li>
+<li><p>可维护性（Maintainability）</p>
+<p>许多不同的人（工程师、运维）在不同的生命周期，都能高效地在系统上工作（使系统保持现有行为，并适应新的应用场景）。</p>
 </li>
 </ul>
 </li>
@@ -413,7 +663,7 @@
                         <a class="tag-none-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a>, <a class="tag-none-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a>, <a class="tag-none-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2022-11-05</span>
+                    <span>最后编辑：2022-12-01</span>
                     </div>
                 </div>
             </footer>
@@ -422,12 +672,12 @@
             <nav class="navigation post-navigation clearfix" role="navigation">
                 
                 <div class="nav-previous clearfix">
-                    <a title=" C/C++相关记录" href="/2022/09/21/C-C-相关记录/">&lt; 上一篇</a>
+                    <a title=" C/C++方向" href="/2022/09/21/CC++方向/">&lt; 上一篇</a>
                 </div>
                 
                 
                 <div class="nav-next clearfix">
-                    <a title=" 3D数学基础：图形与游戏开发" href="/2022/10/07/3D数学基础：图形与游戏开发/">下一篇 &gt;</a>
+                    <a title=" Linux网络编程" href="/2022/10/02/Linux网络编程/">下一篇 &gt;</a>
                 </div>
                 
             </nav>
@@ -481,7 +731,7 @@
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/C/" style="font-size: 0.73em;">C#</a> <a href="/tags/C/" style="font-size: 0.6em;">C++</a> <a href="/tags/C-C/" style="font-size: 0.6em;">C/C++</a> <a href="/tags/Leetcode/" style="font-size: 0.6em;">Leetcode</a> <a href="/tags/Lua/" style="font-size: 0.67em;">Lua</a> <a href="/tags/Unity/" style="font-size: 0.8em;">Unity</a> <a href="/tags/c/" style="font-size: 0.6em;">c++</a> <a href="/tags/unity/" style="font-size: 0.67em;">unity</a> <a href="/tags/xlua/" style="font-size: 0.6em;">xlua</a> <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 0.6em;">图形学</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 0.6em;">学习</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 0.6em;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.6em;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 0.6em;">数据结构</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 0.67em;">经验</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.6em;">计算机网络</a> <a href="/tags/%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" style="font-size: 0.67em;">错误总结</a>
+        <a href="/tags/C/" style="font-size: 0.73em;">C#</a> <a href="/tags/C/" style="font-size: 0.6em;">C++</a> <a href="/tags/C-C/" style="font-size: 0.6em;">C/C++</a> <a href="/tags/Leetcode/" style="font-size: 0.6em;">Leetcode</a> <a href="/tags/Linux/" style="font-size: 0.6em;">Linux</a> <a href="/tags/Lua/" style="font-size: 0.67em;">Lua</a> <a href="/tags/Socket/" style="font-size: 0.6em;">Socket</a> <a href="/tags/Unity/" style="font-size: 0.8em;">Unity</a> <a href="/tags/c/" style="font-size: 0.6em;">c++</a> <a href="/tags/unity/" style="font-size: 0.67em;">unity</a> <a href="/tags/xlua/" style="font-size: 0.6em;">xlua</a> <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 0.6em;">图形学</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 0.6em;">学习</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 0.6em;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.6em;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 0.6em;">数据结构</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 0.67em;">经验</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.6em;">计算机网络</a>
       </div>
   </aside>
 
@@ -492,6 +742,12 @@
   <div class="tab-content">
       <ul class="list-group">
         
+        
+          
+          
+            <a class="list-group-item" href="/2022/11/21/Unity%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E6%95%B4%E7%90%86/"><i class="fa  fa-book"></i> Unity功能模块整理</a>
+            
+          
         
           
           
@@ -507,22 +763,20 @@
         
           
           
+            <a class="list-group-item" href="/2022/10/02/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"><i class="fa  fa-book"></i> Linux网络编程</a>
+            
+          
+        
+          
+          
             <a class="list-group-item" href="/2022/09/22/%E5%85%AB%E8%82%A1/"><i class="fa  fa-book"></i> 操作系统/计网/数据库</a>
             
           
         
           
-          
-            <a class="list-group-item" href="/2022/09/21/C-C-%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/"><i class="fa  fa-book"></i> C/C++相关记录</a>
             
           
-        
-          
-          
-            <a class="list-group-item" href="/2022/08/19/%E7%AC%94%E8%AF%95%E9%A2%98%E8%AE%B0%E5%BD%95/"><i class="fa  fa-book"></i> 知识点记录(Unity/C#)</a>
             
-          
-        
           
             
           
