@@ -6,7 +6,7 @@
   <link href="http://kennyyyyyy.github.io/atom.xml" rel="self"/>
   
   <link href="http://kennyyyyyy.github.io/"/>
-  <updated>2023-08-05T15:33:46.563Z</updated>
+  <updated>2023-08-05T15:36:39.559Z</updated>
   <id>http://kennyyyyyy.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://kennyyyyyy.github.io/2023/08/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/"/>
     <id>http://kennyyyyyy.github.io/2023/08/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/</id>
     <published>2023-08-05T14:38:47.000Z</published>
-    <updated>2023-08-05T15:33:46.563Z</updated>
+    <updated>2023-08-05T15:36:39.559Z</updated>
     
     <content type="html"><![CDATA[<span id="more"></span><h4 id="1、单片机简介"><a href="#1、单片机简介" class="headerlink" title="1、单片机简介"></a>1、单片机简介</h4><p><img src="/images/嵌入式基础/image-20230805225149234.png" alt="image-20230805225149234"></p><h4 id="2、STM32"><a href="#2、STM32" class="headerlink" title="2、STM32"></a>2、STM32</h4><ol><li><p>ST：半导体；M：MCU/MPU；32位</p></li><li><p><a href="www.stmcu.org.cn">ST中文社区网</a></p></li><li><p>命名规则</p><p><img src="/images/嵌入式基础/image-20230805232639235.png" alt="image-20230805232639235"></p></li></ol><h4 id="3、最小系统和IO分配"><a href="#3、最小系统和IO分配" class="headerlink" title="3、最小系统和IO分配"></a>3、最小系统和IO分配</h4>]]></content>
     
