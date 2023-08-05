@@ -24,7 +24,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2022-08-16T01:41:04.000Z">
-<meta property="article:modified_time" content="2022-11-22T08:10:07.736Z">
+<meta property="article:modified_time" content="2023-02-09T10:42:11.880Z">
 <meta property="article:author" content="kennyyy">
 <meta property="article:tag" content="Unity">
 <meta property="article:tag" content="Lua">
@@ -140,7 +140,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~15.57K
+                            ~18.44K
                         
                         字
                     </li>
@@ -149,11 +149,11 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1669104607736"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1675939331880"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
-                        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E5%88%92%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text">资源目录划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">框架内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">框架开发流程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%9ABundle%E5%A4%84%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">第一阶段：Bundle处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%9AC-%E8%B0%83%E7%94%A8Lua"><span class="toc-number">3.2.</span> <span class="toc-text">第二阶段：C#调用Lua</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%90%91Lua%E6%8F%90%E4%BE%9B%E6%8E%A5%E5%8F%A3"><span class="toc-number">3.3.</span> <span class="toc-text">第三阶段：向Lua提供接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%AE%8C%E5%96%84%E5%92%8C%E4%BC%98%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">第四阶段：完善和优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#UI%E7%AE%A1%E7%90%86"><span class="toc-number">3.5.</span> <span class="toc-text">UI管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E7%AE%A1%E7%90%86"><span class="toc-number">3.6.</span> <span class="toc-text">实体管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E7%AE%A1%E7%90%86"><span class="toc-number">3.7.</span> <span class="toc-text">场景管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A3%B0%E9%9F%B3%E7%AE%A1%E7%90%86"><span class="toc-number">3.8.</span> <span class="toc-text">声音管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">3.9.</span> <span class="toc-text">事件管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.10.</span> <span class="toc-text">对象池设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97"><span class="toc-number">3.11.</span> <span class="toc-text">网络模块</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0"><span class="toc-number">4.</span> <span class="toc-text">热更新</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%9B%B4%E6%96%B0"><span class="toc-number">4.1.</span> <span class="toc-text">为什么需要更新</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">4.2.</span> <span class="toc-text">热更新是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Lua%E7%83%AD%E6%9B%B4%E7%9A%84%E5%87%A0%E4%B8%AA%E7%82%B9"><span class="toc-number">4.2.1.</span> <span class="toc-text">Lua热更的几个点</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Xlua%E6%A1%86%E6%9E%B6%E4%B8%8E%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6"><span class="toc-number">4.3.</span> <span class="toc-text">Xlua框架与项目框架</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#lua%E6%A1%86%E6%9E%B6%E2%80%94%E4%B8%BB%E7%A8%8B%E6%89%80%E8%80%83%E8%99%91%E7%9A%84"><span class="toc-number">4.3.1.</span> <span class="toc-text">lua框架—主程所考虑的</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%AD%E5%90%8E%E6%9C%9F%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%83%AD%E6%9B%B4%E9%87%8D%E6%9E%84%E5%BB%BA%E8%AE%AE"><span class="toc-number">4.3.2.</span> <span class="toc-text">中后期项目的热更重构建议</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#XLua%E6%A1%86%E6%9E%B6"><span class="toc-number">4.3.3.</span> <span class="toc-text">XLua框架</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-number">4.4.</span> <span class="toc-text">框架基本功能</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86"><span class="toc-number">4.4.1.</span> <span class="toc-text">资源目录结构划分</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%93%8D%E4%BD%9C"><span class="toc-number">4.4.2.</span> <span class="toc-text">功能模块的引用与操作</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">4.4.3.</span> <span class="toc-text">配置文件的使用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8E%E9%A2%84%E5%88%B6%E4%BD%93%E8%B5%84%E6%BA%90%E7%9A%84%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96"><span class="toc-number">4.4.4.</span> <span class="toc-text">图片与预制体资源的动态获取</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8D%95%E6%9C%BADemo%E7%83%AD%E6%9B%B4%E6%96%B0%E5%88%B6%E4%BD%9C%E8%A7%84%E5%88%92"><span class="toc-number">4.4.5.</span> <span class="toc-text">单机Demo热更新制作规划</span></a></li></ol></li></ol></li></ol>
+                        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E5%88%92%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text">资源目录划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">框架内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">框架开发流程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%9ABundle%E5%A4%84%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">第一阶段：Bundle处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%9AC-%E8%B0%83%E7%94%A8Lua"><span class="toc-number">3.2.</span> <span class="toc-text">第二阶段：C#调用Lua</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%90%91Lua%E6%8F%90%E4%BE%9B%E6%8E%A5%E5%8F%A3"><span class="toc-number">3.3.</span> <span class="toc-text">第三阶段：向Lua提供接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%AE%8C%E5%96%84%E5%92%8C%E4%BC%98%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">第四阶段：完善和优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#UI%E7%AE%A1%E7%90%86"><span class="toc-number">3.5.</span> <span class="toc-text">UI管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E7%AE%A1%E7%90%86"><span class="toc-number">3.6.</span> <span class="toc-text">实体管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E7%AE%A1%E7%90%86"><span class="toc-number">3.7.</span> <span class="toc-text">场景管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A3%B0%E9%9F%B3%E7%AE%A1%E7%90%86"><span class="toc-number">3.8.</span> <span class="toc-text">声音管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">3.9.</span> <span class="toc-text">事件管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.10.</span> <span class="toc-text">对象池设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97"><span class="toc-number">3.11.</span> <span class="toc-text">网络模块</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0%E6%A1%86%E6%9E%B6"><span class="toc-number">4.</span> <span class="toc-text">热更新框架</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%9B%B4%E6%96%B0"><span class="toc-number">4.1.</span> <span class="toc-text">为什么需要更新</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">4.2.</span> <span class="toc-text">热更新是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Lua%E7%83%AD%E6%9B%B4%E7%9A%84%E5%87%A0%E4%B8%AA%E7%82%B9"><span class="toc-number">4.2.1.</span> <span class="toc-text">Lua热更的几个点</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Xlua%E6%A1%86%E6%9E%B6%E4%B8%8E%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6"><span class="toc-number">4.3.</span> <span class="toc-text">Xlua框架与项目框架</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#lua%E6%A1%86%E6%9E%B6%E2%80%94%E4%B8%BB%E7%A8%8B%E6%89%80%E8%80%83%E8%99%91%E7%9A%84"><span class="toc-number">4.3.1.</span> <span class="toc-text">lua框架—主程所考虑的</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%AD%E5%90%8E%E6%9C%9F%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%83%AD%E6%9B%B4%E9%87%8D%E6%9E%84%E5%BB%BA%E8%AE%AE"><span class="toc-number">4.3.2.</span> <span class="toc-text">中后期项目的热更重构建议</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#XLua%E6%A1%86%E6%9E%B6"><span class="toc-number">4.3.3.</span> <span class="toc-text">XLua框架</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-number">4.4.</span> <span class="toc-text">框架基本功能</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86"><span class="toc-number">4.4.1.</span> <span class="toc-text">资源目录结构划分</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%93%8D%E4%BD%9C"><span class="toc-number">4.4.2.</span> <span class="toc-text">功能模块的引用与操作</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">4.4.3.</span> <span class="toc-text">配置文件的使用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8E%E9%A2%84%E5%88%B6%E4%BD%93%E8%B5%84%E6%BA%90%E7%9A%84%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96"><span class="toc-number">4.4.4.</span> <span class="toc-text">图片与预制体资源的动态获取</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8D%95%E6%9C%BADemo%E7%83%AD%E6%9B%B4%E6%96%B0%E5%88%B6%E4%BD%9C%E8%A7%84%E5%88%92"><span class="toc-number">4.4.5.</span> <span class="toc-text">单机Demo热更新制作规划</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%88%98%E6%96%97%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90"><span class="toc-number">4.5.</span> <span class="toc-text">战斗系统分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E6%B8%B8%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E5%88%86%E6%9E%90"><span class="toc-number">4.6.</span> <span class="toc-text">网游功能模块分析</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97%E5%88%86%E6%9E%90"><span class="toc-number">4.6.1.</span> <span class="toc-text">网络模块分析</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E4%B8%9A%E5%8A%A1%E8%AF%B7%E6%B1%82%E9%80%BB%E8%BE%91%E6%B5%81%E7%A8%8B"><span class="toc-number">4.6.2.</span> <span class="toc-text">一次业务请求逻辑流程</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%83%8C%E5%8C%85%E6%A8%A1%E5%9D%97%E5%88%86%E6%9E%90"><span class="toc-number">4.6.3.</span> <span class="toc-text">背包模块分析</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.6.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E6%A6%82%E5%BF%B5"><span class="toc-number">4.7.</span> <span class="toc-text">框架概念</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E7%9B%AE%E6%A0%87"><span class="toc-number">4.7.1.</span> <span class="toc-text">框架目标</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E7%83%AD%E6%9B%B4%E6%A1%86%E6%9E%B6"><span class="toc-number">4.7.2.</span> <span class="toc-text">为什么需要热更框架</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%A1%86%E6%9E%B6%E7%9B%AE%E6%A0%87"><span class="toc-number">4.7.3.</span> <span class="toc-text">热更框架目标</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84"><span class="toc-number">4.8.</span> <span class="toc-text">框架结构</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">4.8.1.</span> <span class="toc-text">框架项目目录结构</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%87%8D%E7%82%B9%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="toc-number">4.8.2.</span> <span class="toc-text">重点功能模块</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB"><span class="toc-number">4.8.3.</span> <span class="toc-text">功能模块调用关系</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.9.</span> <span class="toc-text">框架功能设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E6%89%93%E5%8C%85%E7%AD%96%E7%95%A5"><span class="toc-number">4.10.</span> <span class="toc-text">资源打包策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5"><span class="toc-number">4.11.</span> <span class="toc-text">资源管理策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.12.</span> <span class="toc-text">开发工具设计</span></a></li></ol></li></ol>
                     </div>
                 
                 <hr />
@@ -516,7 +516,7 @@
 </li>
 </ul>
 <p>简单服务器</p>
-<h4 id="热更新"><a href="#热更新" class="headerlink" title="热更新"></a>热更新</h4><h5 id="为什么需要更新"><a href="#为什么需要更新" class="headerlink" title="为什么需要更新"></a>为什么需要更新</h5><ol>
+<h4 id="热更新框架"><a href="#热更新框架" class="headerlink" title="热更新框架"></a>热更新框架</h4><h5 id="为什么需要更新"><a href="#为什么需要更新" class="headerlink" title="为什么需要更新"></a>为什么需要更新</h5><ol>
 <li>修复产品问题</li>
 <li>游戏内容扩充/删减</li>
 </ol>
@@ -612,6 +612,399 @@
 </ol>
 <ol>
 <li>准备开发</li>
+</ol>
+<h5 id="战斗系统分析"><a href="#战斗系统分析" class="headerlink" title="战斗系统分析"></a>战斗系统分析</h5><ol>
+<li><p>需求分析</p>
+<p><img src="/images/热更新/image-20221217210406239.png" alt="image-20221217210406239"></p>
+<ol>
+<li>形式：回合制、即时战斗</li>
+<li>如何开始：攻击怪物、靠近怪物</li>
+<li>如何结束：打败敌人、退出地图</li>
+</ol>
+</li>
+<li><p>配置表与数据结构</p>
+<p>需要较为完整的配置表才能更好的进行代码逻辑的编写</p>
+<p><img src="/images/热更新/image-20221217210547055.png" alt="image-20221217210547055"></p>
+</li>
+<li><p>模块支撑</p>
+<ol>
+<li><p>分析</p>
+<p><img src="/images/热更新/image-20221217210712333.png" alt="image-20221217210712333"></p>
+<ol>
+<li>场景管理：进入战场，场景切换</li>
+<li>怪物管理：怪物刷新、怪物相关任务</li>
+<li>战斗计算：战斗过程处理</li>
+<li>战斗结算：进行结算</li>
+<li>战斗动画：管理动画</li>
+<li>特效管理：管理特效</li>
+</ol>
+</li>
+<li><p>普攻实现</p>
+<ol>
+<li>攻击距离</li>
+<li>攻击判定</li>
+<li>攻击力动态计算</li>
+<li>数值与公式</li>
+</ol>
+</li>
+<li><p>技能实现</p>
+<ol>
+<li>回复术：回复生命值/魔法值等（对Player属性的修改）</li>
+<li>buff：存在时间，可以对多种属性进行增益或减益</li>
+<li>火球术：伤害类技能，直接碰撞检测等 </li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h5 id="网游功能模块分析"><a href="#网游功能模块分析" class="headerlink" title="网游功能模块分析"></a>网游功能模块分析</h5><ol>
+<li><p>模块分析</p>
+<p><img src="/images/热更新/image-20221218151849593.png" alt="image-20221218151849593"></p>
+</li>
+<li><p>框架技术</p>
+<p><img src="/images/热更新/image-20221218152309588.png" alt="image-20221218152309588"></p>
+</li>
+<li><p>网络请求</p>
+<p><img src="/images/热更新/image-20221218155737845.png" alt="image-20221218155737845"></p>
+</li>
+</ol>
+<h6 id="网络模块分析"><a href="#网络模块分析" class="headerlink" title="网络模块分析"></a>网络模块分析</h6><ol>
+<li>Net模块工作原理</li>
+<li>Net模块功能分析</li>
+<li>Net模块使用操作</li>
+</ol>
+<ul>
+<li>短链接<ul>
+<li>缺点：连接操作频繁</li>
+<li>优点：服务器管理成本低，对服务器压力小</li>
+</ul>
+</li>
+<li>C#端与Http请求回调<ul>
+<li>IP地址问题</li>
+<li>接收Lua回调方法</li>
+<li>使用Post请求</li>
+<li>响应后将回调方法加入C#CallLua列表</li>
+</ul>
+</li>
+</ul>
+<h6 id="一次业务请求逻辑流程"><a href="#一次业务请求逻辑流程" class="headerlink" title="一次业务请求逻辑流程"></a>一次业务请求逻辑流程</h6><ol>
+<li><p>方式一</p>
+<p><img src="/images/热更新/image-20221220142727994.png" alt="image-20221220142727994"></p>
+</li>
+<li><p>方式二：主数据的 更新交给框架处理，不需要再业务逻辑开发的过程中处理</p>
+<p><img src="/images/热更新/image-20221220143029015.png" alt="image-20221220143029015"></p>
+</li>
+</ol>
+<h6 id="背包模块分析"><a href="#背包模块分析" class="headerlink" title="背包模块分析"></a>背包模块分析</h6><p>​    <img src="/images/热更新/image-20221220185056104.png" alt="image-20221220185056104"></p>
+<ol>
+<li>需求分析 <ol>
+<li>滑动列表多物体处理：只显示框内的物体，对在列表外的物体进行隐藏</li>
+</ol>
+</li>
+<li>数据流</li>
+<li>数据结构</li>
+<li>配置文件</li>
+</ol>
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p><img src="/images/热更新/image-20221220210827243.png" alt="image-20221220210827243"></p>
+<h5 id="框架概念"><a href="#框架概念" class="headerlink" title="框架概念"></a>框架概念</h5><h6 id="框架目标"><a href="#框架目标" class="headerlink" title="框架目标"></a>框架目标</h6><p><img src="/images/热更新/image-20221221164620711.png" alt="image-20221221164620711"></p>
+<ol>
+<li><p>可靠性</p>
+<ul>
+<li>bug为什么多</li>
+<li>公共功能架构解决</li>
+</ul>
+</li>
+<li><p>安全性</p>
+<ul>
+<li>核心是数据安全</li>
+<li>加密</li>
+<li>身份验证</li>
+<li>只相信服务器的运算 </li>
+</ul>
+</li>
+<li><p>可扩展和和维护</p>
+<p>功能和功能之间需要进行合理的划分，之间不能直接进行调用，要方便后续的功能开发</p>
+<ul>
+<li>功能不断增加</li>
+<li>功能需要维护</li>
+<li>功能划分</li>
+<li>松耦合</li>
+</ul>
+</li>
+<li><p>可定制和可伸缩</p>
+<ul>
+<li>可根据需求进行调整：不同项目侧重不同——框架扩充</li>
+<li>可根据新技术对现有框架进行扩展</li>
+<li>不同项目自定义模块方法</li>
+<li>lua插件本体也可以更换</li>
+</ul>
+</li>
+<li><p>客户体验</p>
+<p>方便开发</p>
+<ul>
+<li>开发模板</li>
+<li>开发工具 ：配置文件等</li>
+</ul>
+</li>
+</ol>
+<h6 id="为什么需要热更框架"><a href="#为什么需要热更框架" class="headerlink" title="为什么需要热更框架"></a>为什么需要热更框架</h6><ol>
+<li><p>被动因素</p>
+<ul>
+<li>XLua：和Tween/easyTouch等插件不一样，使用的是lua语言进行项目开发，从根本上改变了原有框架</li>
+</ul>
+</li>
+<li><p><img src="/images/热更新/image-20221221230049180.png" alt="image-20221221230049180"></p>
+</li>
+</ol>
+<h6 id="热更框架目标"><a href="#热更框架目标" class="headerlink" title="热更框架目标"></a>热更框架目标</h6><ol>
+<li>引擎部分</li>
+</ol>
+<p>   <img src="/images/热更新/image-20221221230854494.png" alt="image-20221221230854494"></p>
+<ul>
+<li>内部采用打包时间作为版本号</li>
+</ul>
+<ol>
+<li><p>C#部分</p>
+<p><img src="/images/热更新/image-20221221232227664.png" alt="image-20221221232227664"></p>
+</li>
+<li><p>Lua部分：使代码功能模式化  </p>
+<p><img src="/images/热更新/image-20221221233018384.png" alt="image-20221221233018384"></p>
+</li>
+</ol>
+<h5 id="框架结构"><a href="#框架结构" class="headerlink" title="框架结构"></a>框架结构</h5><h6 id="框架项目目录结构"><a href="#框架项目目录结构" class="headerlink" title="框架项目目录结构"></a>框架项目目录结构</h6><ol>
+<li><img src="/images/热更新/image-20221222162432848.png" alt="image-20221222162432848"><ul>
+<li>Ant：自定义组件C#脚本</li>
+<li>AssetBundlesLocal：热更新资源目录</li>
+<li>Editor：编辑器开发目录</li>
+<li>EditorPrefab：自定义组件预制体</li>
+<li>Lua：lua脚本存放目录</li>
+<li>Plugins：插件目录</li>
+<li>Resources：内部资源目录</li>
+<li>Xlua：xlua插件目录</li>
+</ul>
+</li>
+</ol>
+<h6 id="重点功能模块"><a href="#重点功能模块" class="headerlink" title="重点功能模块"></a>重点功能模块</h6><p><img src="/images/热更新/image-20221222190624759.png" alt="image-20221222190624759"></p>
+<h6 id="功能模块调用关系"><a href="#功能模块调用关系" class="headerlink" title="功能模块调用关系"></a>功能模块调用关系</h6><p><img src="/images/热更新/image-20221222190725350.png" alt="image-20221222190725350"></p>
+<ul>
+<li><p>重点功能模块</p>
+<ul>
+<li><p>UIGameLoading</p>
+<p><img src="/images/热更新/image-20221222191306345.png" alt="image-20221222191306345"></p>
+</li>
+<li><p>AppBoot</p>
+<p><img src="/images/热更新/image-20221222191735997.png" alt="image-20221222191735997"></p>
+</li>
+<li><p>LuaTools</p>
+<p><img src="/images/热更新/image-20221222192558778.png" alt="image-20221222192558778"></p>
+</li>
+<li><p>LuaBehaviour</p>
+<p><img src="/images/热更新/image-20221222193754710.png" alt="image-20221222193754710"></p>
+</li>
+<li><p>ResourceManager</p>
+<p><img src="/images/热更新/image-20221222194608256.png" alt="image-20221222194608256"></p>
+</li>
+<li><p>SystemTool</p>
+<p><img src="/images/热更新/image-20221222195018653.png" alt="image-20221222195018653"></p>
+</li>
+</ul>
+</li>
+<li><p>重点脚本</p>
+<ul>
+<li><p>ui.lua</p>
+<p><img src="/images/热更新/image-20221222195137140.png" alt="image-20221222195137140"></p>
+</li>
+<li><p>main.lua</p>
+<p><img src="/images/热更新/image-20221222195215642.png" alt="image-20221222195215642"></p>
+</li>
+<li><p>网络模块</p>
+<p><img src="/images/热更新/image-20221222195944179.png" alt="image-20221222195944179"></p>
+</li>
+<li><p>list.lua</p>
+<p><img src="/images/热更新/image-20221222200020222.png" alt="image-20221222200020222"></p>
+</li>
+<li><p>GameMainData</p>
+<p><img src="/images/热更新/image-20221222200037417.png" alt="image-20221222200037417"></p>
+</li>
+<li><p>event.lua</p>
+<p>事件系统，可以订阅和调用</p>
+<p><img src="/images/热更新/image-20221222200306912.png" alt="image-20221222200306912"></p>
+</li>
+<li><p>plugin.lua</p>
+<p>插件资源管理，方便管理</p>
+<p><img src="/images/热更新/image-20221222200444582.png" alt="image-20221222200444582"></p>
+</li>
+<li><p>public.lua</p>
+<p>公共资源管理，存放公共方法</p>
+<p><img src="/images/热更新/image-20221222200455483.png" alt="image-20221222200455483"></p>
+</li>
+<li><p>tools.lua</p>
+<p><img src="/images/热更新/image-20221222200902127.png" alt="image-20221222200902127"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="框架功能设计"><a href="#框架功能设计" class="headerlink" title="框架功能设计"></a>框架功能设计</h5><ol>
+<li><p>业务功能管理 </p>
+<ul>
+<li><p>ui.lua</p>
+<p><img src="/images/热更新/image-20230106085705394.png" alt="image-20230106085705394"></p>
+</li>
+<li><p>UIGameLoading</p>
+<p><img src="/images/热更新/image-20230106145150649.png" alt="image-20230106145150649"></p>
+</li>
+</ul>
+</li>
+<li><p>网络请求管理 </p>
+<ul>
+<li><p>net.lua</p>
+<p><img src="/images/热更新/image-20230106101826176.png" alt="image-20230106101826176"></p>
+</li>
+<li></li>
+</ul>
+</li>
+</ol>
+<h5 id="资源打包策略"><a href="#资源打包策略" class="headerlink" title="资源打包策略"></a>资源打包策略</h5><ol>
+<li><p>资源打包前提</p>
+<p><img src="/images/热更新/image-20230204220246369.png" alt="image-20230204220246369"></p>
+</li>
+<li><p>资源打包流程</p>
+<p><img src="/images/热更新/image-20230205142823955.png" alt="image-20230205142823955"></p>
+</li>
+<li><p>资源打包策略</p>
+<p><img src="/images/热更新/image-20230205144440952.png" alt="image-20230205144440952"></p>
+<p><img src="/images/热更新/image-20230205145249992.png" alt="image-20230205145249992"></p>
+</li>
+<li><p>相关类和函数</p>
+<p>AssetImporter：</p>
+<p><strong>属性</strong></p>
+<ul>
+<li>assetBundleName / assetBundleVariant：获取或设置AssetBundle Name / Property；</li>
+</ul>
+<p><strong>静态方法</strong></p>
+<ul>
+<li>GetAtPath()：通过静态方法GetAtPath获取指定路径（相对路径）下的资源的导入器</li>
+</ul>
+</li>
+</ol>
+<h5 id="资源管理策略"><a href="#资源管理策略" class="headerlink" title="资源管理策略"></a>资源管理策略</h5><ol>
+<li><p>ab包加载</p>
+<ol>
+<li><p>编辑器开发</p>
+<p>使用unity资源数据库类管理</p>
+<p><code>AssetDatabase.LoadAssetAtPath&lt;AudioClip&gt;(&quot;Assets/AssetBundlesLocal/&quot; + path + &quot;/&quot; + name + &quot;.wav&quot;)</code></p>
+</li>
+<li><p>真机环境(PC、安卓)</p>
+<ul>
+<li>判断内存中是否加载需要的资源</li>
+<li>若不存在相应资源，则判断是否存在对应的ab包</li>
+<li>若存在，则从ab包中读取对应的资源</li>
+<li>若不存在，则先load这个ab包，放入对应容器，然后加载资源</li>
+</ul>
+</li>
+<li><p>优点</p>
+<ol>
+<li>可以避免重复加载同一个ab包</li>
+<li>每一个资源都不会重复加载</li>
+<li>通过ab包名和资源名就可以获取相应的资源。ab包名对应路径</li>
+</ol>
+</li>
+<li><p>ab包加载路径</p>
+<ol>
+<li><p>真机</p>
+<p>在从资源服务器判断热更后，下载ab包，将其存放在客户端的PersistentData目录下</p>
+</li>
+<li><p>编辑器</p>
+<p>要将ab包复制到PersistentData目录下</p>
+</li>
+</ol>
+</li>
+<li><p>预加载资源</p>
+<p>有一些资源需要在运行前加载到内存中</p>
+<p>有些资源需要在某功能开始前加载</p>
+<ol>
+<li><p>依赖关系</p>
+<p>一个预制体，使用了text，text使用了字体</p>
+<p>字体和预制体都被打包未ab包</p>
+<p>则这个预制体ab依赖于字体的ab</p>
+<p>要使用这个预制体，则需要预加载字体ab</p>
+<ul>
+<li>按照功能划分ab包，一个功能的所有依赖都打包到同一个ab包中</li>
+<li>公共部分打包为公共ab包，所有使用它的模块共同依赖这个ab包</li>
+</ul>
+</li>
+<li><p>预加载常驻内存资源</p>
+<ul>
+<li>提供加载方法，一般用于字体，shader等资源</li>
+</ul>
+</li>
+<li><p>预加载模块资源</p>
+</li>
+</ol>
+</li>
+<li><p>资源维护与清理</p>
+<ol>
+<li>维护<ol>
+<li>allAssetBundle[path] ：存储所有ab包的容器（字典），每一个ab在内存中的引用。ab包被清理后，对应的值也会被清理</li>
+<li>ab.Unload(true)：清理ab包，并清理ab包中每一个资源的引用</li>
+<li>ab.Unload(false)：仅清理ab包，不清理资源的引用。可能会导致内存泄露</li>
+</ol>
+</li>
+<li>清理<ol>
+<li>C#端，判断内存中是否存在ab包，存在则Unload</li>
+<li>lua端根据需要的时候调用</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>资源清理策略</p>
+<ol>
+<li><p>如何清理</p>
+<p>调用清理方法</p>
+</li>
+<li><p>调用时机</p>
+<ol>
+<li><p>功能模块关闭后直接调用清理</p>
+<p>对于ab包容量不大，资源数适中，在load时不卡顿</p>
+</li>
+<li><p>根据实际情况决定时机</p>
+<p>对于ab包容量大，资源数较多，load时有卡顿</p>
+</li>
+</ol>
+</li>
+<li><p>策略一：从源头</p>
+<ol>
+<li>在ab包划分时：功能划分，资源划分，公共资源部分确定（常驻）</li>
+<li>资源本生容量控制：在显示效果牺牲不大的情况下降低资源配置</li>
+</ol>
+</li>
+<li><p>二：补救，通过配置文件决定如何清理</p>
+<ol>
+<li>延迟清理：在模块关闭一定时间后再清理</li>
+<li>根据需要<ol>
+<li>时间段：某个时间段内不清理</li>
+<li>等级：某些等级对某些模块的使用更频繁</li>
+<li>其他：vip、等</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h5 id="开发工具设计"><a href="#开发工具设计" class="headerlink" title="开发工具设计"></a>开发工具设计</h5><ol>
+<li><p>编译器工具</p>
+<p>通过自定义扩展编辑器功能</p>
+</li>
+<li><p>常规工具</p>
+<p>独立运行的exe程序</p>
+</li>
+<li><p>准换工具</p>
+<p>json转换为lua</p>
+<p>excel转换为json</p>
+</li>
 </ol>
 
             </div>
@@ -728,7 +1121,7 @@ UI
                         <a class="tag-none-link" href="/tags/C/" rel="tag">C#</a>, <a class="tag-none-link" href="/tags/Lua/" rel="tag">Lua</a>, <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>, <a class="tag-none-link" href="/tags/xlua/" rel="tag">xlua</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2022-11-22</span>
+                    <span>最后编辑：2023-02-09</span>
                     </div>
                 </div>
             </footer>
@@ -780,14 +1173,14 @@ UI
         <span class="toc-progress-bar"></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E5%88%92%E5%88%86"><span class="toc-text">资源目录划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%86%85%E5%AE%B9"><span class="toc-text">框架内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-text">框架开发流程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%9ABundle%E5%A4%84%E7%90%86"><span class="toc-text">第一阶段：Bundle处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%9AC-%E8%B0%83%E7%94%A8Lua"><span class="toc-text">第二阶段：C#调用Lua</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%90%91Lua%E6%8F%90%E4%BE%9B%E6%8E%A5%E5%8F%A3"><span class="toc-text">第三阶段：向Lua提供接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%AE%8C%E5%96%84%E5%92%8C%E4%BC%98%E5%8C%96"><span class="toc-text">第四阶段：完善和优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#UI%E7%AE%A1%E7%90%86"><span class="toc-text">UI管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E7%AE%A1%E7%90%86"><span class="toc-text">实体管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E7%AE%A1%E7%90%86"><span class="toc-text">场景管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A3%B0%E9%9F%B3%E7%AE%A1%E7%90%86"><span class="toc-text">声音管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-text">事件管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0%E8%AE%BE%E8%AE%A1"><span class="toc-text">对象池设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97"><span class="toc-text">网络模块</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0"><span class="toc-text">热更新</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%9B%B4%E6%96%B0"><span class="toc-text">为什么需要更新</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">热更新是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Lua%E7%83%AD%E6%9B%B4%E7%9A%84%E5%87%A0%E4%B8%AA%E7%82%B9"><span class="toc-text">Lua热更的几个点</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Xlua%E6%A1%86%E6%9E%B6%E4%B8%8E%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6"><span class="toc-text">Xlua框架与项目框架</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#lua%E6%A1%86%E6%9E%B6%E2%80%94%E4%B8%BB%E7%A8%8B%E6%89%80%E8%80%83%E8%99%91%E7%9A%84"><span class="toc-text">lua框架—主程所考虑的</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%AD%E5%90%8E%E6%9C%9F%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%83%AD%E6%9B%B4%E9%87%8D%E6%9E%84%E5%BB%BA%E8%AE%AE"><span class="toc-text">中后期项目的热更重构建议</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#XLua%E6%A1%86%E6%9E%B6"><span class="toc-text">XLua框架</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-text">框架基本功能</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86"><span class="toc-text">资源目录结构划分</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%93%8D%E4%BD%9C"><span class="toc-text">功能模块的引用与操作</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">配置文件的使用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8E%E9%A2%84%E5%88%B6%E4%BD%93%E8%B5%84%E6%BA%90%E7%9A%84%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96"><span class="toc-text">图片与预制体资源的动态获取</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8D%95%E6%9C%BADemo%E7%83%AD%E6%9B%B4%E6%96%B0%E5%88%B6%E4%BD%9C%E8%A7%84%E5%88%92"><span class="toc-text">单机Demo热更新制作规划</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E5%88%92%E5%88%86"><span class="toc-text">资源目录划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%86%85%E5%AE%B9"><span class="toc-text">框架内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-text">框架开发流程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%9ABundle%E5%A4%84%E7%90%86"><span class="toc-text">第一阶段：Bundle处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%9AC-%E8%B0%83%E7%94%A8Lua"><span class="toc-text">第二阶段：C#调用Lua</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%90%91Lua%E6%8F%90%E4%BE%9B%E6%8E%A5%E5%8F%A3"><span class="toc-text">第三阶段：向Lua提供接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%AE%8C%E5%96%84%E5%92%8C%E4%BC%98%E5%8C%96"><span class="toc-text">第四阶段：完善和优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#UI%E7%AE%A1%E7%90%86"><span class="toc-text">UI管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E7%AE%A1%E7%90%86"><span class="toc-text">实体管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E7%AE%A1%E7%90%86"><span class="toc-text">场景管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A3%B0%E9%9F%B3%E7%AE%A1%E7%90%86"><span class="toc-text">声音管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-text">事件管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0%E8%AE%BE%E8%AE%A1"><span class="toc-text">对象池设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97"><span class="toc-text">网络模块</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0%E6%A1%86%E6%9E%B6"><span class="toc-text">热更新框架</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%9B%B4%E6%96%B0"><span class="toc-text">为什么需要更新</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">热更新是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Lua%E7%83%AD%E6%9B%B4%E7%9A%84%E5%87%A0%E4%B8%AA%E7%82%B9"><span class="toc-text">Lua热更的几个点</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Xlua%E6%A1%86%E6%9E%B6%E4%B8%8E%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6"><span class="toc-text">Xlua框架与项目框架</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#lua%E6%A1%86%E6%9E%B6%E2%80%94%E4%B8%BB%E7%A8%8B%E6%89%80%E8%80%83%E8%99%91%E7%9A%84"><span class="toc-text">lua框架—主程所考虑的</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%AD%E5%90%8E%E6%9C%9F%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%83%AD%E6%9B%B4%E9%87%8D%E6%9E%84%E5%BB%BA%E8%AE%AE"><span class="toc-text">中后期项目的热更重构建议</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#XLua%E6%A1%86%E6%9E%B6"><span class="toc-text">XLua框架</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-text">框架基本功能</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86"><span class="toc-text">资源目录结构划分</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%93%8D%E4%BD%9C"><span class="toc-text">功能模块的引用与操作</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">配置文件的使用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8E%E9%A2%84%E5%88%B6%E4%BD%93%E8%B5%84%E6%BA%90%E7%9A%84%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96"><span class="toc-text">图片与预制体资源的动态获取</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8D%95%E6%9C%BADemo%E7%83%AD%E6%9B%B4%E6%96%B0%E5%88%B6%E4%BD%9C%E8%A7%84%E5%88%92"><span class="toc-text">单机Demo热更新制作规划</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%88%98%E6%96%97%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90"><span class="toc-text">战斗系统分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E6%B8%B8%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E5%88%86%E6%9E%90"><span class="toc-text">网游功能模块分析</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97%E5%88%86%E6%9E%90"><span class="toc-text">网络模块分析</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E4%B8%9A%E5%8A%A1%E8%AF%B7%E6%B1%82%E9%80%BB%E8%BE%91%E6%B5%81%E7%A8%8B"><span class="toc-text">一次业务请求逻辑流程</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%83%8C%E5%8C%85%E6%A8%A1%E5%9D%97%E5%88%86%E6%9E%90"><span class="toc-text">背包模块分析</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E6%A6%82%E5%BF%B5"><span class="toc-text">框架概念</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E7%9B%AE%E6%A0%87"><span class="toc-text">框架目标</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E7%83%AD%E6%9B%B4%E6%A1%86%E6%9E%B6"><span class="toc-text">为什么需要热更框架</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%A1%86%E6%9E%B6%E7%9B%AE%E6%A0%87"><span class="toc-text">热更框架目标</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84"><span class="toc-text">框架结构</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">框架项目目录结构</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%87%8D%E7%82%B9%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="toc-text">重点功能模块</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB"><span class="toc-text">功能模块调用关系</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E8%AE%BE%E8%AE%A1"><span class="toc-text">框架功能设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E6%89%93%E5%8C%85%E7%AD%96%E7%95%A5"><span class="toc-text">资源打包策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5"><span class="toc-text">资源管理策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E8%AE%BE%E8%AE%A1"><span class="toc-text">开发工具设计</span></a></li></ol></li></ol>
     </div>
 </aside>
                 
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c/">c++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">每日一题</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c/">c++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">每日一题</a><span class="category-list-count">1</span></li></ul>
   </aside>
 
 
@@ -810,6 +1203,18 @@ UI
         
           
           
+            <a class="list-group-item" href="/2023/08/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/"><i class="fa  fa-book"></i> 嵌入式基础</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/12/06/%E6%AF%95%E8%AE%BE%E8%AE%B0%E5%BD%95/"><i class="fa  fa-book"></i> 毕设记录</a>
+            
+          
+        
+          
+          
             <a class="list-group-item" href="/2022/11/21/Unity%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E6%95%B4%E7%90%86/"><i class="fa  fa-book"></i> Unity功能模块整理</a>
             
           
@@ -827,17 +1232,9 @@ UI
           
         
           
-          
-            <a class="list-group-item" href="/2022/10/02/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"><i class="fa  fa-book"></i> Linux网络编程</a>
             
           
-        
-          
-          
-            <a class="list-group-item" href="/2022/09/22/%E5%85%AB%E8%82%A1/"><i class="fa  fa-book"></i> 操作系统/计网/数据库</a>
             
-          
-        
           
             
           
@@ -913,7 +1310,7 @@ UI
                     </ul>
                     <ul class="kratos-copyright">
                         <div>
-                            <li>&copy; 2022 Imperio 版权所有.</li>
+                            <li>&copy; 2023 Imperio 版权所有.</li>
                             <li>本站已运行<span id="span_dt">Loading...</span></li>
                         </div>
                         <div>

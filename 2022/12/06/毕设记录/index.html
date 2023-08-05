@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/logo.jpg">
+  <title>毕设记录 | Imperio</title>
+  <meta name="author" content="kennyyy" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Unity" />
+  
+  <meta name="description" content="选题描述主要内容：基于Unity3D引擎的一个2D平台跳跃类游戏。玩家可以在多个地图之中活动，每个地图上会存在一些对应的功能或物体。例如某个地图中存在商店，可以给玩家提供升级武器或购买道具的选项。一些地图中则存在怪物，打败怪物后会掉落金币，用于商店物品的购买。玩家可以随时存档，存档会保存当前玩家的状态数据和位置信息等，下次进入会读取上次的信息，继续游戏。 策划（旧）（地图设计太难）总目标 复刻空">
+<meta property="og:type" content="article">
+<meta property="og:title" content="毕设记录">
+<meta property="og:url" content="http://kennyyyyyy.github.io/2022/12/06/%E6%AF%95%E8%AE%BE%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Imperio">
+<meta property="og:description" content="选题描述主要内容：基于Unity3D引擎的一个2D平台跳跃类游戏。玩家可以在多个地图之中活动，每个地图上会存在一些对应的功能或物体。例如某个地图中存在商店，可以给玩家提供升级武器或购买道具的选项。一些地图中则存在怪物，打败怪物后会掉落金币，用于商店物品的购买。玩家可以随时存档，存档会保存当前玩家的状态数据和位置信息等，下次进入会读取上次的信息，继续游戏。 策划（旧）（地图设计太难）总目标 复刻空">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
+<meta property="article:published_time" content="2022-12-06T05:33:31.000Z">
+<meta property="article:modified_time" content="2023-05-16T15:41:55.901Z">
+<meta property="article:author" content="kennyyy">
+<meta property="article:tag" content="Unity">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Imperio" type="application/atom+xml">
+</head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">Imperio</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://imperio.cn">作者</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/kennyyyyyy/kennyyyyyy.github.io">链接</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Imperio</h2> <br />
+                        <span>Boy♂ Next♂ Door~</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">毕设记录</h1>
+                
+                <ul class="kratos-post-meta text-center">
+                    <li><i class="fa fa-calendar"></i> 2022-12-06</li>
+                    <li><i class="fa fa-user"></i> 作者 kennyyy</li>
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~3.19K
+                        
+                        字
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1684251715901"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                    <div class="kratos-post-inner-toc">
+                        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">选题描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%96%E5%88%92%EF%BC%88%E6%97%A7%EF%BC%89%EF%BC%88%E5%9C%B0%E5%9B%BE%E8%AE%BE%E8%AE%A1%E5%A4%AA%E9%9A%BE%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">策划（旧）（地图设计太难）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%BB%E7%9B%AE%E6%A0%87"><span class="toc-number">2.1.</span> <span class="toc-text">总目标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90"><span class="toc-number">2.2.</span> <span class="toc-text">系统设计分析</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%8E%A9%E5%AE%B6%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.2.1.</span> <span class="toc-text">玩家模块设计</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%95%8C%E4%BA%BA%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.2.2.</span> <span class="toc-text">敌人模块设计</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.2.3.</span> <span class="toc-text">地图模块设计</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#NPC%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.2.4.</span> <span class="toc-text">NPC模块设计</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">流程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E6%96%B0%EF%BC%89"><span class="toc-number"></span> <span class="toc-text">（新）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%9C%B0%E5%9B%BE%E8%AE%BE%E8%AE%A1"><span class="toc-number">0.1.</span> <span class="toc-text">随机地图设计</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Edgar"><span class="toc-number">0.1.1.</span> <span class="toc-text">Edgar</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%92%E8%89%B2%E6%8E%A7%E5%88%B6"><span class="toc-number">0.2.</span> <span class="toc-text">角色控制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="toc-number">0.3.</span> <span class="toc-text">有限状态机</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%95%8C%E4%BA%BA%E7%8A%B6%E6%80%81%E6%8E%A7%E5%88%B6"><span class="toc-number">0.3.1.</span> <span class="toc-text">敌人状态控制</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Player-%E7%8A%B6%E6%80%81%E6%9C%BA%EF%BC%88%E5%88%86%E5%B1%82%E7%8A%B6%E6%80%81%E6%9C%BA%EF%BC%89"><span class="toc-number">0.3.2.</span> <span class="toc-text">Player 状态机（分层状态机）</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Input-System"><span class="toc-number">0.4.</span> <span class="toc-text">Input System</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Animator"><span class="toc-number">0.5.</span> <span class="toc-text">Animator</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%98%E6%96%97%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text">战斗系统</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%AD%A6%E5%99%A8"><span class="toc-number">1.0.1.</span> <span class="toc-text">武器</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Entity%E9%87%8D%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">Entity重构</span></a></li></ol></li></ol>
+                    </div>
+                
+                <hr />
+                <span id="more"></span>
+<h4 id="选题描述"><a href="#选题描述" class="headerlink" title="选题描述"></a>选题描述</h4><p>主要内容：基于Unity3D引擎的一个2D平台跳跃类游戏。玩家可以在多个地图之中活动，每个地图上会存在一些对应的功能或物体。例如某个地图中存在商店，可以给玩家提供升级武器或购买道具的选项。一些地图中则存在怪物，打败怪物后会掉落金币，用于商店物品的购买。玩家可以随时存档，存档会保存当前玩家的状态数据和位置信息等，下次进入会读取上次的信息，继续游戏。</p>
+<h4 id="策划（旧）（地图设计太难）"><a href="#策划（旧）（地图设计太难）" class="headerlink" title="策划（旧）（地图设计太难）"></a>策划（旧）（地图设计太难）</h4><h5 id="总目标"><a href="#总目标" class="headerlink" title="总目标"></a>总目标</h5><ul>
+<li>复刻空洞骑士</li>
+<li>类银河恶魔城游戏设计 </li>
+<li>项目通过GitHub来管理</li>
+<li>资源先通过免费素材代替</li>
+</ul>
+<h5 id="系统设计分析"><a href="#系统设计分析" class="headerlink" title="系统设计分析"></a>系统设计分析</h5><h6 id="玩家模块设计"><a href="#玩家模块设计" class="headerlink" title="玩家模块设计"></a>玩家模块设计</h6><ol>
+<li>移动<ul>
+<li>正常左右移动</li>
+<li>冲刺<ul>
+<li>游玩过程中获得</li>
+<li>只能水品方向冲刺</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>跳跃<ul>
+<li>通过按键时间的长短控制跳跃高度</li>
+<li>二段跳需要游玩过程中获得</li>
+</ul>
+</li>
+<li>攻击<ul>
+<li>攻击分为 上下左右 四个方向</li>
+<li>攻击在一些特定的物体（无法破坏的物体，例如地面尖刺、怪物护盾等）上，会将自己击退</li>
+</ul>
+</li>
+<li>基础属性<ul>
+<li>血量：血量降到零时，玩家或死亡。可以通过血瓶回复血量，通过商店购买对应的物品提升上限</li>
+<li>攻击力：可以通过购买对应物品升级攻击力（升级武器）</li>
+</ul>
+</li>
+<li>基础物品<ul>
+<li>血瓶：需要从NPC中购买（或地图中探索获得），血瓶可以重复使用，只存在使用次数的限制。玩家每次 存档或复活都会使使用次数回满。商店处可以购买使次数提升的物品</li>
+</ul>
+</li>
+<li></li>
+</ol>
+<h6 id="敌人模块设计"><a href="#敌人模块设计" class="headerlink" title="敌人模块设计"></a>敌人模块设计</h6><ol>
+<li>AI逻辑<ul>
+<li>采用状态机来实现敌人的移动和攻击。目前考虑：普通怪物的状态机可以复用（移动，攻击、防御、死亡等），BOSS的状态机单独设计（二阶段的模式设计）</li>
+</ul>
+</li>
+<li>动画<ul>
+<li>动画采用帧动画，先找免费素材</li>
+</ul>
+</li>
+</ol>
+<h6 id="地图模块设计"><a href="#地图模块设计" class="headerlink" title="地图模块设计"></a>地图模块设计</h6><ol>
+<li>敌人刷新<ul>
+<li>游戏每次重新加载，地图中的敌人便会进行刷新。（重新加载包括：死亡后复活、存档后读档、传送等）</li>
+</ul>
+</li>
+<li>地图传送<ul>
+<li>一些地图当中存在传送点，玩家可以在所有已经激活的传送点之间进行传送</li>
+</ul>
+</li>
+<li>商店<ul>
+<li>商店即为NPC，地图中会存在NPC，他们会出售一些增益物品（武器升级，功能升级等）</li>
+</ul>
+</li>
+<li>地图总览<ul>
+<li>玩家所有探索过的地图区域都可以在其中预览</li>
+<li>特定NPC出可以购买地图，能让玩家提前预览未探索的区域</li>
+</ul>
+</li>
+<li>地图探索<ul>
+<li>地图中存在一些特殊物体，可以通过攻击互动</li>
+<li>地图中存在隐藏路径，有一些奖励</li>
+</ul>
+</li>
+<li>地图设计<ul>
+<li>钥匙与锁<ul>
+<li>能力锁：一些地图的点需要获得某些能力之后才能到达。一些高度需要二段跳才能跳上去，一些坑需要冲刺才能通过</li>
+<li>挑战锁：有些地方需要打败特殊敌人才能解锁（打包BOSS）</li>
+<li>物品锁：可以通过钥匙打开一些门，开通近路</li>
+</ul>
+</li>
+<li>回路探索：</li>
+</ul>
+</li>
+</ol>
+<h6 id="NPC模块设计"><a href="#NPC模块设计" class="headerlink" title="NPC模块设计"></a>NPC模块设计</h6><ol>
+<li>NPC为地图中功能的载体（或许有任务系统），可以通过和NPC对话来调用相关的功能</li>
+</ol>
+<h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><h3 id="（新）"><a href="#（新）" class="headerlink" title="（新）"></a>（新）</h3><p>改为类死亡细胞</p>
+<h5 id="随机地图设计"><a href="#随机地图设计" class="headerlink" title="随机地图设计"></a>随机地图设计</h5><p>​    使用 Edgar插件，采用预先设计模板和随机连接的方式生成地图</p>
+<h6 id="Edgar"><a href="#Edgar" class="headerlink" title="Edgar"></a>Edgar</h6><ol>
+<li><p>制作地图模板（包括房间和连接），通过Level Graph对设计房间连接规则</p>
+<ul>
+<li>普通的Level Graph中房间节点无房间类型，若需要特殊房间则要为此节点单独添加模板</li>
+<li>通过Custom Input Task 可以对其进行拓展，新增类需要继承DungeonGeneratorInputBaseGrid2D。例如新增房间类型，每种类型有对应的模板，这样就无需对每个房间单独添加，只需要选择类型即可</li>
+<li>在room templates中，每个tile必须至少于两个tile连接</li>
+</ul>
+</li>
+<li><p>Dungeon generator（地图生成器）/ Platformer generator </p>
+<ul>
+<li>它是一个组件，存在Level Graph字段和Post Processing字段等</li>
+<li>定义了地图的生成规则</li>
+</ul>
+</li>
+<li><p>后处理（Post Processing）</p>
+<ul>
+<li>用户后处理脚本需继承DungeonGeneratorPostProcessingGrid2D，并重载Run函数，后处理逻辑由Run执行</li>
+<li>后处理的逻辑在地图生成后执行。例如将角色的位置移动至出生点、生成敌人等</li>
+<li></li>
+</ul>
+</li>
+<li><p>地图案例</p>
+<p><img src="/images/毕设记录/image-20230226212752937.png" alt="image-20230226212752937"></p>
+</li>
+<li><p>现阶段问题</p>
+<ol>
+<li>地图模板设计</li>
+<li>后处理逻辑</li>
+</ol>
+</li>
+</ol>
+<h5 id="角色控制"><a href="#角色控制" class="headerlink" title="角色控制"></a>角色控制</h5><ol>
+<li><p>基础控制（走、跑、跳（二段）、冲刺），可添加额外控制（蹲、爬、滑墙、滑铲、蹬强跳等）</p>
+<ol>
+<li><p>跳跃</p>
+<ul>
+<li>跳跃检测和跳跃实现分开判断</li>
+<li>在地面状态时重置跳跃次数</li>
+</ul>
+</li>
+<li><p>滑墙</p>
+<ul>
+<li>通过射线检测，判断角色前方是否存在墙体，当角色不在地面且前方存在墙体时进入滑墙状态</li>
+<li>当x轴输入方向和墙的方向一致时才进入滑墙</li>
+<li>在滑墙状态下重置跳跃次数</li>
+</ul>
+</li>
+<li><p>蹬墙跳：</p>
+<ul>
+<li><p>在滑墙的基础下实现</p>
+</li>
+<li><p>当角色在滑墙状态时，用户可以通过直接跳跃落下墙体或者通过方向加跳跃进行蹬墙跳</p>
+</li>
+<li><p>两种跳跃通过预设定的方向和力实现</p>
+<p><img src="/images/毕设记录/image-20230305121338565.png" alt="滑墙状态下的跳跃"></p>
+</li>
+<li><p>设置canMove和canFlip两个参数，优化蹬墙跳的手感。即当在滑墙状态下输入反方向时的一小段时间内使角色无法移动和转向</p>
+</li>
+</ul>
+</li>
+<li></li>
+</ol>
+</li>
+<li><p>问题：</p>
+<ol>
+<li>跳跃感觉在月球<ol>
+<li>调整重力大小</li>
+<li>跳跃直接修改速度而非添加力</li>
+</ol>
+</li>
+<li>冲刺有bug<ol>
+<li>设置其他条件，当碰到墙壁或时间结束都结束冲刺</li>
+<li>冲刺过程中屏蔽跳跃和移动</li>
+</ol>
+</li>
+<li>攻击等需要设计</li>
+</ol>
+</li>
+</ol>
+<h5 id="有限状态机"><a href="#有限状态机" class="headerlink" title="有限状态机"></a>有限状态机</h5><h6 id="敌人状态控制"><a href="#敌人状态控制" class="headerlink" title="敌人状态控制"></a>敌人状态控制</h6><ul>
+<li><p>Entity</p>
+<p>敌人实体的基类</p>
+</li>
+<li><p>FiniteStateMachine</p>
+<p>管理Entity当前状态，执行对应的逻辑</p>
+</li>
+<li><p>State</p>
+<p>状态类，每个状态有对应的逻辑</p>
+</li>
+<li><p>状态转换图</p>
+<ul>
+<li><p>enemy1：近战</p>
+<p><img src="/images/毕设记录/image-20230308202413591.png" alt="Enemy1状态"></p>
+</li>
+<li><p>enemy2：远程</p>
+<p><img src="/images/毕设记录/image-20230311110302165.png" alt="enemy2状态"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="Player-状态机（分层状态机）"><a href="#Player-状态机（分层状态机）" class="headerlink" title="Player 状态机（分层状态机）"></a>Player 状态机（分层状态机）</h6><p><img src="/images/毕设记录/FSM.png" alt="FSM"></p>
+<ul>
+<li><p>Ledge Climb：</p>
+<p>分为三个状态，在动画状态机中用sub-state machine完成动画状态转换</p>
+</li>
+<li></li>
+</ul>
+<h5 id="Input-System"><a href="#Input-System" class="headerlink" title="Input System"></a><a target="_blank" rel="noopener" href="https://docs.unity3d.com/Packages/com.unity.inputsystem@1.4/manual/index.html">Input System</a></h5><ul>
+<li>Descirption:The Input System package implements a system to use any kind of Input Device to control your Unity content. It’s intended to be a more powerful, flexible, and configurable replacement for Unity’s classic Input Manager (the <code>UnityEngine.Input</code> class).</li>
+<li>InputSystem对大部分常用的输入设备都定义了详细的控制类，其中具体的控制项则基于InputControl基类派生出的各种处理类，包括但不仅限于AxisControl，ButtonControl，TouchControl等。可以很方便的对多个设备的输入进行处理</li>
+</ul>
+<h5 id="Animator"><a href="#Animator" class="headerlink" title="Animator"></a>Animator</h5><ul>
+<li>子状态机（Sub-State Machine）</li>
+</ul>
+<h4 id="战斗系统"><a href="#战斗系统" class="headerlink" title="战斗系统"></a>战斗系统</h4><p>目标是一个框架，能够方便的装备和取消装备，且敌人也能如此</p>
+<h6 id="武器"><a href="#武器" class="headerlink" title="武器"></a>武器</h6><p>让武器成为有限状态机的一个完全独立的实体，每个武器对应一个单一的攻击状态</p>
+<p>每个武器类决定攻击状态如何和武器交互</p>
+<p><img src="/images/毕设记录/image-20230329180813857.png" alt="weapon"></p>
+<ul>
+<li><p>武器结构如图</p>
+<p><img src="/images/毕设记录/image-20230407140004089.png" alt="武器结构"></p>
+<p>分为角色（base）和武器（weapon），base控制角色动画，weapon控制武器动画，并添加有碰撞器，用于攻击检测</p>
+</li>
+</ul>
+<p>sprite 切换回调</p>
+<p><code>SpriteRenderer.RegsiterSpriteChangeCallback(UnityAction&lt;SpriteRenderer&gt; callback);</code></p>
+<h5 id="Entity重构"><a href="#Entity重构" class="headerlink" title="Entity重构"></a>Entity重构</h5><p>将所有Entity公用的方法和变量抽象成另一个类，其他Entity中增加一个对其的引用，增加代码复用性，并方便管理</p>
+<p><img src="/images/毕设记录/image-20230405163600882.png" alt="新的Entity关系"></p>
+<ul>
+<li>Movement：控制移动</li>
+<li>CollisionSenses：控制物理检测部分</li>
+<li>Combat：控制战斗和受伤部分，继承IDamageable、IKnockbackable等接口，并有collider用于被攻击的触发检测</li>
+<li>Stats：用于记录所有的数据状态，如health、mana等</li>
+<li>ParticleManagert：例子效果管理</li>
+<li>Death：死亡</li>
+</ul>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://kennyyyyyy.github.io/2022/12/06/%E6%AF%95%E8%AE%BE%E8%AE%B0%E5%BD%95/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://kennyyyyyy.github.io/2022/12/06/%E6%AF%95%E8%AE%BE%E8%AE%B0%E5%BD%95/";
+            const title         = "「毕设记录」";
+            const excerpt       = `
+选题描述主要内容：基于Unity3D引擎的一个2D平台跳跃类游戏。玩家可以在多个地图之中活动，每个地图上会存在一些对应的功能或物体。例如某个地图中存在商店，可以给玩家提供升级武器或购买道具的选项。一些地图中则存在怪物，打败怪物后会掉...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2023-05-16</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" Unity功能模块整理" href="/2022/11/21/Unity功能模块整理/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 嵌入式基础" href="/2023/08/05/嵌入式基础/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.jpg" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">Deep♂ Dark♂ Fantasy♂</p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-text">选题描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%96%E5%88%92%EF%BC%88%E6%97%A7%EF%BC%89%EF%BC%88%E5%9C%B0%E5%9B%BE%E8%AE%BE%E8%AE%A1%E5%A4%AA%E9%9A%BE%EF%BC%89"><span class="toc-text">策划（旧）（地图设计太难）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%BB%E7%9B%AE%E6%A0%87"><span class="toc-text">总目标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90"><span class="toc-text">系统设计分析</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%8E%A9%E5%AE%B6%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="toc-text">玩家模块设计</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%95%8C%E4%BA%BA%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="toc-text">敌人模块设计</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="toc-text">地图模块设计</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#NPC%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="toc-text">NPC模块设计</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-text">流程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E6%96%B0%EF%BC%89"><span class="toc-text">（新）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%9C%B0%E5%9B%BE%E8%AE%BE%E8%AE%A1"><span class="toc-text">随机地图设计</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Edgar"><span class="toc-text">Edgar</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%92%E8%89%B2%E6%8E%A7%E5%88%B6"><span class="toc-text">角色控制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="toc-text">有限状态机</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%95%8C%E4%BA%BA%E7%8A%B6%E6%80%81%E6%8E%A7%E5%88%B6"><span class="toc-text">敌人状态控制</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Player-%E7%8A%B6%E6%80%81%E6%9C%BA%EF%BC%88%E5%88%86%E5%B1%82%E7%8A%B6%E6%80%81%E6%9C%BA%EF%BC%89"><span class="toc-text">Player 状态机（分层状态机）</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Input-System"><span class="toc-text">Input System</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Animator"><span class="toc-text">Animator</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%98%E6%96%97%E7%B3%BB%E7%BB%9F"><span class="toc-text">战斗系统</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%AD%A6%E5%99%A8"><span class="toc-text">武器</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Entity%E9%87%8D%E6%9E%84"><span class="toc-text">Entity重构</span></a></li></ol></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c/">c++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">每日一题</a><span class="category-list-count">1</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/C/" style="font-size: 0.73em;">C#</a> <a href="/tags/C/" style="font-size: 0.6em;">C++</a> <a href="/tags/C-C/" style="font-size: 0.6em;">C/C++</a> <a href="/tags/Leetcode/" style="font-size: 0.6em;">Leetcode</a> <a href="/tags/Linux/" style="font-size: 0.6em;">Linux</a> <a href="/tags/Lua/" style="font-size: 0.67em;">Lua</a> <a href="/tags/Socket/" style="font-size: 0.6em;">Socket</a> <a href="/tags/Unity/" style="font-size: 0.8em;">Unity</a> <a href="/tags/c/" style="font-size: 0.6em;">c++</a> <a href="/tags/unity/" style="font-size: 0.67em;">unity</a> <a href="/tags/xlua/" style="font-size: 0.6em;">xlua</a> <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 0.6em;">图形学</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 0.6em;">学习</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 0.6em;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.6em;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 0.6em;">数据结构</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 0.67em;">经验</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.6em;">计算机网络</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2023/08/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/"><i class="fa  fa-book"></i> 嵌入式基础</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/12/06/%E6%AF%95%E8%AE%BE%E8%AE%B0%E5%BD%95/"><i class="fa  fa-book"></i> 毕设记录</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/11/21/Unity%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E6%95%B4%E7%90%86/"><i class="fa  fa-book"></i> Unity功能模块整理</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/11/06/Unity%E7%9B%B8%E5%85%B3/"><i class="fa  fa-book"></i> Unity相关</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/07/3D%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%9B%BE%E5%BD%A2%E4%B8%8E%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"><i class="fa  fa-book"></i> 3D数学基础：图形与游戏开发</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2023 Imperio 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by kennyyy.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+//<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
