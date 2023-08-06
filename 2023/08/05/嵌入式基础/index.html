@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="1、单片机简介 2、STM32 ST：半导体；M：MCU&#x2F;MPU；32位  ST中文社区网  命名规则    3、最小系统和IO分配">
+  <meta name="description" content="名词解释 串口：串口是一种用于在计算机和外部设备之间进行通信的接口。串口可以通过传输一位一位的数据来实现通信，常见的有RS-232串口和USB串口。在嵌入式领域，串口通常被用于连接开发板和计算机，用于传输数据、进行调试或者配置设备。串口通常包含发送线、接收线和地线等信号线。 MCU：MCU（Microcontroller Unit）是一种集成了微处理器核心、存储器、输入&#x2F;输出接口和其他外设模块的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="嵌入式基础">
 <meta property="og:url" content="http://kennyyyyyy.github.io/2023/08/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Imperio">
-<meta property="og:description" content="1、单片机简介 2、STM32 ST：半导体；M：MCU&#x2F;MPU；32位  ST中文社区网  命名规则    3、最小系统和IO分配">
+<meta property="og:description" content="名词解释 串口：串口是一种用于在计算机和外部设备之间进行通信的接口。串口可以通过传输一位一位的数据来实现通信，常见的有RS-232串口和USB串口。在嵌入式领域，串口通常被用于连接开发板和计算机，用于传输数据、进行调试或者配置设备。串口通常包含发送线、接收线和地线等信号线。 MCU：MCU（Microcontroller Unit）是一种集成了微处理器核心、存储器、输入&#x2F;输出接口和其他外设模块的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
 <meta property="article:published_time" content="2023-08-05T14:38:47.000Z">
-<meta property="article:modified_time" content="2023-08-05T15:36:39.559Z">
+<meta property="article:modified_time" content="2023-08-06T15:14:29.790Z">
 <meta property="article:author" content="kennyyy">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://kennyyyyyy.github.io/images/logo.jpg">
@@ -136,7 +136,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            67
+                            383
                         
                         字
                     </li>
@@ -145,26 +145,39 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1691249799559"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1691334869790"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
-                        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">1、单片机简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81STM32"><span class="toc-number">2.</span> <span class="toc-text">2、STM32</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E6%9C%80%E5%B0%8F%E7%B3%BB%E7%BB%9F%E5%92%8CIO%E5%88%86%E9%85%8D"><span class="toc-number">3.</span> <span class="toc-text">3、最小系统和IO分配</span></a></li></ol>
+                        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">1.</span> <span class="toc-text">名词解释</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95"><span class="toc-number">2.</span> <span class="toc-text">问题记录</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E7%AE%80%E4%BB%8B"><span class="toc-number"></span> <span class="toc-text">1、单片机简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81STM32"><span class="toc-number"></span> <span class="toc-text">2、STM32</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E6%9C%80%E5%B0%8F%E7%B3%BB%E7%BB%9F%E5%92%8CIO%E5%88%86%E9%85%8D"><span class="toc-number"></span> <span class="toc-text">3、最小系统和IO分配</span></a>
                     </div>
                 
                 <hr />
                 <span id="more"></span>
+<h5 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h5><ul>
+<li><strong>串口</strong>：串口是一种用于在计算机和外部设备之间进行通信的接口。串口可以通过传输一位一位的数据来实现通信，常见的有RS-232串口和USB串口。在嵌入式领域，串口通常被用于连接开发板和计算机，用于传输数据、进行调试或者配置设备。串口通常包含发送线、接收线和地线等信号线。</li>
+<li><strong>MCU</strong>：MCU（Microcontroller Unit）是一种集成了微处理器核心、存储器、输入/输出接口和其他外设模块的单芯片微型计算机系统。</li>
+</ul>
+<h5 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h5><ul>
+<li><p><img src="/images/嵌入式基础/image-20230806230514052.png" alt="image-20230806230514052"></p>
+<p>该电路中电容的作用？<font color="red">上电后让NRST保持一段时间低电平（电容电压不突变），使其复位。</font></p>
+</li>
+</ul>
 <h4 id="1、单片机简介"><a href="#1、单片机简介" class="headerlink" title="1、单片机简介"></a>1、单片机简介</h4><p><img src="/images/嵌入式基础/image-20230805225149234.png" alt="image-20230805225149234"></p>
 <h4 id="2、STM32"><a href="#2、STM32" class="headerlink" title="2、STM32"></a>2、STM32</h4><ol>
 <li><p>ST：半导体；M：MCU/MPU；32位</p>
 </li>
-<li><p><a href="www.stmcu.org.cn">ST中文社区网</a></p>
+<li><p><a href="www.stmcu.org.cn">ST中文社区网</a>  </p>
 </li>
 <li><p>命名规则</p>
 <p><img src="/images/嵌入式基础/image-20230805232639235.png" alt="image-20230805232639235"></p>
 </li>
 </ol>
-<h4 id="3、最小系统和IO分配"><a href="#3、最小系统和IO分配" class="headerlink" title="3、最小系统和IO分配"></a>3、最小系统和IO分配</h4>
+<h4 id="3、最小系统和IO分配"><a href="#3、最小系统和IO分配" class="headerlink" title="3、最小系统和IO分配"></a>3、最小系统和IO分配</h4><ol>
+<li>最小系统：保证MCU正常工作的最小电路组成单元</li>
+<li>优先分配特定外设IO，然后分配通用IO，最后微调</li>
+</ol>
+
             </div>
             
                 <div class="kratos-copyright text-center clearfix">
@@ -232,17 +245,8 @@
             const hostUrl       = "http://kennyyyyyy.github.io/2023/08/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/";
             const title         = "「嵌入式基础」";
             const excerpt       = `
-1、单片机简介
-2、STM32
-ST：半导体；M：MCU/MPU；32位
-
-ST中文社区网
-
-命名规则
-
-
-
-3、最小系统和IO分配`;
+名词解释
+串口：串口是一种用于在计算机和外部设备之间进行通信的接口。串口可以通过传输一位一位的数据来实现通信，常见的有RS-232串口和USB串口。在嵌入式领域，串口通常被用于连接开发板和计算机，用于传输数据、进行调试或者配置设备。...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -264,7 +268,7 @@ ST中文社区网
                         
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2023-08-05</span>
+                    <span>最后编辑：2023-08-06</span>
                     </div>
                 </div>
             </footer>
@@ -312,7 +316,7 @@ ST中文社区网
         <span class="toc-progress-bar"></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E7%AE%80%E4%BB%8B"><span class="toc-text">1、单片机简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81STM32"><span class="toc-text">2、STM32</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E6%9C%80%E5%B0%8F%E7%B3%BB%E7%BB%9F%E5%92%8CIO%E5%88%86%E9%85%8D"><span class="toc-text">3、最小系统和IO分配</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-text">名词解释</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95"><span class="toc-text">问题记录</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E7%AE%80%E4%BB%8B"><span class="toc-text">1、单片机简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81STM32"><span class="toc-text">2、STM32</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E6%9C%80%E5%B0%8F%E7%B3%BB%E7%BB%9F%E5%92%8CIO%E5%88%86%E9%85%8D"><span class="toc-text">3、最小系统和IO分配</span></a>
     </div>
 </aside>
                 

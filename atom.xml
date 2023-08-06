@@ -6,7 +6,7 @@
   <link href="http://kennyyyyyy.github.io/atom.xml" rel="self"/>
   
   <link href="http://kennyyyyyy.github.io/"/>
-  <updated>2023-08-05T15:36:39.559Z</updated>
+  <updated>2023-08-06T15:14:29.790Z</updated>
   <id>http://kennyyyyyy.github.io/</id>
   
   <author>
@@ -21,15 +21,16 @@
     <link href="http://kennyyyyyy.github.io/2023/08/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/"/>
     <id>http://kennyyyyyy.github.io/2023/08/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/</id>
     <published>2023-08-05T14:38:47.000Z</published>
-    <updated>2023-08-05T15:36:39.559Z</updated>
+    <updated>2023-08-06T15:14:29.790Z</updated>
     
-    <content type="html"><![CDATA[<span id="more"></span><h4 id="1、单片机简介"><a href="#1、单片机简介" class="headerlink" title="1、单片机简介"></a>1、单片机简介</h4><p><img src="/images/嵌入式基础/image-20230805225149234.png" alt="image-20230805225149234"></p><h4 id="2、STM32"><a href="#2、STM32" class="headerlink" title="2、STM32"></a>2、STM32</h4><ol><li><p>ST：半导体；M：MCU/MPU；32位</p></li><li><p><a href="www.stmcu.org.cn">ST中文社区网</a></p></li><li><p>命名规则</p><p><img src="/images/嵌入式基础/image-20230805232639235.png" alt="image-20230805232639235"></p></li></ol><h4 id="3、最小系统和IO分配"><a href="#3、最小系统和IO分配" class="headerlink" title="3、最小系统和IO分配"></a>3、最小系统和IO分配</h4>]]></content>
+    <content type="html"><![CDATA[<span id="more"></span><h5 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h5><ul><li><strong>串口</strong>：串口是一种用于在计算机和外部设备之间进行通信的接口。串口可以通过传输一位一位的数据来实现通信，常见的有RS-232串口和USB串口。在嵌入式领域，串口通常被用于连接开发板和计算机，用于传输数据、进行调试或者配置设备。串口通常包含发送线、接收线和地线等信号线。</li><li><strong>MCU</strong>：MCU（Microcontroller Unit）是一种集成了微处理器核心、存储器、输入/输出接口和其他外设模块的单芯片微型计算机系统。</li></ul><h5 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h5><ul><li><p><img src="/images/嵌入式基础/image-20230806230514052.png" alt="image-20230806230514052"></p><p>该电路中电容的作用？<font color="red">上电后让NRST保持一段时间低电平（电容电压不突变），使其复位。</font></p></li></ul><h4 id="1、单片机简介"><a href="#1、单片机简介" class="headerlink" title="1、单片机简介"></a>1、单片机简介</h4><p><img src="/images/嵌入式基础/image-20230805225149234.png" alt="image-20230805225149234"></p><h4 id="2、STM32"><a href="#2、STM32" class="headerlink" title="2、STM32"></a>2、STM32</h4><ol><li><p>ST：半导体；M：MCU/MPU；32位</p></li><li><p><a href="www.stmcu.org.cn">ST中文社区网</a>  </p></li><li><p>命名规则</p><p><img src="/images/嵌入式基础/image-20230805232639235.png" alt="image-20230805232639235"></p></li></ol><h4 id="3、最小系统和IO分配"><a href="#3、最小系统和IO分配" class="headerlink" title="3、最小系统和IO分配"></a>3、最小系统和IO分配</h4><ol><li>最小系统：保证MCU正常工作的最小电路组成单元</li><li>优先分配特定外设IO，然后分配通用IO，最后微调</li></ol>]]></content>
     
     
       
       
     <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-&lt;h4 id=&quot;1、单片机简介&quot;&gt;&lt;a href=&quot;#1、单片机简介&quot; class=&quot;headerlink&quot; title=&quot;1、单片机简介&quot;&gt;&lt;/a&gt;1、单片机简介&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;/images/嵌入式基础/im</summary>
+&lt;h5 id=&quot;名词解释&quot;&gt;&lt;a href=&quot;#名词解释&quot; class=&quot;headerlink&quot; title=&quot;名词解释&quot;&gt;&lt;/a&gt;名词解释&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;串口&lt;/strong&gt;：串口是一种用于在计算机和</summary>
       
     
     
